@@ -3,9 +3,10 @@ import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { useLocation } from "react-router-dom";
 import Comments from "../components/Comments";
+import WriteComment from "../components/WriteComment";
 
 const PurchaseDetail = () => {
-  const arr = [1, 1, 1, 1];
+  const arr = [1, 1, 1, 1, 1];
 
   const location = useLocation();
   console.log(location);
@@ -17,7 +18,7 @@ const PurchaseDetail = () => {
       <div className="w-full h-full">
         <BoardTitle title="구매 문의 게시판" />
         <div className="w-full h-full flex justify-center">
-          <div className="w-[50%] mb-20 bg-white border border-black shadow-md px-5">
+          <div className="w-[50%] mb-20 bg-white border-2 border-gray-300 shadow-md px-5 rounded-md">
             {/* 게시글 머리 */}
             <div className="py-4">
               <div className="text-[#02C75A] text-sm mb-1">구매 문의</div>
@@ -49,7 +50,7 @@ const PurchaseDetail = () => {
                 );
               })}
               {/* 댓글 작성 칸 */}
-              <div></div>
+              <WriteComment />
             </div>
           </div>
         </div>
