@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { useLocation } from "react-router-dom";
-import LongMenu from "../components/ui/LongMenu";
+import Comments from "../components/Comments";
 
 const PurchaseDetail = () => {
   const location = useLocation();
@@ -36,38 +36,14 @@ const PurchaseDetail = () => {
             </div>
             <hr className="mb-4" />
             {/* 게시글 몸 */}
-            <div className="h-[600px]">게시글게시글</div>
+            <div className="pb-10">게시글게시글</div>
             <hr className="mb-3" />
             <div>
               <div className="font-bold text-lg mb-4">댓글</div>
               {/* 댓글 내용 */}
-              <div className="flex w-full justify-between">
-                <div>
-                  <div className="font-semibold text-base">공돌이</div>
-                  <div className="text-sm">라즈베리파이 4 정석</div>
-                  <div className="text-xs mb-2 text-gray-500">2022-04-30</div>
-                </div>
-                <LongMenu />
-              </div>
-              <hr className="mb-2" />
-              <div className="flex w-full justify-between">
-                <div>
-                  <div className="font-semibold text-base">공돌이</div>
-                  <div className="text-sm">라즈베리파이 4 정석</div>
-                  <div className="text-xs mb-2 text-gray-500">2022-04-30</div>
-                </div>
-                <LongMenu />
-              </div>
-              <hr className="mb-2" />
-              <div className="flex w-full justify-between">
-                <div>
-                  <div className="font-semibold text-base">공돌이</div>
-                  <div className="text-sm">라즈베리파이 4 정석</div>
-                  <div className="text-xs mb-2 text-gray-500">2022-04-30</div>
-                </div>
-                <LongMenu />
-              </div>
-              <hr className="mb-2" />
+              {[1, 1, 1, 1].map((_, index) => {
+                return <Comments key={index} />;
+              })}
             </div>
           </div>
         </div>
