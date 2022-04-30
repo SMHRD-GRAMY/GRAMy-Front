@@ -12,6 +12,8 @@ const PurchaseDetail = () => {
 
   const location = useLocation();
   console.log(location);
+  // name : 제목, title이 아닌 name인 이유는 API에서 가져오는 데이터가 사람 정보에 대한 데이터이기 때문
+  const { name, username } = location.state.info;
   return (
     <>
       <Helmet>
@@ -24,12 +26,12 @@ const PurchaseDetail = () => {
             {/* 게시글 머리 */}
             <div className="py-4">
               <div className="text-[#02C75A] text-sm mb-1">구매 문의</div>
-              <div className="text-3xl font-semibold">제목</div>
+              <div className="text-3xl font-semibold">{name}</div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">
                   <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                   <div className="flex flex-col">
-                    <span className="font-semibold text-base">박종재</span>
+                    <span className="font-semibold text-base">{username}</span>
                     <span className="text-sm text-gray-400">2022-04-30</span>
                   </div>
                 </div>

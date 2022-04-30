@@ -1,7 +1,6 @@
 import React from "react";
 import LongMenu from "../components/ui/LongMenu";
 const Comments = ({ index, length }) => {
-  console.log(index);
   return (
     <>
       <div className="flex w-full justify-between">
