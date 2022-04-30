@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import Comments from "../components/Comments";
 
 const PurchaseDetail = () => {
+  const arr = [1, 1, 1, 1];
+
   const location = useLocation();
   console.log(location);
   return (
@@ -41,9 +43,13 @@ const PurchaseDetail = () => {
             <div>
               <div className="font-bold text-lg mb-4">댓글</div>
               {/* 댓글 내용 */}
-              {[1, 1, 1, 1].map((_, index) => {
-                return <Comments key={index} />;
+              {arr.map((_, index) => {
+                return (
+                  <Comments key={index} index={index} length={arr.length} />
+                );
               })}
+              {/* 댓글 작성 칸 */}
+              <div></div>
             </div>
           </div>
         </div>

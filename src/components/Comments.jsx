@@ -1,6 +1,7 @@
 import React from "react";
 import LongMenu from "../components/ui/LongMenu";
-const Comments = () => {
+const Comments = ({ index, length }) => {
+  console.log(index);
   return (
     <>
       <div className="flex w-full justify-between">
@@ -11,7 +12,7 @@ const Comments = () => {
         </div>
         <LongMenu />
       </div>
-      <hr className="mb-2" />
+      {index === length - 1 ? null : <hr className="mb-2" />}
     </>
   );
 };
