@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { useLocation } from "react-router-dom";
@@ -7,6 +7,8 @@ import WriteComment from "../components/WriteComment";
 
 const PurchaseDetail = () => {
   const arr = [1, 1, 1, 1, 1];
+
+  const [comment, setComment] = useState("");
 
   const location = useLocation();
   console.log(location);
@@ -50,7 +52,7 @@ const PurchaseDetail = () => {
                 );
               })}
               {/* 댓글 작성 칸 */}
-              <WriteComment />
+              <WriteComment comment={comment} setComment={setComment} />
             </div>
           </div>
         </div>
