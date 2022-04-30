@@ -7,7 +7,7 @@ const WriteComment = () => {
       <div className="flex">
         <textarea
           placeholder="댓글을 남겨보세요."
-          className="w-full h-10 resize-none text-sm"
+          className="w-full h-10 resize-none text-sm border-0 focus:ring-0"
           value=""
         />
         <button className="w-20 bg-[#90C8B4] ml-3 text-sm rounded-md text-white">
