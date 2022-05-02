@@ -83,7 +83,7 @@ const Join = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = "http://localhost:8082/Join.do";
-    let data = input;
+    let data = { ...input };
     axios
       .post(url, data, {
         headers: {
