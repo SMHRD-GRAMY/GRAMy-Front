@@ -80,7 +80,8 @@ const Join = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const url = "http://localhost:8082/Join.do";
     let data = input;
     axios
@@ -93,7 +94,7 @@ const Join = () => {
       .then((res) => {
         console.log(res);
       });
-    window.location.href = "login";
+    // window.location.href = "login";
   };
 
   return (
