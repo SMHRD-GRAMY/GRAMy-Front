@@ -48,6 +48,7 @@ const Join = () => {
       [name]: value,
     });
     setInput({
+      ...input,
       address: `${address.zonecode} ${address.addr} ${value}`,
     });
   };
