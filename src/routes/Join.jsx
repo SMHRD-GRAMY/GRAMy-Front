@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext, useState, useRef } from "react";
 import Helmet from "react-helmet";
 import { AppContext } from "../App";
@@ -77,6 +78,22 @@ const Join = () => {
     if (checked) {
       checkBoxes.forEach((i) => (i.current.checked = true));
     }
+  };
+
+  const handleSubmit = () => {
+    const url = "http://localhost:8082/Join.do";
+    let data = input;
+    axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+          data,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+    window.location.href = "login";
   };
 
   return (
@@ -309,6 +326,7 @@ const Join = () => {
                 className=" bg-[#90C8B4] rounded-md text-white h-10 font-bold cursor-pointer"
                 type="submit"
                 value="회원가입"
+                onClick={handleSubmit}
               />
             </form>
           </div>
