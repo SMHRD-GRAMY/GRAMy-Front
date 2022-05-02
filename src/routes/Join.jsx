@@ -91,8 +91,9 @@ const Join = () => {
           data,
         },
       })
-      .then((res) => {
+      .then((res, err) => {
         console.log(res);
+        console.log(err);
       });
     // window.location.href = "login";
   };
