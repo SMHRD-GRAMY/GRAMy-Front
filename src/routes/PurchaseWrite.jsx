@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
+import { useLocation, useParams } from "react-router-dom";
 import BoardTitle from "../components/BoardTitle";
 import DraftEditor from "../components/DraftEditor";
 
-const PurchaseWrite = () => {
+const PurchaseWrite = ({ mode }) => {
+  const location = useLocation();
+  const params = useParams();
+
+  console.log(location);
+
+  const articleId = params.id; // 수정할 게시글 번호
+  const editTitle = location.state === null ? "" : location.state.title; // 게시글 제목
+  const editContent = location.state === null ? "" : location.state.content; // 수정할 게시글 내용
+
   const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    if (mode === "edit") {
+      // 만약 게시글 수정 모드일 시, 전에 입력했던 게시글 제목 SET
+      setTitle(editTitle);
+    }
+  }, []);
 
   const onChangeTitle = (e) => {
     const { value } = e.target;
@@ -33,7 +50,12 @@ const PurchaseWrite = () => {
               </div>
               {/* 게시글 내용 작성 */}
               <div>
-                <DraftEditor title={title} />
+                <DraftEditor
+                  title={title}
+                  mode={mode}
+                  articleId={articleId}
+                  editContent={editContent}
+                />
               </div>
             </div>
           </div>

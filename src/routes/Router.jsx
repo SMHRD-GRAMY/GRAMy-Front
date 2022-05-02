@@ -11,7 +11,6 @@ import Purchase from "./Purchase";
 import Report from "./Report";
 import PurchaseDetail from "./PurchaseDetail";
 import PurchaseWrite from "./PurchaseWrite";
-import PurchaseUpdate from "./PurchaseUpdate";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -29,8 +28,11 @@ const Router = () => {
           <Route path="/join" element={<Join />} />
           <Route path="/purchase" element={<Purchase />} />
           <Route path="/purchase/:id" element={<PurchaseDetail />} />
-          <Route path="/purchase/:id/update" element={<PurchaseUpdate />} />
           <Route path="/purchase/write" element={<PurchaseWrite />} />
+          <Route
+            path="/purchase/:id/update"
+            element={<PurchaseWrite mode="edit" />}
+          />
           <Route path="/report" element={<Report />} />
         </Routes>
         <Footer />

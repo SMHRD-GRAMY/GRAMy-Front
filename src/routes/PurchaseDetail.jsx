@@ -6,9 +6,10 @@ import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
 
 const PurchaseDetail = () => {
+  // TODO : 게시글 데이터 useEffect로 받아오자!!
+  // 로딩은 어쩔수 없다! 스켈레톤 UI로 구현해보자!
   const params = useParams();
-
-  const articleId = params.id;
+  const articleId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
   const arr = [1, 1, 1, 1, 1];
 
@@ -46,8 +47,10 @@ const PurchaseDetail = () => {
                   <Link
                     to="update"
                     state={{
-                      articleId: articleId,
                       title: name,
+                      // content : useEffect로 게시글 상세 정보 받아와서 여기다가 처박은 후 수정
+                      // 우선은 백엔드 완성 전까지 테스트만
+                      content: "<strong>훠킹뻐킹</strong>",
                     }}
                     className="cursor-pointer hover:border-b hover:border-gray-500"
                   >
