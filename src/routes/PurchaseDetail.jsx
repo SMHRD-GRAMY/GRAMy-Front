@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
 
 const PurchaseDetail = () => {
+  const params = useParams();
+
+  const articleId = params.id;
+
   const arr = [1, 1, 1, 1, 1];
 
   const [comment, setComment] = useState("");
 
   const location = useLocation();
-  console.log(location);
   // name : 제목, title이 아닌 name인 이유는 API에서 가져오는 데이터가 사람 정보에 대한 데이터이기 때문
   const { name, username } = location.state.info;
+
+  const handleDelete = () => {
+    // TODO : 게시글 삭제 요청 보내기
+  };
   return (
     <>
       <Helmet>
@@ -36,8 +43,19 @@ const PurchaseDetail = () => {
                   </div>
                 </div>
                 <div className=" text-base text-gray-500">
-                  <span>수정</span>
-                  <span className="ml-2">삭제</span>
+                  <Link
+                    to="update"
+                    state={{
+                      articleId: articleId,
+                      title: name,
+                    }}
+                    className="cursor-pointer hover:border-b hover:border-gray-500"
+                  >
+                    수정
+                  </Link>
+                  <span className="ml-2 cursor-pointer hover:border-b hover:border-gray-500">
+                    삭제
+                  </span>
                 </div>
               </div>
             </div>

@@ -13,7 +13,7 @@ const MyBlock = styled.div`
   }
   .editor {
     height: 500px !important;
-    border: 1px solid #f1f1f1 !important;
+    border: 2px solid #9ba3af !important;
     padding: 5px !important;
     border-radius: 2px !important;
   }

@@ -22,7 +22,7 @@ const PurchaseWrite = () => {
           <div className="w-full h-full flex justify-center">
             <div className="w-[50%] bg-white">
               {/* 게시글 제목 */}
-              <div className="border border-gray-400 mb-3">
+              <div className="border border-gray-400">
                 <input
                   className="w-full border-0 focus:ring-0"
                   type="text"
