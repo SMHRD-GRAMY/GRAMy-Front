@@ -9,12 +9,12 @@ const Join = () => {
   const ModalContext = useContext(AppContext);
 
   const [input, setInput] = useState({
-    email: "",
-    password: "",
-    username: "",
-    phone: "",
-    gender: "",
-    address: "",
+    user_id: "",
+    user_pw: "",
+    user_name: "",
+    user_phone: "",
+    user_gender: "",
+    user_addr: "",
   });
 
   const [address, setAddress] = useState({
@@ -49,7 +49,7 @@ const Join = () => {
     });
     setInput({
       ...input,
-      address: `${address.zonecode} ${address.addr} ${value}`,
+      user_addr: `${address.zonecode} ${address.addr} ${value}`,
     });
   };
 
@@ -83,10 +83,10 @@ const Join = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:8082/Join.do";
+    const url = "http://localhost:8082/join.do";
     let data = { ...input };
     axios
-      .post(url, data, {
+      .post(url, JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
           data,
@@ -130,7 +130,7 @@ const Join = () => {
                 placeholder="이메일 주소 (필수)"
                 required
                 value={input.id}
-                name="email"
+                name="user_id"
                 onChange={onChangeInput}
               />
               <input
@@ -139,7 +139,7 @@ const Join = () => {
                 placeholder="비밀번호 (필수)"
                 required
                 value={input.pw}
-                name="password"
+                name="user_pw"
                 onChange={onChangeInput}
               />
               <input
@@ -148,7 +148,7 @@ const Join = () => {
                 placeholder="이름 (필수)"
                 required
                 value={input.username}
-                name="username"
+                name="user_name"
                 onChange={onChangeInput}
               />
               <div>
@@ -158,7 +158,7 @@ const Join = () => {
                   placeholder="전화번호 (-없이 입력) (필수)"
                   required
                   value={input.phone}
-                  name="phone"
+                  name="user_phone"
                   onChange={onChangeInput}
                 />
                 <button
@@ -176,7 +176,7 @@ const Join = () => {
                   <input
                     className="focus:ring-2 focus:ring-green-300 text-green-300"
                     type="radio"
-                    name="gender"
+                    name="user_gender"
                     value="man"
                     onChange={onChangeInput}
                   />
@@ -186,7 +186,7 @@ const Join = () => {
                   <input
                     className="focus:ring-2 focus:ring-green-300 text-green-300"
                     type="radio"
-                    name="gender"
+                    name="user_gender"
                     value="women"
                     onChange={onChangeInput}
                   />
@@ -196,7 +196,7 @@ const Join = () => {
                   <input
                     className="focus:ring-2 focus:ring-gray-500 text-gray-500"
                     type="radio"
-                    name="gender"
+                    name="user_gender"
                     value="nothing"
                     onChange={onChangeInput}
                   />
