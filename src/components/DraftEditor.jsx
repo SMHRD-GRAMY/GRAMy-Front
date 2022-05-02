@@ -47,6 +47,7 @@ const DraftEditor = ({ title }) => {
   );
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const url = "/";
 
     let data = {
@@ -63,6 +64,11 @@ const DraftEditor = ({ title }) => {
       .then((res) => {
         console.log(res);
       });
+  };
+
+  const writeCancel = (e) => {
+    e.preventDefault();
+    window.location.href = "/purchase";
   };
 
   return (
@@ -94,14 +100,19 @@ const DraftEditor = ({ title }) => {
           onEditorStateChange={onEditorStateChange}
         />
       </MyBlock>
-      <div className="bg-[#F4F6F6] flex justify-end">
+      <div className="bg-[#F4F6F6] flex justify-end pt-3 mb-3">
         <button
-          onSubmit={handleSubmit}
-          className="h-9 bg-[#90C8B4] rounded-md text-white font-bold w-28"
+          onClick={handleSubmit}
+          className="h-9 bg-[#90C8B4] rounded-md text-white font-bold w-20"
         >
-          글 쓰기
+          등록
         </button>
-        <button className="ml-4">취소</button>
+        <button
+          className="ml-4 mr-4 h-9 bg-white rounded-md text-black font-bold w-20 border border-black"
+          onClick={writeCancel}
+        >
+          취소
+        </button>
       </div>
     </>
   );
