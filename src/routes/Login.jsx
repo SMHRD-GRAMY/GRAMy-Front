@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import FaceBookLogin from "../components/auth/FaceBookLogin";
 
 const Login = () => {
   const [input, setinput] = useState({
@@ -80,16 +81,7 @@ const Login = () => {
               소셜 아이디로 로그인
             </div>
             <div className=" flex flex-col items-center w-full h-full mb-20">
-              <a href="/" className="w-auto flex mb-5">
-                <img
-                  src="img/facebook.png"
-                  alt="페이스북 아이콘"
-                  className="w-[50px] h-[50px]"
-                />
-                <div className="w-[350px] h-[50px] bg-[#517AD5] flex items-center justify-center text-lg font-semibold text-white">
-                  페이스북 아이디로 로그인
-                </div>
-              </a>
+              <FaceBookLogin />
               <a href="/" className="w-auto flex mb-5">
                 <img
                   src="img/kakao.jpeg"
