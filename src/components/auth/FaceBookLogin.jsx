@@ -1,13 +1,13 @@
 import React from "react";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import dotenv from "dotenv";
+import "dotenv";
 
 const FaceBookLogin = () => {
   const responseFacebook = (response) => {
     const { id, name, email } = response;
     console.log(id); // 토큰 ID << 이거 인증에 사용
     console.log(email); // 페이스북 로그인 한 이메일
-    console.log(name);
+    console.log(name); // 사용자 이름
   };
 
   return (

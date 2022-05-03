@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
 
 const Header = () => {
   const location = useLocation();
+  const loginContext = useContext(AppContext);
+
+  const handleLogout = () => {
+    // TODO: JWT 토큰 해제 -> 로그아웃
+    console.log("로그아웃");
+  };
+
+  let isLogin = loginContext.isLogin;
 
   return (
     <div className=" w-full h-[80px] bg-white flex">
@@ -33,16 +42,51 @@ const Header = () => {
           <Link to="/report">고장 문의</Link>
         </div>
         <div className=" flex items-center justify-evenly w-[310px]">
-          <Link to="/login">
-            <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
-              로그인
-            </button>
-          </Link>
-          <Link to="/join">
-            <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
-              회원가입
-            </button>
-          </Link>
+          {isLogin ? (
+            <Link to="/profile">
+              <div className="flex items-center">
+                <div className="rounded-full w-10 h-10 mr-2 flex items-center justify-center border border-green-200 bg-[#90C8B4]">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                </div>
+                <span>박종재</span>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
+                로그인
+              </button>
+            </Link>
+          )}
+          {isLogin ? (
+            <div>
+              <button
+                className="cursor-pointer hover:underline"
+                onClick={handleLogout}
+              >
+                로그아웃
+              </button>
+            </div>
+          ) : (
+            <Link to="/join">
+              <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
+                회원가입
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
