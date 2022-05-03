@@ -6,8 +6,8 @@ import FaceBookLogin from "../components/auth/FaceBookLogin";
 
 const Login = () => {
   const [input, setinput] = useState({
-    email: "",
-    password: "",
+    user_id: "",
+    user_pw: "",
   });
 
   const onChangeInput = (e) => {
@@ -54,7 +54,7 @@ const Login = () => {
                 placeholder="이메일 주소"
                 required
                 value={input.id}
-                name="email"
+                name="user_id"
                 onChange={onChangeInput}
               />
               <input
@@ -63,7 +63,7 @@ const Login = () => {
                 placeholder="비밀번호"
                 required
                 value={input.pw}
-                name="password"
+                name="user_pw"
                 onChange={onChangeInput}
               />
               <div className="flex  w-full justify-end mb-4 font-thin">
