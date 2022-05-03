@@ -61,7 +61,7 @@ const Join = () => {
     });
   };
 
-  const phoneAuth = (e) => {
+  const handlePhoneAuth = (e) => {
     e.preventDefault();
     console.log(input);
   };
@@ -163,7 +163,7 @@ const Join = () => {
                 />
                 <button
                   className="h-10 bg-[#90C8B4] rounded-md text-white font-bold w-28"
-                  onClick={phoneAuth}
+                  onClick={handlePhoneAuth}
                 >
                   인증 하기
                 </button>

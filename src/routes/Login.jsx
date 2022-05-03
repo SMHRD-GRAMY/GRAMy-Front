@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [input, setinput] = useState({
-    emaiil: "",
+    email: "",
     password: "",
   });
 
@@ -14,6 +15,24 @@ const Login = () => {
       ...input,
       [name]: value,
     });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const url = "http://localhost:8082/login.do";
+    let data = { ...input }; // email, password 넘어감!
+    axios
+      .post(url, JSON.stringify(data), {
+        headers: {
+          "Content-Type": "application/json",
+          data,
+        },
+      })
+      .then((res, err) => {
+        console.log(res);
+        console.log(err);
+      });
+    // window.location.href = "/";
   };
 
   return (
@@ -49,7 +68,10 @@ const Login = () => {
               <div className="flex  w-full justify-end mb-4 font-thin">
                 <Link to="/">비밀번호를 잊어버리셨나요?</Link>
               </div>
-              <button className=" bg-[#90C8B4] rounded-md text-white h-10 font-bold">
+              <button
+                onClick={handleLogin}
+                className=" bg-[#90C8B4] rounded-md text-white h-10 font-bold"
+              >
                 로그인
               </button>
             </form>
