@@ -11,7 +11,11 @@ const App = () => {
     modal3: false,
   });
 
-  const [isLogin, setIsLogin] = useState(true);
+  const [socialUser, setSocialUser] = useState({
+    email: "",
+    name: "",
+  });
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <>

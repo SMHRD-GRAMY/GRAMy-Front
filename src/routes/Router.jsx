@@ -11,6 +11,7 @@ import Purchase from "./Purchase";
 import Report from "./Report";
 import PurchaseDetail from "./PurchaseDetail";
 import PurchaseWrite from "./PurchaseWrite";
+import KaKaoRedirectHandler from "../components/auth/KaKaoRedirectHandler";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -34,6 +35,10 @@ const Router = () => {
             element={<PurchaseWrite mode="edit" />}
           />
           <Route path="/report" element={<Report />} />
+          <Route
+            path="/oauth/callback/kakao"
+            element={<KaKaoRedirectHandler />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

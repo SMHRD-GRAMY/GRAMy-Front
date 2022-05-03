@@ -1,6 +1,5 @@
 import React from "react";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import "dotenv";
 
 const FaceBookLogin = () => {
   const responseFacebook = (response) => {
