@@ -7,11 +7,13 @@ import PurchaseTableBody from "../components/PurchaseTableBody";
 
 const Purchase = () => {
   const [articleInfo, setArticleInfo] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users/")
-      .then((res) => setArticleInfo(res.data));
+    axios.get("https://jsonplaceholder.typicode.com/users/").then((res) => {
+      setLoading(false);
+      setArticleInfo(res.data);
+    });
   }, []);
 
   return (
@@ -35,7 +37,10 @@ const Purchase = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                <PurchaseTableBody articleInfo={articleInfo} />
+                <PurchaseTableBody
+                  articleInfo={articleInfo}
+                  loading={loading}
+                />
               </tbody>
             </table>
           </div>
