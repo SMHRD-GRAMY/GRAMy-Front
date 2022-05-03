@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { Link, useLocation, useParams } from "react-router-dom";
@@ -8,6 +8,10 @@ import WriteComment from "../components/WriteComment";
 const PurchaseDetail = () => {
   // TODO : 게시글 데이터 useEffect로 받아오자!!
   // 로딩은 어쩔수 없다! 스켈레톤 UI로 구현해보자!
+  // 무엇을 로딩? -> 댓글, 게시글내용
+
+  useEffect(() => {}, []);
+
   const params = useParams();
   const articleId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
