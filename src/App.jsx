@@ -12,14 +12,23 @@ const App = () => {
   });
 
   const [socialUser, setSocialUser] = useState({
-    email: "",
     name: "",
+    email: "",
   });
   const [isLogin, setIsLogin] = useState(false);
 
   return (
     <>
-      <AppContext.Provider value={{ terms, setTerms, isLogin, setIsLogin }}>
+      <AppContext.Provider
+        value={{
+          terms,
+          setTerms,
+          isLogin,
+          setIsLogin,
+          socialUser,
+          setSocialUser,
+        }}
+      >
         <GlobalStyle />
         <Router />
       </AppContext.Provider>

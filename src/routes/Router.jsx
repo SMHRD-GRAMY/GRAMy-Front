@@ -12,6 +12,7 @@ import Report from "./Report";
 import PurchaseDetail from "./PurchaseDetail";
 import PurchaseWrite from "./PurchaseWrite";
 import KaKaoRedirectHandler from "../components/auth/KaKaoRedirectHandler";
+import NaverRedirectHandler from "../components/auth/NaverRedirectHandler";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -38,6 +39,10 @@ const Router = () => {
           <Route
             path="/oauth/callback/kakao"
             element={<KaKaoRedirectHandler />}
+          />
+          <Route
+            path="/oauth/callback/naver"
+            element={<NaverRedirectHandler />}
           />
         </Routes>
         <Footer />

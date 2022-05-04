@@ -32,7 +32,7 @@ const KaKaoRedirectHandler = () => {
           url: "/v2/user/me",
         });
 
-        console.log(data);
+        console.log(data); // 이 데이터 핸들링
       });
   }, [navigate, LoginContext]);
 

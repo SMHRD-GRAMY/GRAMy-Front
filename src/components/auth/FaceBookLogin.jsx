@@ -3,7 +3,7 @@ import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props
 
 const FaceBookLogin = () => {
   const responseFacebook = (response) => {
-    const { id, name, email } = response;
+    const { id, name, email } = response; // 이 데이터 핸들링
     console.log(id); // 토큰 ID << 이거 인증에 사용
     console.log(email); // 페이스북 로그인 한 이메일
     console.log(name); // 사용자 이름
