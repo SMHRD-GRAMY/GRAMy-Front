@@ -39,7 +39,7 @@ const Header = () => {
             <Link to="/">제품 소개</Link>
           )}
           <Link to="/purchase">구매 문의</Link>
-          <Link to="/report">고장 문의</Link>
+          <Link to="/report">고장 신고</Link>
         </div>
         <div className=" flex items-center justify-evenly w-[310px]">
           {isLogin ? (
