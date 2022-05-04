@@ -10,28 +10,30 @@ const Nav = styled.nav`
 `;
 
 const Button = styled.button`
+  width: 30px;
+  height: 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50%;
   padding: 8px;
   margin: 0;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   font-size: 1rem;
 
   &:hover {
-    background: tomato;
     cursor: pointer;
     transform: translateY(-2px);
   }
 
   &[disabled] {
-    background: grey;
+    background: #80808087;
     cursor: revert;
     transform: revert;
   }
 
   &[aria-current] {
-    background: deeppink;
+    background: #90c8b4;
+    color: white;
     font-weight: bold;
     cursor: revert;
     transform: revert;
@@ -49,13 +51,18 @@ const Pagination = ({ total, limit, page, setPage }) => {
   return (
     <>
       <Nav>
-        <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
+        <Button
+          className="shadow-md font-extrabold"
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+        >
           &lt;
         </Button>
         {Array(numPages)
           .fill()
           .map((_, i) => (
             <Button
+              className="shadow-md transition-all"
               key={i + 1}
               onClick={() => setPage(i + 1)}
               aria-current={page === i + 1 ? "page" : null}
@@ -63,7 +70,11 @@ const Pagination = ({ total, limit, page, setPage }) => {
               {i + 1}
             </Button>
           ))}
-        <Button onClick={() => setPage(page + 1)} disabled={page === numPages}>
+        <Button
+          className="shadow-md font-extrabold"
+          onClick={() => setPage(page + 1)}
+          disabled={page === numPages}
+        >
           &gt;
         </Button>
       </Nav>
