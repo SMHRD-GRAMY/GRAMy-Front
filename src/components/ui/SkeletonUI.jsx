@@ -6,9 +6,16 @@ export default function SkeletonUI() {
   return (
     <div className="flex justify-center">
       <Box sx={{ width: 1000 }}>
-        <Skeleton />
-        <Skeleton animation="wave" />
-        <Skeleton animation={false} />
+        <Skeleton className="" height={40} />
+        <Skeleton className="" animation="wave" height={40} />
+        <Skeleton className="" animation={false} height={40} />
+        <Skeleton className="" height={40} />
+        <Skeleton className="" animation="wave" height={40} />
+        <Skeleton className="" animation={false} height={40} />
+        <Skeleton className="" height={40} />
+        <Skeleton className="" animation="wave" height={40} />
+        <Skeleton className="" animation={false} height={40} />
+        <Skeleton className="" height={40} />
       </Box>
     </div>
   );
