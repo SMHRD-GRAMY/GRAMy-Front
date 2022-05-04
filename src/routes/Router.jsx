@@ -13,6 +13,8 @@ import PurchaseDetail from "./PurchaseDetail";
 import PurchaseWrite from "./PurchaseWrite";
 import KaKaoRedirectHandler from "../components/auth/KaKaoRedirectHandler";
 import NaverRedirectHandler from "../components/auth/NaverRedirectHandler";
+import ReportDetail from "./ReportDetail";
+import ReportWrite from "./ReportWrite";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -36,6 +38,8 @@ const Router = () => {
             element={<PurchaseWrite mode="edit" />}
           />
           <Route path="/report" element={<Report />} />
+          <Route path="/report/:id" element={<ReportDetail />} />
+          <Route path="/report/write" element={<ReportWrite />} />
           <Route
             path="/oauth/callback/kakao"
             element={<KaKaoRedirectHandler />}
