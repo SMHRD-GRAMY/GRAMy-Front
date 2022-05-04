@@ -4,18 +4,9 @@ import Skeleton from "@mui/material/Skeleton";
 
 export default function SkeletonUI() {
   return (
-    <div className="flex justify-center">
-      <Box sx={{ width: 1000 }}>
-        <Skeleton className="" height={40} />
-        <Skeleton className="" animation="wave" height={40} />
-        <Skeleton className="" animation={false} height={40} />
-        <Skeleton className="" height={40} />
-        <Skeleton className="" animation="wave" height={40} />
-        <Skeleton className="" animation={false} height={40} />
-        <Skeleton className="" height={40} />
-        <Skeleton className="" animation="wave" height={40} />
-        <Skeleton className="" animation={false} height={40} />
-        <Skeleton className="" height={40} />
+    <div className="flex justify-center px-3">
+      <Box className="w-full">
+        <Skeleton animation="wave" height={40} />
       </Box>
     </div>
   );
