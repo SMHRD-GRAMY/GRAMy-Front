@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Skeleton } from "@mui/material";
 
 const NaverRedirectHandler = () => {
   const { hostname, protocol } = window.location;
@@ -31,12 +32,16 @@ const NaverRedirectHandler = () => {
         console.log("userName: " + userName);
 
         // 핸들링 이후 메인 페이지로 이동
-        // navigate("/");
+        navigate("/");
       }
     });
   });
 
-  return <div>네이버 콜백</div>;
+  return (
+    <div>
+      <Skeleton variant="rectangular" width={10000} height={1000} />
+    </div>
+  );
 };
 
 export default NaverRedirectHandler;
