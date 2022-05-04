@@ -7,6 +7,8 @@ const Nav = styled.nav`
   align-items: center;
   gap: 4px;
   margin: 16px;
+  margin-top: 30px;
+  margin-bottom: 100px;
 `;
 
 const Button = styled.button`
