@@ -13,15 +13,14 @@ const PurchaseDetail = () => {
   useEffect(() => {}, []);
 
   const params = useParams();
-  const articleId = params.id; // 게시글번호, 삭제할 때 사용할 것
+  const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
   const arr = [1, 1, 1, 1, 1];
 
   const [comment, setComment] = useState("");
 
   const location = useLocation();
-  // name : 제목, title이 아닌 name인 이유는 API에서 가져오는 데이터가 사람 정보에 대한 데이터이기 때문
-  const { name, username } = location.state.info;
+  const { title, userId } = location.state.info;
 
   const handleDelete = () => {
     // TODO : 게시글 삭제 요청 보내기
@@ -38,12 +37,12 @@ const PurchaseDetail = () => {
             {/* 게시글 머리 */}
             <div className="py-4">
               <div className="text-[#02C75A] text-sm mb-1">구매 문의</div>
-              <div className="text-3xl font-semibold">{name}</div>
+              <div className="text-3xl font-semibold">{title}</div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">
                   <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                   <div className="flex flex-col">
-                    <span className="font-semibold text-base">{username}</span>
+                    <span className="font-semibold text-base">{userId}</span>
                     <span className="text-sm text-gray-400">2022-04-30</span>
                   </div>
                 </div>
@@ -51,7 +50,7 @@ const PurchaseDetail = () => {
                   <Link
                     to="update"
                     state={{
-                      title: name,
+                      title: title,
                       // content : useEffect로 게시글 상세 정보 받아와서 여기다가 처박은 후 수정
                       // 우선은 백엔드 완성 전까지 테스트만
                       content: "<strong>훠킹뻐킹</strong>",
