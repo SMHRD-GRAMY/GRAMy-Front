@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
-import PurchaseTableBody from "../components/PurchaseTableBody";
 import Pagination from "../components/Pagination";
+import ReportTableBody from "../components/ReportTableBody";
 
 const Report = () => {
   const [posts, setPosts] = useState();
@@ -42,7 +42,7 @@ const Report = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                <PurchaseTableBody
+                <ReportTableBody
                   posts={posts}
                   loading={loading}
                   offset={offset}
