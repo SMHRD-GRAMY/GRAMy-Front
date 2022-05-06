@@ -61,9 +61,8 @@ const Join = () => {
     });
   };
 
-  const handlePhoneAuth = (e) => {
+  const handlePhoneAuth = async (e) => {
     e.preventDefault();
-    console.log(input);
   };
 
   const showTerms = (e) => {

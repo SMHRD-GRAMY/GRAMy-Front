@@ -36,6 +36,7 @@ const Report = () => {
               <thead>
                 <tr className="border border-slate-500">
                   <th className="w-[100px] py-3 font-extrabold">번호</th>
+                  <th className="w-[100px] font-extrabold">처리상황</th>
                   <th className="w-[1200px] font-extrabold">제목</th>
                   <th className="w-[200px] font-extrabold">작성자</th>
                   <th className="w-[200px] font-extrabold">작성일</th>
