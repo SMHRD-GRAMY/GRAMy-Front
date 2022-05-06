@@ -41,6 +41,10 @@ const Router = () => {
           <Route path="/report/:id" element={<ReportDetail />} />
           <Route path="/report/write" element={<ReportWrite />} />
           <Route
+            path="/report/:id/update"
+            element={<PurchaseWrite mode="edit" />}
+          />
+          <Route
             path="/oauth/callback/kakao"
             element={<KaKaoRedirectHandler />}
           />

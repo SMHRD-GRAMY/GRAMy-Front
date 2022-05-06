@@ -57,6 +57,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
         setEditorState(editorState);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (e) => {
@@ -112,7 +113,6 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("구매 문의 게시글 등록!");
           url = "/"; // 구매 문의 게시글 등록 url
           data = {
-            articleId: articleId,
             title: title,
             content: editorToHtml,
           };
@@ -130,7 +130,6 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("고장 신고 게시글 등록!");
           url = "/"; // 고장 신고 게시글 등록 url
           data = {
-            articleId: articleId,
             title: title,
             content: editorToHtml,
           };
