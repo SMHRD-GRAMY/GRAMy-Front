@@ -6,8 +6,8 @@ const ReportTableBody = ({ posts, loading, offset, limit }) => {
   return (
     <>
       {loading
-        ? new Array(10).fill(1).map((i) => {
-            return <SkeletonRow />;
+        ? new Array(10).fill(1).map((i, key) => {
+            return <SkeletonRow key={key} />;
           })
         : posts
         ? posts.slice(offset, offset + limit).map((info, key) => {

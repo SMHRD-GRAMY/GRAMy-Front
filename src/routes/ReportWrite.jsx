@@ -55,6 +55,7 @@ const ReportWrite = ({ mode }) => {
                   mode={mode}
                   articleId={articleId}
                   editContent={editContent}
+                  board="report"
                 />
               </div>
             </div>

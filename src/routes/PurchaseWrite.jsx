@@ -55,6 +55,7 @@ const PurchaseWrite = ({ mode }) => {
                   mode={mode}
                   articleId={articleId}
                   editContent={editContent}
+                  board="purchase"
                 />
               </div>
             </div>
