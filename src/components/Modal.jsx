@@ -442,6 +442,7 @@ const Modal = ({ modalId }) => {
                 </div>
               </div>
             ) : null}
+            {modalId === "serviceModal" ? null : null}
           </>
         </div>
       </div>
