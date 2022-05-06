@@ -15,6 +15,7 @@ import KaKaoRedirectHandler from "../components/auth/KaKaoRedirectHandler";
 import NaverRedirectHandler from "../components/auth/NaverRedirectHandler";
 import ReportDetail from "./ReportDetail";
 import ReportWrite from "./ReportWrite";
+import ServiceJoin from "../components/ServiceJoin";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -24,6 +25,7 @@ const Router = () => {
       {ModalContext.terms.modal1 ? <Modal modalId="modal1" /> : null}
       {ModalContext.terms.modal2 ? <Modal modalId="modal2" /> : null}
       {ModalContext.terms.modal3 ? <Modal modalId="modal3" /> : null}
+      <ServiceJoin />
       <BrowserRouter>
         <Header />
         <Routes>

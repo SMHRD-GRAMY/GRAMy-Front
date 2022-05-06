@@ -18,6 +18,9 @@ const ReportDetail = () => {
   const location = useLocation();
   const { title, userId } = location.state.info;
 
+  // 실제 백엔드와 연동할 때 없애고 합쳐야 할 부분
+  const progress = location.state.progress;
+
   const handleDelete = () => {
     // TODO : 게시글 삭제 요청 보내기
   };
@@ -33,6 +36,13 @@ const ReportDetail = () => {
             {/* 게시글 머리 */}
             <div className="py-4">
               <div className="text-[#02C75A] text-sm mb-1">고장 신고</div>
+              {progress === "고장접수" ? (
+                <div className="text-gray-600 text-sm mb-1">{progress}</div>
+              ) : progress === "처리중" ? (
+                <div className="text-red-600 text-sm mb-1">{progress}</div>
+              ) : (
+                <div className="text-green-600 text-sm mb-1">{progress}</div>
+              )}
               <div className="text-3xl font-semibold">{title}</div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">

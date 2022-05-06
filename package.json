@@ -14,12 +14,20 @@
     "@testing-library/user-event": "^13.5.0",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",
     "@toast-ui/react-editor": "^3.1.5",
+    "assert": "^2.0.0",
     "axios": "^0.27.1",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.0",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "html-to-draftjs": "^1.5.0",
     "http-proxy-middleware": "^2.0.6",
+    "https-browserify": "^1.0.0",
+    "https-proxy-agent": "^5.0.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "prismjs": "^1.28.0",
     "qs": "^6.10.3",
     "react": "^18.0.0",
@@ -31,7 +39,12 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "styled-components": "^5.3.5",
+    "twilio": "^3.77.0",
+    "url": "^0.11.0",
+    "util": "^0.12.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -59,9 +72,10 @@
     ]
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/forms": "^0.5.1",
     "autoprefixer": "^10.4.5",
     "postcss": "^8.4.12",
+    "react-error-overlay": "^6.0.9",
     "tailwindcss": "^3.0.24"
   }
 }
