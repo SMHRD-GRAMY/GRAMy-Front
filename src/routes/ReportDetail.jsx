@@ -5,17 +5,13 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
 
-const PurchaseDetail = () => {
-  // TODO : 게시글 데이터 useEffect로 받아오자!!
-  // 로딩은 어쩔수 없다! 스켈레톤 UI로 구현해보자!
-  // 무엇을 로딩? -> 댓글, 게시글내용
-
+const ReportDetail = () => {
   useEffect(() => {}, []);
 
   const params = useParams();
-  const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
+  const postId = params.id; // 게시글번호
 
-  const arr = [1, 1, 1, 1, 1];
+  const arr = [1, 1, 1, 1, 1]; // 댓글에 대한 데이터로 교체되어져야 할 것임
 
   const [comment, setComment] = useState("");
 
@@ -31,12 +27,12 @@ const PurchaseDetail = () => {
         <title>GRAMy | {`${location.state.info.name}`}</title>
       </Helmet>
       <div className="w-full h-full">
-        <BoardTitle title="구매 문의 게시판" />
+        <BoardTitle title="고장 신고 게시판" />
         <div className="w-full h-full flex justify-center">
           <div className="w-[50%] mb-20 bg-white border-2 border-gray-300 shadow-md px-5 rounded-md">
             {/* 게시글 머리 */}
             <div className="py-4">
-              <div className="text-[#02C75A] text-sm mb-1">구매 문의</div>
+              <div className="text-[#02C75A] text-sm mb-1">고장 신고</div>
               <div className="text-3xl font-semibold">{title}</div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">
@@ -87,4 +83,4 @@ const PurchaseDetail = () => {
   );
 };
 
-export default PurchaseDetail;
+export default ReportDetail;

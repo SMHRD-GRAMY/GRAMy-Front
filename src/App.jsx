@@ -11,11 +11,25 @@ const App = () => {
     modal3: false,
   });
 
+
+  const [socialUser, setSocialUser] = useState({
+    name: "",
+    email: "",
+  });
   const [isLogin, setIsLogin] = useState(false);
 
   return (
     <>
-      <AppContext.Provider value={{ terms, setTerms, isLogin, setIsLogin }}>
+      <AppContext.Provider
+        value={{
+          terms,
+          setTerms,
+          isLogin,
+          setIsLogin,
+          socialUser,
+          setSocialUser,
+        }}
+      >
         <GlobalStyle />
         <Router />
       </AppContext.Provider>

@@ -20,8 +20,9 @@ const MyBlock = styled.div`
   }
 `;
 
+// 게시판 구분 : board
 // title props는 게시글 제목, mode props는 게시글 수정 모드
-const DraftEditor = ({ title, mode, articleId, editContent }) => {
+const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -56,6 +57,7 @@ const DraftEditor = ({ title, mode, articleId, editContent }) => {
         setEditorState(editorState);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (e) => {
@@ -64,39 +66,86 @@ const DraftEditor = ({ title, mode, articleId, editContent }) => {
     let data; // 보낼 데이터
     if (mode === "edit") {
       // 게시글 수정
-      url = "/"; // 게시글 수정 EndPoint
-      data = {
-        articleId: articleId,
-        title: title,
-        content: editorToHtml,
-      };
-      axios
-        .post(url, data, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((res) => {
-          console.log(res);
-        });
+      switch (board) {
+        case "purchase":
+          console.log("구매 문의 게시글 수정!");
+          url = "/"; // 구매 문의 게시글 수정 url
+          data = {
+            articleId: articleId,
+            title: title,
+            content: editorToHtml,
+          };
+          axios
+            .post(url, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            .then((res) => {
+              console.log(res);
+            });
+          break;
+        case "report":
+          console.log("고장 신고 게시글 수정!");
+          url = "/"; // 고장 신고 게시글 수정 url
+          data = {
+            articleId: articleId,
+            title: title,
+            content: editorToHtml,
+          };
+          axios
+            .post(url, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            .then((res) => {
+              console.log(res);
+            });
+          break;
+        default:
+          break;
+      }
     } else {
       // 게시글 등록
-      url = "/"; // 게시글 등록 EndPoint
-
-      data = {
-        title: title,
-        content: editorToHtml,
-      };
-
-      axios
-        .post(url, data, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((res) => {
-          console.log(res);
-        });
+      switch (board) {
+        case "purchase":
+          console.log("구매 문의 게시글 등록!");
+          url = "/"; // 구매 문의 게시글 등록 url
+          data = {
+            title: title,
+            content: editorToHtml,
+          };
+          axios
+            .post(url, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            .then((res) => {
+              console.log(res);
+            });
+          break;
+        case "report":
+          console.log("고장 신고 게시글 등록!");
+          url = "/"; // 고장 신고 게시글 등록 url
+          data = {
+            title: title,
+            content: editorToHtml,
+          };
+          axios
+            .post(url, data, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            .then((res) => {
+              console.log(res);
+            });
+          break;
+        default:
+          break;
+      }
     }
   };
 

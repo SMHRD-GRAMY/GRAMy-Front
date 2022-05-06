@@ -4,15 +4,21 @@ import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import BoardTitle from "../components/BoardTitle";
 import PurchaseTableBody from "../components/PurchaseTableBody";
+import Pagination from "../components/Pagination";
 
 const Purchase = () => {
-  const [articleInfo, setArticleInfo] = useState();
+  const [posts, setPosts] = useState();
   const [loading, setLoading] = useState(true);
 
+  // eslint-disable-next-line no-unused-vars
+  const [limit, setLimit] = useState(10); // 한 페이지에 보여줄 게시글 수
+  const [page, setPage] = useState(1); // 현재 페이지
+  const offset = (page - 1) * limit; // 현재 페이지의 첫번
+
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users/").then((res) => {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
       setLoading(false);
-      setArticleInfo(res.data);
+      setPosts(res.data);
     });
   }, []);
 
@@ -38,8 +44,10 @@ const Purchase = () => {
               </thead>
               <tbody className="text-center">
                 <PurchaseTableBody
-                  articleInfo={articleInfo}
+                  posts={posts}
                   loading={loading}
+                  offset={offset}
+                  limit={limit}
                 />
               </tbody>
             </table>
@@ -52,6 +60,14 @@ const Purchase = () => {
               </button>
             </Link>
           </div>
+          {loading ? null : (
+            <Pagination
+              total={posts.length}
+              limit={limit}
+              page={page}
+              setPage={setPage}
+            />
+          )}
         </div>
       </div>
     </>

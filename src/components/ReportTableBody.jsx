@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SkeletonRow from "./ui/SkeletonRow";
 
-const PurchaseTableBody = ({ posts, loading, offset, limit }) => {
+const ReportTableBody = ({ posts, loading, offset, limit }) => {
   return (
     <>
       {loading
@@ -35,4 +35,4 @@ const PurchaseTableBody = ({ posts, loading, offset, limit }) => {
   );
 };
 
-export default PurchaseTableBody;
+export default ReportTableBody;

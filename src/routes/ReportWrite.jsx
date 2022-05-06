@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import BoardTitle from "../components/BoardTitle";
 import DraftEditor from "../components/DraftEditor";
 
-const PurchaseWrite = ({ mode }) => {
+const ReportWrite = ({ mode }) => {
   const location = useLocation();
   const params = useParams();
 
@@ -32,10 +32,10 @@ const PurchaseWrite = ({ mode }) => {
   return (
     <>
       <Helmet>
-        <title>GRAMy | 구매문의 작성</title>
+        <title>GRAMy | 고장신고 작성</title>
       </Helmet>
       <div className="w-full h-full">
-        <BoardTitle title="구매 문의 작성" />
+        <BoardTitle title="고장 신고 작성" />
         <form action="/purchase">
           <div className="w-full h-full flex justify-center">
             <div className="w-[50%] bg-white">
@@ -56,7 +56,7 @@ const PurchaseWrite = ({ mode }) => {
                   mode={mode}
                   articleId={articleId}
                   editContent={editContent}
-                  board="purchase"
+                  board="report"
                 />
               </div>
             </div>
@@ -67,4 +67,4 @@ const PurchaseWrite = ({ mode }) => {
   );
 };
 
-export default PurchaseWrite;
+export default ReportWrite;
