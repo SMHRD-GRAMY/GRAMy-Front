@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useContext, useState, useRef } from "react";
 import Helmet from "react-helmet";
 import { AppContext } from "../App";
@@ -81,21 +80,17 @@ const Join = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:8082/join.do";
-    let data = { ...input };
-    axios
-      .post(url, JSON.stringify(data), {
-        headers: {
-          "Content-Type": "application/json",
-          data,
-        },
-      })
-      .then((res, err) => {
-        console.log(res);
-        console.log(err);
-      });
+    e.stopPropagation();
+    let q = Object.keys(input).map(name => {
+      return `${name}=${input[name]}`
+    }).join("&");
+    const result = await fetch("http://localhost:8082/join.do?"+ q, {
+      method: 'GET', // *GET, POST, PUT, DELETE 등
+    })
+    console.log(result)
+
     // window.location.href = "login";
   };
 
