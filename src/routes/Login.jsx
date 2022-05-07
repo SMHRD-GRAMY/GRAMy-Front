@@ -5,6 +5,7 @@ import axios from "axios";
 import FaceBookLogin from "../components/auth/FaceBookLogin";
 import KaKaoLogin from "../components/auth/KaKaoLogin";
 import NaverLogin from "../components/auth/NaverLogin";
+import { setCookie } from "../components/auth/cookie";
 
 const Login = () => {
   const [input, setinput] = useState({
