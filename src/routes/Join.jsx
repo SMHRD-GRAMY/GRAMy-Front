@@ -97,8 +97,12 @@ const Join = () => {
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin
       body: JSON.stringify(input),
     });
-    console.log(await result.text());
-    // window.location.href = "login";
+    let resultText = await result.text();
+    if (resultText === "success") {
+      window.location.href = "login";
+    } else if (resultText === "fail") {
+      console.log("로그인 실패 처리하기");
+    }
   };
 
   return (

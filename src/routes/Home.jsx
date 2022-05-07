@@ -8,7 +8,7 @@ const Home = () => {
         <title>GRAMy | 홈</title>
       </Helmet>
       <div className="w-screen h-auto">
-        <div className=" w-full h-[660px] px-48 bg-gradient-to-l from-gray-300 ">
+        <div className=" w-full h-[660px] px-48 bg-gradient-to-r from-gray-300 ">
           <div className="px-14">
             <div className="h-36 flex items-center">
               <span className="text-xl text-gray-400">GRAMy</span>
