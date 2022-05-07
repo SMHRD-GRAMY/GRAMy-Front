@@ -16,6 +16,7 @@ import NaverRedirectHandler from "../components/auth/NaverRedirectHandler";
 import ReportDetail from "./ReportDetail";
 import ReportWrite from "./ReportWrite";
 import ServiceJoin from "../components/ServiceJoin";
+import ServiceModal from "../components/ui/ServiceModal";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -25,7 +26,8 @@ const Router = () => {
       {ModalContext.terms.modal1 ? <Modal modalId="modal1" /> : null}
       {ModalContext.terms.modal2 ? <Modal modalId="modal2" /> : null}
       {ModalContext.terms.modal3 ? <Modal modalId="modal3" /> : null}
-      <ServiceJoin />
+      {ModalContext.serviceModal ? <ServiceModal /> : null}
+      {ModalContext.serviceModal ? null : <ServiceJoin />}
       <BrowserRouter>
         <Header />
         <Routes>

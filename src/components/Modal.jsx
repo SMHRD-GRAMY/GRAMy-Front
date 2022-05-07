@@ -4,7 +4,7 @@ import { cls } from "../utils/utils";
 
 const Modal = ({ modalId }) => {
   const ModalContext = useContext(AppContext);
-  const [isMouseLeave, setIsMouseLeave] = useState(false);
+  const [isMouseLeave, setIsMouseLeave] = useState(true);
 
   const closeModal = (e) => {
     if (isMouseLeave === true) {
