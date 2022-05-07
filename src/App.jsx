@@ -11,6 +11,7 @@ const App = () => {
     modal3: false,
   });
 
+  const [serviceModal, setServiceModal] = useState(false);
 
   const [socialUser, setSocialUser] = useState({
     name: "",
@@ -28,6 +29,8 @@ const App = () => {
           setIsLogin,
           socialUser,
           setSocialUser,
+          serviceModal,
+          setServiceModal,
         }}
       >
         <GlobalStyle />

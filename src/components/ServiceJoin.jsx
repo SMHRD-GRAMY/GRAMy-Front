@@ -4,10 +4,15 @@ import { AppContext } from "../App";
 const ServiceJoin = () => {
   const modalContext = useContext(AppContext);
 
-  const onClickServiceJoin = () => {};
+  const onClickServiceJoin = () => {
+    modalContext.setServiceModal(true);
+  };
 
   return (
-    <div className="fixed right-8 bottom-10 h-12 w-32 bg-white z-40 rounded-md flex justify-center items-center shadow-xl cursor-pointer border-2 border-black hover:scale-125 transition-all">
+    <div
+      className="fixed right-8 bottom-10 h-12 w-32 bg-white z-40 rounded-md flex justify-center items-center shadow-xl cursor-pointer border-2 border-black hover:scale-125 active:scale-100 transition-all"
+      onClick={onClickServiceJoin}
+    >
       <span className=" font-bold text-black mr-2">서비스 신청</span>
       <svg
         className="w-6 h-6"
