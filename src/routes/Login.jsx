@@ -8,8 +8,8 @@ import NaverLogin from "../components/auth/NaverLogin";
 
 const Login = () => {
   const [input, setinput] = useState({
-    user_id: "",
-    user_pw: "",
+    userId: "",
+    userPw: "",
   });
 
   const onChangeInput = (e) => {
@@ -56,7 +56,7 @@ const Login = () => {
                 placeholder="이메일 주소"
                 required
                 value={input.id}
-                name="user_id"
+                name="userId"
                 onChange={onChangeInput}
               />
               <input
@@ -65,7 +65,7 @@ const Login = () => {
                 placeholder="비밀번호"
                 required
                 value={input.pw}
-                name="user_pw"
+                name="userPw"
                 onChange={onChangeInput}
               />
               <div className="flex  w-full justify-end mb-4 font-thin">
