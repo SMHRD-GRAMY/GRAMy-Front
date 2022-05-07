@@ -168,7 +168,7 @@ const Join = () => {
                   onChange={onChangeInput}
                 />
                 <button
-                  className="h-10 bg-[#90C8B4] rounded-md text-white font-bold w-28"
+                  className="h-10 bg-[#132C4D] rounded-md text-white font-bold w-28"
                   onClick={handlePhoneAuth}
                 >
                   인증 하기
@@ -180,7 +180,7 @@ const Join = () => {
                 <div className="flex items-center mr-1">
                   <span className="mr-2">남성</span>
                   <input
-                    className="focus:ring-2 focus:ring-green-300 text-green-300"
+                    className="focus:ring-2 focus:ring-blue-300 text-blue-300"
                     type="radio"
                     name="user_gender"
                     value="man"
@@ -190,7 +190,7 @@ const Join = () => {
                 <div className="flex items-center mr-1">
                   <span className="mr-2">여성</span>
                   <input
-                    className="focus:ring-2 focus:ring-green-300 text-green-300"
+                    className="focus:ring-2 focus:ring-blue-300 text-blue-300"
                     type="radio"
                     name="user_gender"
                     value="women"
@@ -259,7 +259,7 @@ const Join = () => {
                   <div className="flex items-center">
                     {/* 전체 약관 동의 */}
                     <input
-                      className="mr-2 focus:ring-0 text-green-500"
+                      className="mr-2 focus:ring-0 text-[#3E72AF]"
                       type="checkbox"
                       onClick={checkAll}
                     />
@@ -268,7 +268,7 @@ const Join = () => {
                   <div className="flex items-center relative">
                     {/* GRAMy 이용 약관 동의 */}
                     <input
-                      className="mr-2 focus:ring-0 text-green-500"
+                      className="mr-2 focus:ring-0 text-[#3E72AF]"
                       type="checkbox"
                       ref={checkBox1}
                       required
@@ -287,7 +287,7 @@ const Join = () => {
                   <div className="flex items-center relative">
                     {/* 개인정보 취급 방침 동의 (필수) */}
                     <input
-                      className="mr-2 focus:ring-0 text-green-500"
+                      className="mr-2 focus:ring-0 text-[#3E72AF]"
                       type="checkbox"
                       ref={checkBox2}
                       required
@@ -306,7 +306,7 @@ const Join = () => {
                   <div className="flex items-center relative">
                     {/* 개인정보 취급 방침 동의 (선택) */}
                     <input
-                      className="mr-2 focus:ring-0 text-green-500"
+                      className="mr-2 focus:ring-0 text-[#3E72AF]"
                       type="checkbox"
                       ref={checkBox3}
                     />
@@ -323,7 +323,7 @@ const Join = () => {
                   </div>
                   <div className="flex items-center">
                     <input
-                      className="mr-2 focus:ring-0 text-green-500"
+                      className="mr-2 focus:ring-0 text-[#3E72AF]"
                       type="checkbox"
                       ref={checkBox4}
                     />
@@ -332,7 +332,7 @@ const Join = () => {
                 </div>
               </div>
               <input
-                className=" bg-[#90C8B4] rounded-md text-white h-10 font-bold cursor-pointer"
+                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold cursor-pointer"
                 type="submit"
                 value="회원가입"
                 onClick={handleSubmit}

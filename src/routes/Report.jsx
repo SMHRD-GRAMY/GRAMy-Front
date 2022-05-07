@@ -32,7 +32,7 @@ const Report = () => {
         <div className="w-full h-full flex flex-col">
           <div className="w-full h-full flex justify-center items-center">
             {/* 게시글 리스트 */}
-            <table className=" w-3/4 border border-slate-500 mb-4">
+            <table className=" w-3/4 border border-slate-500 mb-4 bg-white">
               <thead>
                 <tr className="border border-slate-500">
                   <th className="w-[100px] py-3 font-extrabold">번호</th>
@@ -56,7 +56,7 @@ const Report = () => {
           <div className=" w-[87%] flex justify-end mb-4">
             {/* 글 작성 버튼 박스 */}
             <Link to="write">
-              <button className="h-9 bg-[#90C8B4] rounded-md text-white font-bold w-28">
+              <button className="h-9 bg-[#3E72AF] rounded-md text-white font-bold w-28">
                 글 쓰기
               </button>
             </Link>

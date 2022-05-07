@@ -74,7 +74,7 @@ const Login = () => {
               </div>
               <button
                 onClick={handleLogin}
-                className=" bg-[#90C8B4] rounded-md text-white h-10 font-bold"
+                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold"
               >
                 로그인
               </button>

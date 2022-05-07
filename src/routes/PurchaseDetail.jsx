@@ -36,7 +36,9 @@ const PurchaseDetail = () => {
           <div className="w-[50%] mb-20 bg-white border-2 border-gray-300 shadow-md px-5 rounded-md">
             {/* 게시글 머리 */}
             <div className="py-4">
-              <div className="text-[#02C75A] text-sm mb-1">구매 문의</div>
+              <div className="text-[#132C4D] text-sm font-bold mb-1">
+                구매 문의
+              </div>
               <div className="text-3xl font-semibold">{title}</div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">

@@ -1,6 +1,13 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Trail from "../components/ui/Trail";
+import styled from "styled-components";
+
+const Banner = styled.div`
+  /* background-image: url("img/gramy_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover; */
+`;
 
 const Home = () => {
   return (
@@ -9,7 +16,7 @@ const Home = () => {
         <title>GRAMy | 홈</title>
       </Helmet>
       <div className="w-screen h-auto">
-        <div className=" w-full h-[660px] px-48 bg-gradient-to-b from-stone-300 ">
+        <Banner className=" w-full h-[660px] px-48 ">
           <div className="px-14">
             <div className="h-36 flex items-center">
               <span className="text-xl text-gray-400">GRAMy</span>
@@ -21,7 +28,7 @@ const Home = () => {
                     <span>재고관리</span>
                   </div>
                   <div className="text-4xl font-extrabold mb-2">
-                    <span className="text-[#90C8B4] font-serif">GRAMy </span>
+                    <span className="text-[#3E72AF] font-serif">GRAMy </span>
                     <span>에게 맡겨보실래요?</span>
                   </div>
                   <div className="text-lg">
@@ -31,15 +38,16 @@ const Home = () => {
                   </div>
                 </Trail>
               </div>
+
               {/* 분리 */}
               <img src="img/boxe.png" alt="박스이미지" />
             </div>
           </div>
-        </div>
+        </Banner>
         {/* 제품 특징 */}
-        <div className="bg-[#90C8B4] h-[400px] w-full px-48">
+        <div className="bg-[#132C4D] h-[400px] w-full px-48">
           <div className="w-full h-full">
-            <div className="font-semibold w-full h-auto pt-8 pl-8 text-2xl mb-6 text-gray-500">
+            <div className="font-semibold w-full h-auto pt-8 pl-8 text-2xl mb-6 text-white">
               Why GRAMy?
             </div>
             <div className="flex w-full justify-between px-24">
@@ -48,7 +56,7 @@ const Home = () => {
                   src="img/realtime.webp"
                   className="w-[200px] h-[200px] drop-shadow-xl"
                 />
-                <div className="text-xl font-semibold text-gray-700">
+                <div className="text-xl font-semibold text-[#DAE2EF]">
                   실시간 재고 확인
                 </div>
               </div>
@@ -57,7 +65,7 @@ const Home = () => {
                   src="img/graph.png"
                   className="w-[200px] h-[200px] drop-shadow-xl"
                 />
-                <div className="text-xl font-semibold text-gray-700">
+                <div className="text-xl font-semibold text-[#DAE2EF]">
                   소모 재고 통계
                 </div>
               </div>
@@ -66,7 +74,7 @@ const Home = () => {
                   src="img/alarm.png"
                   className="w-[200px] h-[200px] drop-shadow-xl"
                 />
-                <div className="text-xl font-semibold text-gray-700">
+                <div className="text-xl font-semibold text-[#DAE2EF]">
                   재고 부족 알림
                 </div>
               </div>

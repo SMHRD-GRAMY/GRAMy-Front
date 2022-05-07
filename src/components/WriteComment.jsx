@@ -16,7 +16,7 @@ const WriteComment = ({ comment, setComment }) => {
           value={comment}
           onChange={onChangeComment}
         />
-        <button className="w-20 bg-[#90C8B4] ml-3 text-sm rounded-md text-white">
+        <button className="w-20 bg-[#132C4D] ml-3 text-sm rounded-md text-white">
           등록
         </button>
       </div>
