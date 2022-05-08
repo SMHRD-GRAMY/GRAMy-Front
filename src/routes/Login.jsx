@@ -7,6 +7,8 @@ import KaKaoLogin from "../components/auth/KaKaoLogin";
 import NaverLogin from "../components/auth/NaverLogin";
 import { setCookie } from "../components/auth/cookie";
 
+// 로그인
+
 const Login = () => {
   const [input, setinput] = useState({
     userId: "",
