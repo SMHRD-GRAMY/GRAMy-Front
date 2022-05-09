@@ -188,7 +188,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
       <div className="bg-[#DAE2EF] flex justify-end pt-3 mb-3">
         <button
           onClick={handleSubmit}
-          className="h-9 bg-[#90C8B4] rounded-md text-white font-bold w-20"
+          className="h-9 bg-[#132C4D] rounded-md text-white font-bold w-20"
         >
           등록
         </button>
