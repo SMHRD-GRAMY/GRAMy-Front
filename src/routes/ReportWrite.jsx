@@ -38,7 +38,7 @@ const ReportWrite = ({ mode }) => {
         <BoardTitle title="고장 신고 작성" />
         <form action="/purchase">
           <div className="w-full h-full flex justify-center">
-            <div className="w-[50%] bg-white">
+            <div className="w-[50%] bg-[#DAE2EF]">
               {/* 게시글 제목 */}
               <div className="border border-gray-400">
                 <input
