@@ -12,7 +12,9 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
     useEffect(() => {
       if (userCookie) {
-        console.log(userCookie);
+        if (userCookie.user_id === LoginContext.user.email) {
+          console.log("현재 로그인 중");
+        }
       } else {
         console.log("쿠키 없쪙");
       }
