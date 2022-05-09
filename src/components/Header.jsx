@@ -18,8 +18,6 @@ const Header = () => {
     });
   };
 
-  let isLogin = loginContext.isLogin;
-
   return (
     <div className=" w-full h-[80px] bg-white flex">
       <div className=" w-[80px] h-[80px]" />

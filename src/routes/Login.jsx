@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Helmet from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FaceBookLogin from "../components/auth/FaceBookLogin";
 import KaKaoLogin from "../components/auth/KaKaoLogin";
@@ -11,8 +11,7 @@ import { AppContext } from "../App";
 // 로그인
 
 const Login = () => {
-  const LoginContext = useContext(AppContext);
-
+  const navigate = useNavigate();
   const [input, setinput] = useState({
     userId: "",
     userPw: "",
@@ -44,7 +43,7 @@ const Login = () => {
           user_name: res.data.user_name,
         });
       });
-    // window.location.href = "/";
+    navigate("/");
   };
 
   return (
