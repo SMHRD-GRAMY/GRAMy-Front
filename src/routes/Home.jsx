@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Helmet from "react-helmet";
 import Trail from "../components/ui/Trail";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
+import useScrollFadeIn from "../components/hooks/useScrollFadeIn";
 
 const Banner = styled.div`
   /* background-image: url("img/gramy_bg.png");
@@ -11,6 +12,41 @@ const Banner = styled.div`
 `;
 
 const Home = () => {
+  const [fade, setFade] = useState({
+    realtime: false,
+    graph: false,
+    alarm: false,
+  });
+
+  const realtime = useScrollFadeIn({ fade, setFade });
+  const graph = useScrollFadeIn({ fade, setFade });
+  const alarm = useScrollFadeIn({ fade, setFade });
+
+  const onScroll = useCallback(([entry]) => {
+    if (entry.isIntersecting) {
+      console.log(entry);
+    }
+  }, []);
+
+  useEffect(() => {
+    let observer;
+
+    if (realtime.current) {
+      observer = new IntersectionObserver(onScroll, { threshold: 0.7 });
+      observer.observe(realtime.current);
+    }
+    if (graph.current) {
+      observer = new IntersectionObserver(onScroll, { threshold: 0.7 });
+      observer.observe(graph.current);
+    }
+    if (alarm.current) {
+      observer = new IntersectionObserver(onScroll, { threshold: 0.7 });
+      observer.observe(alarm.current);
+    }
+
+    return () => observer && observer.disconnect();
+  }, [onScroll]);
+
   return (
     <>
       <Helmet>
@@ -93,14 +129,20 @@ const Home = () => {
                 재고를 확인할 수 있도록 도와줍니다.
               </p>
               <div className="flex justify-around mb-3">
-                <img
-                  src="img/realtime_img_1.png"
-                  className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                />
-                <img
-                  src="img/realtime_img_2.png"
-                  className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                />
+                {/* 위치 파악용 DIV */}
+                <div {...realtime} className="realtime" />
+                <Fade when={fade.realtime} bottom>
+                  <img
+                    src="img/realtime_img_1.png"
+                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                  />
+                </Fade>
+                <Fade when={fade.realtime} right>
+                  <img
+                    src="img/realtime_img_2.png"
+                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                  />
+                </Fade>
               </div>
               <span className=" text-slate-400 text-sm">
                 * 실제 앱 화면과 다를 수 있습니다.
@@ -116,10 +158,14 @@ const Home = () => {
                 재고 소모 통계를 확인하여 필요한 만큼만 주문해보세요!
               </p>
               <div className="flex justify-around mb-3">
-                <img
-                  src="img/graph_img_1.png"
-                  className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                />
+                {/* 위치 파악용 DIV */}
+                <div {...graph} className="graph" />
+                <Fade when={fade.graph} bottom>
+                  <img
+                    src="img/graph_img_1.png"
+                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                  />
+                </Fade>
               </div>
             </div>
             <img src="img/sub_graph.webp" className=" scale-75" />
@@ -134,10 +180,14 @@ const Home = () => {
                 현재 관리하고 있는 품목의 재고가 부족하면 알림으로 알려줘요!
               </p>
               <div className="flex justify-around mb-3">
-                <img
-                  src="img/alarm_img_1.png"
-                  className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                />
+                {/* 위치 파악용 DIV */}
+                <div {...alarm} className="alarm"></div>
+                <Fade when={fade.alarm} top>
+                  <img
+                    src="img/alarm_img_1.png"
+                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                  />
+                </Fade>
               </div>
             </div>
           </div>
