@@ -9,6 +9,7 @@
 - react-scroll : 클릭 스크롤을 구현할 때 사용한 라이브러리
 - Draft.js : 텍스트 에디터 위지윅(WYSIWYG)으로 사용한 라이브러리
 - http-proxy-middleware : 프록시 설정을 도와주는 라이브러리 (백엔드와 연동을 위해)
+- react-cookie : 로그인 한 유저의 정보를 쿠키에 저장하기 위해서 사용
 
 # 사용 API
 
