@@ -101,7 +101,7 @@ const Join = () => {
     if (resultText === "success") {
       window.location.href = "login";
     } else if (resultText === "fail") {
-      console.log("로그인 실패 처리하기");
+      console.log("회원가입 실패 처리하기");
     }
   };
 
