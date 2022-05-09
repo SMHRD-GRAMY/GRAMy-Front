@@ -22,7 +22,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     };
 
     useEffect(() => {
-      handleAuth();
+      // handleAuth();
     }, []);
 
     return <SpecificComponent />;
