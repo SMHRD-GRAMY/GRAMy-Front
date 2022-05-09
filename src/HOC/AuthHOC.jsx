@@ -12,10 +12,13 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
   const AuthenticationCheck = (props) => {
     // 유저 인증 처리
     const handleAuth = () => {
-      if (LoginContext.user.email === getCookie("x_auth").user_id) {
-        console.log("Hello");
+      if (getCookie("x_auth").user_id != null) {
+        LoginContext.user.setUser({
+          email: getCookie("x_auth").user_id,
+          name: getCookie("x_auth").name,
+        });
       } else {
-        console.log("nohello");
+        console.log("no login");
       }
     };
 
