@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import { getCookie } from "../components/auth/cookie";
 
 const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
   // Component : 컴포넌트
@@ -8,12 +9,17 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
   const AuthenticationCheck = (props) => {
     // 유저 인증 처리
     const handleAuth = () => {
-      axios.get("http://localhost:8082/api/user/auth").then((res) => {
-        console.log(res);
-      });
+      axios
+        .get("http://localhost:8082/api/user/auth", getCookie("x_auth"))
+        .then((res) => {
+          console.log(res);
+        });
     };
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+      //   handleAuth();
+      console.log(getCookie("x_auth"));
+    }, []);
 
     return <SpecificComponent />;
   };
