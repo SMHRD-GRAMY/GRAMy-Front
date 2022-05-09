@@ -17,8 +17,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     };
 
     useEffect(() => {
-      //   handleAuth();
-      console.log(getCookie("x_auth").token);
+      handleAuth();
     }, []);
 
     return <SpecificComponent />;
