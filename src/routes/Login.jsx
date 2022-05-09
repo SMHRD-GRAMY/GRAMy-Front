@@ -44,8 +44,8 @@ const Login = () => {
           user_name: res.data.user_name,
         });
       });
-    loginContext.setIsLogin(true);
     navigate("/");
+    loginContext.setIsLogin(true);
   };
 
   return (
