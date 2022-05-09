@@ -32,17 +32,17 @@ const Router = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={AuthHOC(Home, null)} />
-          <Route path="/login" element={AuthHOC(Login, null)} />
-          <Route path="/join" element={AuthHOC(Join, null)} />
-          <Route path="/purchase" element={AuthHOC(Purchase, null)} />
-          <Route path="/purchase/:id" element={AuthHOC(PurchaseDetail, null)} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/purchase" element={<Purchase />} />
+          <Route path="/purchase/:id" element={<PurchaseDetail />} />
           <Route path="/purchase/write" element={<PurchaseWrite />} />
           <Route
             path="/purchase/:id/update"
             element={<PurchaseWrite mode="edit" />}
           />
-          <Route path="/report" element={AuthHOC(Report, null)} />
+          <Route path="/report" element={<Report />} />
           <Route path="/report/:id" element={<ReportDetail />} />
           <Route path="/report/write" element={<ReportWrite />} />
           <Route

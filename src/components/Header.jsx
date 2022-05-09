@@ -74,7 +74,7 @@ const Header = () => {
               </button>
             </Link>
           )}
-          {isLogin ? (
+          {userCookie.user_id !== "" ? (
             <div>
               <button
                 className="cursor-pointer hover:underline"
