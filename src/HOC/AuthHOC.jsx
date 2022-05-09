@@ -15,7 +15,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
       if (getCookie("x_auth").user_id != null) {
         LoginContext.user.setUser({
           email: getCookie("x_auth").user_id,
-          name: getCookie("x_auth").name,
+          name: getCookie("x_auth").user_name,
         });
       } else {
         console.log("no login");
