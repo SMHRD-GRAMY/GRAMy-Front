@@ -15,6 +15,7 @@ const Header = () => {
       user_id: "",
       user_name: "",
     });
+    loginContext.setIsLogin(false);
   };
 
   return (
