@@ -21,7 +21,7 @@ const ReportTableBody = ({ posts, loading, offset, limit }) => {
                     to={`${info.id}`}
                     state={{
                       info: info,
-                      progress: "고장접수", // 고장신고 분기 : 고장접수 -> 처리중 -> 처리완료
+                      progress: "처리완료", // 고장신고 분기 : 고장접수 -> 처리중 -> 처리완료
                     }}
                   >
                     {info.title}
