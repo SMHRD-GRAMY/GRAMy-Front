@@ -12,9 +12,11 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
     useEffect(() => {
       if (userCookie) {
-        LoginContext.setIsLogin(true);
-      } else {
-        LoginContext.setIsLogin(false);
+        if (userCookie.user_id !== "" && userCookie.user_name !== "") {
+          LoginContext.setIsLogin(true);
+        } else {
+          LoginContext.setIsLogin(false);
+        }
       }
     }, [LoginContext.isLogin]);
 
