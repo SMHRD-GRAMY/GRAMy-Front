@@ -14,6 +14,8 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
       if (userCookie) {
         if (userCookie.user_id !== "" && userCookie.user_name !== "") {
           LoginContext.setIsLogin(true);
+        } else {
+          LoginContext.setIsLogin(false);
         }
       }
     }, [LoginContext.isLogin]);
