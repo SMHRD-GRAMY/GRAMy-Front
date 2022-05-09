@@ -11,7 +11,6 @@ const Header = () => {
   let userCookie = getCookie("x_auth");
 
   const handleLogout = () => {
-    // TODO: JWT 토큰 해제 -> 로그아웃
     setCookie("x_auth", {
       user_id: "",
       user_name: "",

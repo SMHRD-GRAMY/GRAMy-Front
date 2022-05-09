@@ -43,7 +43,7 @@ const Login = () => {
           user_name: res.data.user_name,
         });
       });
-    window.location.href = "/";
+    navigate("/");
   };
 
   return (
