@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
-import { getCookie } from "./auth/cookie";
+import { getCookie, setCookie } from "./auth/cookie";
 
 const Header = () => {
   const location = useLocation();
@@ -12,7 +12,10 @@ const Header = () => {
 
   const handleLogout = () => {
     // TODO: JWT 토큰 해제 -> 로그아웃
-    console.log("로그아웃");
+    setCookie("x_auth", {
+      user_id: "",
+      user_name: "",
+    });
   };
 
   let isLogin = loginContext.isLogin;
