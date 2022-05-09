@@ -9,17 +9,17 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
   const AuthenticationCheck = (props) => {
     const LoginContext = useContext(AppContext);
+
+    if (getCookie("x_auth").user_id !== null) {
+      LoginContext.setUser({
+        email: getCookie("x_auth").user_id,
+        name: getCookie("x_auth").user_name,
+      });
+    } else {
+      console.log("no login");
+    }
     // 유저 인증 처리
-    const handleAuth = () => {
-      if (getCookie("x_auth").user_id !== null) {
-        LoginContext.setUser({
-          email: getCookie("x_auth").user_id,
-          name: getCookie("x_auth").user_name,
-        });
-      } else {
-        console.log("no login");
-      }
-    };
+    const handleAuth = () => {};
 
     useEffect(() => {
       handleAuth();
