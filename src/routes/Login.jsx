@@ -12,6 +12,7 @@ import { AppContext } from "../App";
 
 const Login = () => {
   const navigate = useNavigate();
+  const loginContext = useContext(AppContext);
   const [input, setinput] = useState({
     userId: "",
     userPw: "",
@@ -43,6 +44,7 @@ const Login = () => {
           user_name: res.data.user_name,
         });
       });
+    loginContext.setIsLogin(true);
     navigate("/");
   };
 
