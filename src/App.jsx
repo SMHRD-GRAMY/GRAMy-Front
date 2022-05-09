@@ -18,6 +18,12 @@ const App = () => {
     name: "",
     email: "",
   });
+
+  const [user, setUser] = useState({
+    email: "",
+    name: "",
+  });
+
   const [isLogin, setIsLogin] = useState(false);
 
   return (
@@ -33,6 +39,8 @@ const App = () => {
             setSocialUser,
             serviceModal,
             setServiceModal,
+            user,
+            setUser,
           }}
         >
           <GlobalStyle />

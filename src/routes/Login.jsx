@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FaceBookLogin from "../components/auth/FaceBookLogin";
 import KaKaoLogin from "../components/auth/KaKaoLogin";
 import NaverLogin from "../components/auth/NaverLogin";
-import { setCookie } from "../components/auth/cookie";
+import { getCookie, setCookie } from "../components/auth/cookie";
+import { AppContext } from "../App";
 
 // 로그인
 
 const Login = () => {
+  const LoginContext = useContext(AppContext);
+
   const [input, setinput] = useState({
     userId: "",
     userPw: "",
@@ -38,10 +41,13 @@ const Login = () => {
         setCookie("x_auth", {
           user_id: res.data.user_id,
           user_name: res.data.user_name,
-          token: res.data.token,
         });
-        console.log(res);
-        console.log(err);
+      })
+      .then(() => {
+        LoginContext.setUser({
+          email: getCookie("x_auth").user_id,
+          name: getCookie("x_auth").user_name,
+        });
       });
     // window.location.href = "/";
   };
