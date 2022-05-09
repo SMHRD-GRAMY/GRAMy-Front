@@ -18,7 +18,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
           LoginContext.setIsLogin(false);
         }
       }
-    }, [LoginContext.isLogin]);
+    }, []);
 
     return <SpecificComponent />;
   };
