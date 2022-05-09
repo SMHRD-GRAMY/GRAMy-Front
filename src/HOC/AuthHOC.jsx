@@ -10,7 +10,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     // 유저 인증 처리
     const handleAuth = () => {
       axios
-        .get("http://localhost:8082/api/user/auth", getCookie("x_auth").token)
+        .get("http://localhost:8082/api/user/auth", getCookie("x_auth"))
         .then((res) => {
           console.log(res);
         });
@@ -18,7 +18,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
     useEffect(() => {
       //   handleAuth();
-      console.log(getCookie("x_auth"));
+      console.log(getCookie("x_auth").token);
     }, []);
 
     return <SpecificComponent />;
