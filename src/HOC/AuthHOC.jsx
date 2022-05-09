@@ -13,6 +13,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     useEffect(() => {
       if (userCookie) {
         if (userCookie.user_id === LoginContext.user.email) {
+          console.log("로그인");
           LoginContext.setIsLogin(true);
         }
       } else {
