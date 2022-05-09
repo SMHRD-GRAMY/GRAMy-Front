@@ -15,7 +15,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
       if (LoginContext.user.username == getCookie("x_auth").user_id) {
         console.log("Hello");
       } else {
-        console.log("no hello");
+        console.log("nohello");
       }
     };
 

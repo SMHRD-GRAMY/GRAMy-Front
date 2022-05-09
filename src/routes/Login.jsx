@@ -38,6 +38,7 @@ const Login = () => {
         },
       })
       .then((res, err) => {
+        console.log(res);
         setCookie("x_auth", {
           user_id: res.data.user_id,
           user_name: res.data.user_name,
