@@ -10,10 +10,9 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     // 유저 인증 처리
     const handleAuth = () => {
       axios
-        .post(
-          "http://localhost:8082/api/user/auth",
-          JSON.stringify(getCookie("x_auth").token)
-        )
+        .post("http://localhost:8082/api/user/auth", {
+          Authorization: getCookie("x_auth").token,
+        })
         .then((res) => {
           console.log(res);
         });
