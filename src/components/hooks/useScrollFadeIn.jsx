@@ -3,16 +3,19 @@ import { useEffect, useRef, useCallback } from "react";
 const useScrollFadeIn = ({ fade, setFade }) => {
   const dom = useRef();
 
-  const handleScroll = useCallback(([entry]) => {
-    const { current } = dom;
+  const handleScroll = useCallback(
+    ([entry]) => {
+      const { current } = dom;
 
-    if (entry.isIntersecting) {
-      setFade({
-        ...fade,
-        [current.className]: true,
-      });
-    }
-  }, []);
+      if (entry.isIntersecting) {
+        setFade({
+          ...fade,
+          [current.className]: true,
+        });
+      }
+    },
+    [fade]
+  );
 
   useEffect(() => {
     let observer;
