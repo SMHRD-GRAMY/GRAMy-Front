@@ -17,7 +17,6 @@ import ReportDetail from "./ReportDetail";
 import ReportWrite from "./ReportWrite";
 import ServiceJoin from "../components/ServiceJoin";
 import ServiceModal from "../components/ui/ServiceModal";
-import AuthHOC from "../HOC/AuthHOC";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
