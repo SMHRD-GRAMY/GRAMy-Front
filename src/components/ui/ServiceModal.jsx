@@ -95,12 +95,16 @@ const ServiceModal = () => {
                   />
                   <span className=" font-semibold">SMS / 이메일 수신 동의</span>
                 </div>
-                <div className="flex justify-center items-center cursor-pointer bg-[#90C8B4] rounded-lg py-3 mb-4">
+                <div className="flex justify-center items-center cursor-pointer bg-[#132C4D] rounded-lg py-3 mb-4">
                   <span className=" font-bold text-white">서비스 신청</span>
                 </div>
                 <div>
-                  <p className="text-base">* 이용해주셔서 감사합니다.</p>
-                  <p className="text-base">빠른 시일내에 연락드리겠습니다.</p>
+                  <p className="text-base text-gray-400">
+                    * 이용해주셔서 감사합니다.
+                  </p>
+                  <p className="text-base text-gray-400">
+                    빠른 시일내에 연락드리겠습니다.
+                  </p>
                 </div>
               </div>
             </div>

@@ -8,6 +8,8 @@ import axios from "axios";
 import htmlToDraft from "html-to-draftjs";
 
 const MyBlock = styled.div`
+  background-color: white;
+
   .wrapper-class {
     width: 100%;
     margin: 0 auto;
@@ -183,7 +185,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           onEditorStateChange={onEditorStateChange}
         />
       </MyBlock>
-      <div className="bg-[#F4F6F6] flex justify-end pt-3 mb-3">
+      <div className="bg-[#DAE2EF] flex justify-end pt-3 mb-3">
         <button
           onClick={handleSubmit}
           className="h-9 bg-[#90C8B4] rounded-md text-white font-bold w-20"
