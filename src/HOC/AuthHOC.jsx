@@ -11,7 +11,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     const LoginContext = useContext(AppContext);
     // 유저 인증 처리
     const handleAuth = () => {
-      if (getCookie("x_auth").user_id != null) {
+      if (getCookie("x_auth").user_id !== null) {
         LoginContext.setUser({
           email: getCookie("x_auth").user_id,
           name: getCookie("x_auth").user_name,
@@ -22,7 +22,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     };
 
     useEffect(() => {
-      // handleAuth();
+      handleAuth();
     }, []);
 
     return <SpecificComponent />;
