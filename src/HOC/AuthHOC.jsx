@@ -11,12 +11,12 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     const LoginContext = useContext(AppContext);
     let userCookie = getCookie("x_auth");
 
-    const handleAuth = () => {
-      console.log(userCookie);
-    };
-
     useEffect(() => {
-      handleAuth();
+      if (userCookie) {
+        console.log("쿠키 확인!");
+      } else {
+        console.log("쿠키 없쪙");
+      }
     }, []);
 
     return <SpecificComponent />;
