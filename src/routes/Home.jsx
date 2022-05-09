@@ -129,8 +129,6 @@ const Home = () => {
                 재고를 확인할 수 있도록 도와줍니다.
               </p>
               <div className="flex justify-around mb-3">
-                {/* 위치 파악용 DIV */}
-                <div {...realtime} className="realtime" />
                 <Fade when={fade.realtime} bottom>
                   <img
                     src="img/realtime_img_1.png"
@@ -144,9 +142,12 @@ const Home = () => {
                   />
                 </Fade>
               </div>
+
               <span className=" text-slate-400 text-sm">
                 * 실제 앱 화면과 다를 수 있습니다.
               </span>
+              {/* 위치 파악용 DIV */}
+              <div {...realtime} className="realtime" />
             </div>
           </div>
           <div className="w-full h-[600px] bg-[#F7F8F8] flex justify-between">
@@ -158,8 +159,6 @@ const Home = () => {
                 재고 소모 통계를 확인하여 필요한 만큼만 주문해보세요!
               </p>
               <div className="flex justify-around mb-3">
-                {/* 위치 파악용 DIV */}
-                <div {...graph} className="graph" />
                 <Fade when={fade.graph} bottom>
                   <img
                     src="img/graph_img_1.png"
@@ -167,6 +166,8 @@ const Home = () => {
                   />
                 </Fade>
               </div>
+              {/* 위치 파악용 DIV */}
+              <div {...graph} className="graph" />
             </div>
             <img src="img/sub_graph.webp" className=" scale-75" />
           </div>
@@ -180,8 +181,6 @@ const Home = () => {
                 현재 관리하고 있는 품목의 재고가 부족하면 알림으로 알려줘요!
               </p>
               <div className="flex justify-around mb-3">
-                {/* 위치 파악용 DIV */}
-                <div {...alarm} className="alarm"></div>
                 <Fade when={fade.alarm} top>
                   <img
                     src="img/alarm_img_1.png"
@@ -189,6 +188,8 @@ const Home = () => {
                   />
                 </Fade>
               </div>
+              {/* 위치 파악용 DIV */}
+              <div {...alarm} className="alarm"></div>
             </div>
           </div>
         </div>
