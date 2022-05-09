@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { getCookie } from "../components/auth/cookie";
@@ -13,7 +12,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
     useEffect(() => {
       if (userCookie) {
-        console.log("쿠키 확인!");
+        console.log(userCookie);
       } else {
         console.log("쿠키 없쪙");
       }
