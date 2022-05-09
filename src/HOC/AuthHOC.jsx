@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { getCookie } from "../components/auth/cookie";
 
@@ -11,7 +10,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
 
   const AuthenticationCheck = (props) => {
     // 유저 인증 처리
-    const handleAuth = () => {
+    const handleAuth = useCallback(() => {
       if (getCookie("x_auth").user_id != null) {
         LoginContext.setUser({
           email: getCookie("x_auth").user_id,
@@ -20,7 +19,7 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
       } else {
         console.log("no login");
       }
-    };
+    });
 
     useEffect(() => {
       handleAuth();
