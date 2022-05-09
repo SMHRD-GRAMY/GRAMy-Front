@@ -5,6 +5,7 @@ import axios from "axios";
 import FaceBookLogin from "../components/auth/FaceBookLogin";
 import KaKaoLogin from "../components/auth/KaKaoLogin";
 import NaverLogin from "../components/auth/NaverLogin";
+import { setCookie } from "../components/auth/cookie";
 
 // 로그인
 
@@ -34,6 +35,11 @@ const Login = () => {
         },
       })
       .then((res, err) => {
+        setCookie("x_auth", {
+          user_id: res.data.user_id,
+          user_name: res.data.user_name,
+          token: res.data.token,
+        });
         console.log(res);
         console.log(err);
       });
