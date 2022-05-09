@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
+import { getCookie } from "./auth/cookie";
 
 const Header = () => {
   const location = useLocation();
   const loginContext = useContext(AppContext);
+
+  let userCookie = getCookie("x_auth");
 
   const handleLogout = () => {
     // TODO: JWT 토큰 해제 -> 로그아웃
@@ -42,7 +45,7 @@ const Header = () => {
           <Link to="/report">고장 신고</Link>
         </div>
         <div className=" flex items-center justify-evenly w-[310px]">
-          {isLogin ? (
+          {userCookie.user_id !== "" ? (
             <Link to="/profile">
               <div className="flex items-center">
                 <div className="rounded-full w-10 h-10 mr-2 flex items-center justify-center border border-green-200 bg-[#90C8B4]">
@@ -61,7 +64,7 @@ const Header = () => {
                     />
                   </svg>
                 </div>
-                <span>박종재</span>
+                <span>{userCookie.user_name}</span>
               </div>
             </Link>
           ) : (
