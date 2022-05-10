@@ -65,7 +65,7 @@ const Header = () => {
                     />
                   </svg>
                 </div>
-                <span>{userCookie.user_name}</span>
+                <span className="font-semibold">{userCookie.user_name}</span>
               </div>
             </Link>
           ) : (
@@ -78,7 +78,7 @@ const Header = () => {
           {loginContext.isLogin ? (
             <div>
               <button
-                className="cursor-pointer hover:underline"
+                className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md"
                 onClick={handleLogout}
               >
                 로그아웃
