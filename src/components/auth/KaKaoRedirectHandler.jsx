@@ -33,10 +33,23 @@ const KaKaoRedirectHandler = () => {
         });
 
         console.log(data); // 이 데이터 핸들링
+        sessionStorage.setItem(
+          "socialUser",
+          JSON.stringify({
+            id: data.id,
+            email: data.kakao_account.email,
+            name: data.kakao_account.profile.nickname,
+            type: "kakao",
+          })
+        );
+
+        LoginContext.setIsLogin(true);
+
+        navigate("/");
       });
   }, [navigate, LoginContext]);
 
-  return <div>Hello</div>;
+  return <div></div>;
 };
 
 export default KaKaoRedirectHandler;

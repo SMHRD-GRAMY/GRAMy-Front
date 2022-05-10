@@ -3,18 +3,21 @@ import { AppContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
 import { getCookie, setCookie } from "./auth/cookie";
+import { useCookies } from "react-cookie";
 
 const Header = () => {
   const location = useLocation();
   const loginContext = useContext(AppContext);
+  const [, , removeCookie] = useCookies("x_auth");
 
   let userCookie = getCookie("x_auth");
 
+  console.log(userCookie);
+  let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
+
   const handleLogout = () => {
-    setCookie("x_auth", {
-      user_id: "",
-      user_name: "",
-    });
+    removeCookie("x_auth", { path: "/" });
+    sessionStorage.clear();
     loginContext.setIsLogin(false);
   };
 
@@ -65,7 +68,11 @@ const Header = () => {
                     />
                   </svg>
                 </div>
-                <span className="font-semibold">{userCookie.user_name}</span>
+                <span className="font-semibold">
+                  {userCookie === undefined || userCookie.user_name === ""
+                    ? socialUser.name
+                    : userCookie.user_name}
+                </span>
               </div>
             </Link>
           ) : (

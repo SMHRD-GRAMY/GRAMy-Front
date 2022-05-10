@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Skeleton } from "@mui/material";
+import { AppContext } from "../../App";
 
 const NaverRedirectHandler = () => {
+  const LoginContext = useContext(AppContext);
   const { hostname, protocol } = window.location;
   const navigate = useNavigate();
 
@@ -20,18 +22,24 @@ const NaverRedirectHandler = () => {
   useEffect(() => {
     const location = window.location.href.split("=")[1];
     const access_token = location.split("&")[0];
-    console.log("access_token: " + access_token);
 
     naverLogin.getLoginStatus(async function (status) {
       if (status) {
         // 이 값 핸들링
-        const userId = naverLogin.user.getEmail();
+        const userId = naverLogin.user.getId();
+        const userEmail = naverLogin.user.getEmail();
         const userName = naverLogin.user.getName();
 
-        console.log("userId: " + userId);
-        console.log("userName: " + userName);
-
-        // 핸들링 이후 메인 페이지로 이동
+        sessionStorage.setItem(
+          "socialUser",
+          JSON.stringify({
+            id: userId,
+            email: userEmail,
+            name: userName,
+            type: "naver",
+          })
+        );
+        LoginContext.setIsLogin(true);
         navigate("/");
       }
     });

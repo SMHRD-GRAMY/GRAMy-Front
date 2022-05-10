@@ -9,12 +9,17 @@ const AuthHOC = (SpecificComponent, option, adminRoute = null) => {
     // 유저 인증 처리
     const LoginContext = useContext(AppContext);
     let userCookie = getCookie("x_auth");
+    let socialUser = sessionStorage.getItem("socialUser");
+
+    console.log(socialUser);
 
     useEffect(() => {
       if (userCookie) {
         if (userCookie.user_id !== "" && userCookie.user_name !== "") {
           LoginContext.setIsLogin(true);
         }
+      } else if (socialUser) {
+        LoginContext.setIsLogin(true);
       }
     }, []);
 

@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../App";
 
 const FaceBookLogin = () => {
+  const LoginContext = useContext(AppContext);
+  const navigate = useNavigate();
+
   const responseFacebook = (response) => {
     const { id, name, email } = response; // 이 데이터 핸들링
-    console.log(id); // 토큰 ID << 이거 인증에 사용
-    console.log(email); // 페이스북 로그인 한 이메일
-    console.log(name); // 사용자 이름
+    sessionStorage.setItem(
+      "socialUser",
+      JSON.stringify({ id: id, email: email, name: name, type: "facebook" })
+    );
+
+    LoginContext.setIsLogin(true);
+
+    navigate("/");
   };
 
   return (
