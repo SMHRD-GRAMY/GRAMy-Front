@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
-import { getCookie, setCookie } from "./auth/cookie";
+import { getCookie } from "./auth/cookie";
 import { useCookies } from "react-cookie";
 
 const Header = () => {
