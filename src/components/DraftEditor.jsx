@@ -29,7 +29,6 @@ const MyBlock = styled.div`
 // title props는 게시글 제목, mode props는 게시글 수정 모드
 const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
   let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
-
   const userCookie = getCookie("x_auth");
   const navigate = useNavigate();
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
