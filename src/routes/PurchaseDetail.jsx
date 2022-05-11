@@ -47,7 +47,6 @@ const PurchaseDetail = () => {
       .then((res) => {
         setData(res.data);
         loadComment();
-        setLoading(false);
       });
   };
 
@@ -60,6 +59,7 @@ const PurchaseDetail = () => {
       })
       .then((res) => {
         setComments(res.data);
+        setLoading(false);
       });
   };
 
