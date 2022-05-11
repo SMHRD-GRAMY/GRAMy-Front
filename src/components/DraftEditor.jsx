@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
@@ -7,7 +7,6 @@ import styled from "styled-components";
 import axios from "axios";
 import htmlToDraft from "html-to-draftjs";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../App";
 import { getCookie } from "./auth/cookie";
 
 const MyBlock = styled.div`
