@@ -27,7 +27,7 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          <div>수정</div>
+          수정
           <LongMenu comment={comment} setMode={setMode} />
         </div>
       ) : (
