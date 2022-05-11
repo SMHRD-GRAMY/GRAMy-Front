@@ -6,9 +6,11 @@ const Comments = ({ index, length }) => {
     <>
       <div className="flex w-full justify-between">
         <div>
-          <div className="font-semibold text-base">공돌이</div>
-          <div className="text-sm">라즈베리파이 4 정석</div>
-          <div className="text-xs mb-2 text-gray-500">2022-04-30</div>
+          <div className="font-semibold text-base">{index.user_name}</div>
+          <div className="text-sm">{index.pr_content}</div>
+          <div className="text-xs mb-2 text-gray-500">
+            {index.pr_date.substring(0, 11)}
+          </div>
         </div>
         <LongMenu />
       </div>

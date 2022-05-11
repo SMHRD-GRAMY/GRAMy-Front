@@ -16,7 +16,7 @@ const PurchaseDetail = () => {
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
-  const arr = [1, 1, 1, 1, 1];
+  const arr = comments;
 
   const [comment, setComment] = useState("");
 
@@ -60,7 +60,7 @@ const PurchaseDetail = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        setComments(res.data);
         setLoading(false);
       });
   };
@@ -220,7 +220,7 @@ const PurchaseDetail = () => {
                 <div>
                   <div className="font-bold text-lg mb-4">댓글</div>
                   {/* 댓글 내용 */}
-                  {arr.map((_, index) => {
+                  {comments.map((_, index) => {
                     return (
                       <Comments key={index} index={index} length={arr.length} />
                     );
