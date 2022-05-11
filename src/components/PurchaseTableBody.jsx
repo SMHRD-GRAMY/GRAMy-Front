@@ -25,7 +25,7 @@ const PurchaseTableBody = ({ posts, loading, offset, limit }) => {
                   </Link>
                 </td>
                 <td>{info.user_id}</td>
-                <td>2022-04-29</td>
+                <td>{info.purchase_date}</td>
                 <td>{info.purchase_cnt}</td>
               </tr>
             );
