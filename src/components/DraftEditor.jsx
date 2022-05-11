@@ -89,7 +89,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           break;
         case "report":
           console.log("고장 신고 게시글 수정!");
-          url = "/"; // 고장 신고 게시글 수정 url
+          url = "http://localhost:8082/report/update.do"; // 고장 신고 게시글 수정 url
           data = {
             articleId: articleId,
             title: title,
@@ -130,7 +130,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           break;
         case "report":
           console.log("고장 신고 게시글 등록!");
-          url = "/"; // 고장 신고 게시글 등록 url
+          url = "http://localhost:8082/report/insert.do"; // 고장 신고 게시글 등록 url
           data = {
             title: title,
             content: editorToHtml,
