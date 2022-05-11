@@ -22,7 +22,7 @@ export default function LongMenu({ comment }) {
   const handleUpdate = () => {};
 
   const handleDelete = () => {
-    const url = "http://localhost:8082/replydelete.do";
+    const url = "http://localhost:8082/purchase/replydelete.do";
     axios.get(
       url,
       {
