@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
+import axios from "axios";
 
 const PurchaseDetail = () => {
-  // TODO : 게시글 데이터 useEffect로 받아오자!!
-  // 로딩은 어쩔수 없다! 스켈레톤 UI로 구현해보자!
-  // 무엇을 로딩? -> 댓글, 게시글내용
-
+  const navigate = useNavigate();
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
@@ -20,8 +18,9 @@ const PurchaseDetail = () => {
   const location = useLocation();
   const details = location.state.info;
 
-  const handleDelete = () => {
-    // TODO : 게시글 삭제 요청 보내기
+  const handleDelete = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:8082/purchase/delete.do", postId);
   };
   return (
     <>
@@ -65,7 +64,10 @@ const PurchaseDetail = () => {
                   >
                     수정
                   </Link>
-                  <span className="ml-2 cursor-pointer hover:border-b hover:border-gray-500">
+                  <span
+                    className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
+                    onClick={handleDelete}
+                  >
                     삭제
                   </span>
                 </div>
@@ -85,6 +87,16 @@ const PurchaseDetail = () => {
               })}
               {/* 댓글 작성 칸 */}
               <WriteComment comment={comment} setComment={setComment} />
+            </div>
+            <div className="w-full flex justify-end items-center">
+              <button
+                className="border border-black py-3 px-10 mb-5 rounded-md font-bold"
+                onClick={() => {
+                  navigate("/report");
+                }}
+              >
+                목록
+              </button>
             </div>
           </div>
         </div>

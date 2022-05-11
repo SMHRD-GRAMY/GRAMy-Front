@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
+import axios from "axios";
 
 const ReportDetail = () => {
   useEffect(() => {}, []);
 
+  const navigate = useNavigate();
   const params = useParams();
   const postId = params.id; // 게시글번호
 
@@ -21,13 +23,15 @@ const ReportDetail = () => {
   // 실제 백엔드와 연동할 때 없애고 합쳐야 할 부분
   const progress = location.state.progress;
 
-  const handleDelete = () => {
-    // TODO : 게시글 삭제 요청 보내기
+  const handleDelete = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:8082/report/delete.do", postId);
   };
+
   return (
     <>
       <Helmet>
-        <title>GRAMy | {`${location.state.info.name}`}</title>
+        <title>GRAMy | {`${location.state.info.title}`}</title>
       </Helmet>
       <div className="w-full h-full">
         <BoardTitle title="고장 신고 게시판" />
@@ -67,7 +71,10 @@ const ReportDetail = () => {
                   >
                     수정
                   </Link>
-                  <span className="ml-2 cursor-pointer hover:border-b hover:border-gray-500">
+                  <span
+                    className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
+                    onClick={handleDelete}
+                  >
                     삭제
                   </span>
                 </div>
@@ -87,6 +94,16 @@ const ReportDetail = () => {
               })}
               {/* 댓글 작성 칸 */}
               <WriteComment comment={comment} setComment={setComment} />
+            </div>
+            <div className="w-full flex justify-end items-center">
+              <button
+                className="border border-black py-3 px-10 mb-5 rounded-md font-bold"
+                onClick={() => {
+                  navigate("/report");
+                }}
+              >
+                목록
+              </button>
             </div>
           </div>
         </div>
