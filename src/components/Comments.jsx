@@ -8,9 +8,7 @@ const Comments = ({ index, length }) => {
         <div>
           <div className="font-semibold text-base">{index.user_name}</div>
           <div className="text-sm">{index.pr_content}</div>
-          <div className="text-xs mb-2 text-gray-500">
-            {index.pr_date.substring(0, 11)}
-          </div>
+          <div className="text-xs mb-2 text-gray-500">{index.pr_date}</div>
         </div>
         <LongMenu />
       </div>
