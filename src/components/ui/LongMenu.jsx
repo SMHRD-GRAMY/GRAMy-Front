@@ -26,7 +26,9 @@ export default function LongMenu({ comment }) {
     axios.get(
       url,
       {
-        params: comment.pr_seq,
+        params: {
+          pr_seq: comment.pr_seq,
+        },
       },
       {
         headers: {
