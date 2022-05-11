@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import { getCookie } from "./auth/cookie";
 
 const WriteComment = ({ postId, comment, setComment }) => {
+  const navigate = useNavigate();
   const loginContext = useContext(AppContext);
   let userCookie = getCookie("x_auth");
   let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
@@ -29,11 +31,15 @@ const WriteComment = ({ postId, comment, setComment }) => {
           : userCookie.user_name,
       pr_content: comment,
     };
-    axios.post(url, data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        navigate(0);
+      });
   };
 
   return (
