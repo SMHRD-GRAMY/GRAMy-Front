@@ -46,7 +46,14 @@ export default function LongMenu() {
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === "Pyxis"}>
+          <MenuItem
+            key={option}
+            selected={option === "Pyxis"}
+            onClick={() => {
+              console.log(option);
+              setAnchorEl(null);
+            }}
+          >
             {option}
           </MenuItem>
         ))}
