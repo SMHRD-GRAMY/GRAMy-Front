@@ -6,12 +6,16 @@ import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
 import axios from "axios";
 import { Skeleton } from "@mui/material";
+import { getCookie } from "../components/auth/cookie";
+import { identifyUserName } from "../utils/utils";
 
 const PurchaseDetail = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
   const [comments, setComments] = useState([]);
+  const userCookie = getCookie("x_auth");
+  const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
@@ -187,6 +191,8 @@ const PurchaseDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
+                      {console.log(data)}
+                      {identifyUserName(userCookie, socialUser)}
                       <Link
                         to="update"
                         state={{
