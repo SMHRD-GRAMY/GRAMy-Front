@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LongMenu from "../components/ui/LongMenu";
 const Comments = ({ comment, index, length }) => {
   const [mode, setMode] = useState();
@@ -17,12 +17,15 @@ const Comments = ({ comment, index, length }) => {
       pr_seq: comment.pr_seq,
       pr_content: editComment,
     };
-    axios.post(url, data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setMode(); // 모드 초기화
+    axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        setMode(); // 모드 초기화
+      });
   };
 
   // TODO : 게시물 별 코멘트 처리해야함
