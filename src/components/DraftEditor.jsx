@@ -124,10 +124,10 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
               userCookie === undefined || userCookie.user_id === ""
                 ? socialUser.email
                 : userCookie.user_id,
-            // user_name:
-            //   userCookie === undefined || userCookie.user_name === ""
-            //     ? socialUser.name
-            //     : userCookie.user_name,
+            user_name:
+              userCookie === undefined || userCookie.user_name === ""
+                ? socialUser.name
+                : userCookie.user_name,
             purchase_title: title,
             purchase_content: editorToHtml,
           };
