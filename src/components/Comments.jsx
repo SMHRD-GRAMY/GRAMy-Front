@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import LongMenu from "../components/ui/LongMenu";
 const Comments = ({ comment, index, length }) => {
@@ -11,6 +12,16 @@ const Comments = ({ comment, index, length }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
+    const url = "http://localhost:8082/purchase/replyupdate.do";
+    let data = {
+      pr_seq: comment.pr_seq,
+      pr_content: editComment,
+    };
+    axios.post(url, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   };
 
   // TODO : 게시물 별 코멘트 처리해야함
