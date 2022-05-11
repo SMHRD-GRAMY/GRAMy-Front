@@ -1,8 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
-font-family: 'Source Sans Pro', sans-serif;
+
+
+@font-face {
+  font-family: "Nanum Gothic Neo";
+  src: url("fonts/AppleSDGothicNeoM.ttf");
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite,
@@ -33,6 +38,7 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
+  font-family: "Nanum Gothic Neo";
 }
 menu, ol, ul {
   list-style: none;
