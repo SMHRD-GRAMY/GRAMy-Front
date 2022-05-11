@@ -32,7 +32,7 @@ const Comments = ({ comment, index, length }) => {
             </div>
           </div>
           <button
-            className="w-20 py-4 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
+            className="w-20 py-2 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
             onClick={handleEdit}
           >
             등록
