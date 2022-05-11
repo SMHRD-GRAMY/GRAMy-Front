@@ -10,7 +10,7 @@ const options = ["수정", "삭제"];
 
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu({ comment }) {
+export default function LongMenu({ comment, setMode }) {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -76,6 +76,7 @@ export default function LongMenu({ comment }) {
             onClick={() => {
               if (option === "수정") {
                 // 수정 로직
+                setMode("edit");
               } else if (option === "삭제") {
                 // 삭제 로직
                 handleDelete();

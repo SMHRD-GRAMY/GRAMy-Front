@@ -53,7 +53,7 @@ const WriteComment = ({ postId, comment, setComment }) => {
       <div className="flex">
         {isLogin ? (
           <textarea
-            placeholder="댓글을 남겨보세요."
+            placeholder="내용을 입력하세요."
             className="w-full h-10 resize-none text-sm border-0 focus:ring-0"
             value={comment}
             onChange={onChangeComment}
