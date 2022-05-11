@@ -11,6 +11,7 @@ const PurchaseDetail = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
+  const [comments, setComments] = useState();
 
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
@@ -38,7 +39,7 @@ const PurchaseDetail = () => {
       });
   };
 
-  useEffect(() => {
+  const loadArticle = () => {
     axios
       .post("http://localhost:8082/purchase/content.do", postId, {
         headers: {
@@ -49,6 +50,22 @@ const PurchaseDetail = () => {
         setData(res.data);
         setLoading(false);
       });
+  };
+
+  const loadComment = () => {
+    axios
+      .post("http://localhost:8082/purchase/replylist.do", postId, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
+  useEffect(() => {
+    loadArticle();
   }, []);
 
   return (
