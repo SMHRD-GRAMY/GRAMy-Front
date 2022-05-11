@@ -5,10 +5,11 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import WriteComment from "../components/WriteComment";
 import axios from "axios";
+import { Skeleton } from "@mui/material";
 
 const PurchaseDetail = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
 
   const params = useParams();
@@ -34,7 +35,8 @@ const PurchaseDetail = () => {
         },
       })
       .then((res) => {
-        console.log(res);
+        setData(res.data);
+        setLoading(false);
       });
   }, []);
 
@@ -53,17 +55,17 @@ const PurchaseDetail = () => {
                 구매 문의
               </div>
               <div className="text-3xl font-semibold">
-                {details.purchase_title}
+                {loading ? <Skeleton variant="text" /> : data.purchase_title}
               </div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">
                   <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                   <div className="flex flex-col">
                     <span className="font-semibold text-base">
-                      {details.user_id}
+                      {loading ? <Skeleton variant="text" /> : data.user_id}
                     </span>
                     <span className="text-sm text-gray-400">
-                      {details.purchase_date.substring(0, 11)}
+                      {data.purchase_date.substring(0, 11)}
                     </span>
                   </div>
                 </div>
@@ -89,7 +91,13 @@ const PurchaseDetail = () => {
             </div>
             <hr className="mb-4" />
             {/* 게시글 몸 */}
-            <div className="pb-10">{details.purchase_content}</div>
+            <div className="pb-10">
+              {loading ? (
+                <Skeleton variant="rectangular" width={210} height={118} />
+              ) : (
+                data.purchase_content
+              )}
+            </div>
             <hr className="mb-3" />
             <div>
               <div className="font-bold text-lg mb-4">댓글</div>
