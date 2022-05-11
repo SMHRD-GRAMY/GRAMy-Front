@@ -158,7 +158,7 @@ const PurchaseDetail = () => {
                       <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                       <div className="flex flex-col">
                         <span className="font-semibold text-base">
-                          {data.user_id}
+                          {data.user_name}
                         </span>
                         <span className="text-sm text-gray-400">
                           {data.purchase_date.substring(0, 11)}
