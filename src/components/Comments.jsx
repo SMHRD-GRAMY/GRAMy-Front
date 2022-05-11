@@ -35,7 +35,7 @@ const Comments = ({ comment, index, length }) => {
             className="w-20 py-2 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
             onClick={handleEdit}
           >
-            등록
+            수정
           </button>
           <LongMenu comment={comment} setMode={setMode} />
         </div>
