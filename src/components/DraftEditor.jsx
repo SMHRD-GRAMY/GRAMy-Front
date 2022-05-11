@@ -71,7 +71,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
       switch (board) {
         case "purchase":
           console.log("구매 문의 게시글 수정!");
-          url = "/"; // 구매 문의 게시글 수정 url
+          url = "http://localhost:8082/purchase/update.do"; // 구매 문의 게시글 수정 url
           data = {
             articleId: articleId,
             title: title,
@@ -113,7 +113,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
       switch (board) {
         case "purchase":
           console.log("구매 문의 게시글 등록!");
-          url = "/"; // 구매 문의 게시글 등록 url
+          url = "http://localhost:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
           data = {
             title: title,
             content: editorToHtml,
@@ -153,7 +153,11 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
 
   const writeCancel = (e) => {
     e.preventDefault();
-    window.location.href = "/purchase";
+    if (board === "purchase") {
+      window.location.href = "/purchase";
+    } else if (board === "report") {
+      window.location.href = "/report";
+    }
   };
 
   return (
