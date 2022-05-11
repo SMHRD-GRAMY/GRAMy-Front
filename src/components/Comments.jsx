@@ -1,6 +1,7 @@
 import React from "react";
 import LongMenu from "../components/ui/LongMenu";
 const Comments = ({ index, length }) => {
+  console.log(index);
   // TODO : 게시물 별 코멘트 처리해야함
   return (
     <>
