@@ -20,7 +20,7 @@ const PurchaseDetail = () => {
   const [comment, setComment] = useState("");
 
   const location = useLocation();
-  const { title, userId } = location.state.info;
+  const details = location.state.info;
 
   const handleDelete = () => {
     // TODO : 게시글 삭제 요청 보내기
@@ -28,7 +28,7 @@ const PurchaseDetail = () => {
   return (
     <>
       <Helmet>
-        <title>GRAMy | {`${location.state.info.name}`}</title>
+        <title>GRAMy | {`${details.purchase_title}`}</title>
       </Helmet>
       <div className="w-full h-full">
         <BoardTitle title="구매 문의 게시판" />
@@ -39,23 +39,29 @@ const PurchaseDetail = () => {
               <div className="text-[#132C4D] text-sm font-bold mb-1">
                 구매 문의
               </div>
-              <div className="text-3xl font-semibold">{title}</div>
+              <div className="text-3xl font-semibold">
+                {details.purchase_title}
+              </div>
               <div className="flex items-center py-2 justify-between">
                 <div className="flex items-center">
                   <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                   <div className="flex flex-col">
-                    <span className="font-semibold text-base">{userId}</span>
-                    <span className="text-sm text-gray-400">2022-04-30</span>
+                    <span className="font-semibold text-base">
+                      {details.user_id}
+                    </span>
+                    <span className="text-sm text-gray-400">
+                      {details.purchase_date.substring(0, 11)}
+                    </span>
                   </div>
                 </div>
                 <div className=" text-base text-gray-500">
                   <Link
                     to="update"
                     state={{
-                      title: title,
+                      title: details.purchase_title,
                       // content : useEffect로 게시글 상세 정보 받아와서 여기다가 처박은 후 수정
                       // 우선은 백엔드 완성 전까지 테스트만
-                      content: "<strong>훠킹뻐킹</strong>",
+                      content: details.purchase_content,
                     }}
                     className="cursor-pointer hover:border-b hover:border-gray-500"
                   >
