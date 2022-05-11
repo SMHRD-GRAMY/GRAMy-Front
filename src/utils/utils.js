@@ -3,6 +3,8 @@ export function cls(...classnames) {
 }
 
 export const identifyUserName = (userCookie, socialUser) => {
+  console.log(userCookie);
+  console.log(socialUser);
   if (
     userCookie === undefined || userCookie.user_name === ""
       ? socialUser.name
