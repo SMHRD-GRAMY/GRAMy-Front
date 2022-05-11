@@ -45,7 +45,7 @@ const Router = () => {
             element={<PurchaseWrite mode="edit" />}
           />
           <Route path="/report" element={AuthHOC(Report, null)} />
-          <Route path="/report/:id" element={<ReportDetail />} />
+          <Route path="/report/:id" element={AuthHOC(<ReportDetail />, null)} />
           <Route path="/report/write" element={<ReportWrite />} />
           <Route
             path="/report/:id/update"
