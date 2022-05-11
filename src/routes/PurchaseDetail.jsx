@@ -7,12 +7,6 @@ import WriteComment from "../components/WriteComment";
 import axios from "axios";
 
 const PurchaseDetail = () => {
-  useEffect(() => {
-    axios.get("http://localhost:8082/purchase/content.do").then((res) => {
-      console.log(res);
-    });
-  }, []);
-
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState();
@@ -31,6 +25,14 @@ const PurchaseDetail = () => {
     e.preventDefault();
     axios.get("http://localhost:8082/purchase/delete.do", postId);
   };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8082/purchase/content.do", postId)
+      .then((res) => {
+        console.log(res);
+      });
+  }, []);
 
   return (
     <>
