@@ -17,7 +17,6 @@ const Purchase = () => {
 
   useEffect(() => {
     axios.get("http://localhost:8082/purchase/list.do").then((res) => {
-      console.log(res.data);
       setLoading(false);
       setPosts(res.data);
     });
