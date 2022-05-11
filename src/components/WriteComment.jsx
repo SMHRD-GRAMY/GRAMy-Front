@@ -27,7 +27,7 @@ const WriteComment = ({ postId, comment, setComment }) => {
         userCookie === undefined || userCookie.user_name === ""
           ? socialUser.name
           : userCookie.user_name,
-      comment: comment,
+      pr_content: comment,
     };
     axios.post(url, data, {
       headers: {
