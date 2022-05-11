@@ -21,7 +21,17 @@ const PurchaseDetail = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8082/purchase/delete.do", postId);
+    axios.get(
+      "http://localhost:8082/purchase/delete.do",
+      {
+        params: { purchase_seq: postId },
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   useEffect(() => {
