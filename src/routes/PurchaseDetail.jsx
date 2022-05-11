@@ -61,11 +61,13 @@ const PurchaseDetail = () => {
       })
       .then((res) => {
         console.log(res.data);
+        setLoading(false);
       });
   };
 
   useEffect(() => {
     loadArticle();
+    loadComment();
   }, []);
 
   return (
