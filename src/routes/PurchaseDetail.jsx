@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
@@ -7,7 +7,16 @@ import WriteComment from "../components/WriteComment";
 import axios from "axios";
 
 const PurchaseDetail = () => {
+  useEffect(() => {
+    axios.get("http://localhost:8082/purchase/content.do").then((res) => {
+      console.log(res);
+    });
+  }, []);
+
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState();
+
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
@@ -20,8 +29,9 @@ const PurchaseDetail = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8082/purchase/delete.do", postId);
+    axios.get("http://localhost:8082/purchase/delete.do", postId);
   };
+
   return (
     <>
       <Helmet>
@@ -56,8 +66,6 @@ const PurchaseDetail = () => {
                     to="update"
                     state={{
                       title: details.purchase_title,
-                      // content : useEffect로 게시글 상세 정보 받아와서 여기다가 처박은 후 수정
-                      // 우선은 백엔드 완성 전까지 테스트만
                       content: details.purchase_content,
                     }}
                     className="cursor-pointer hover:border-b hover:border-gray-500"
