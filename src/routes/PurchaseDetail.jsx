@@ -220,11 +220,17 @@ const PurchaseDetail = () => {
                 <div>
                   <div className="font-bold text-lg mb-4">댓글</div>
                   {/* 댓글 내용 */}
-                  {comments.map((_, index) => {
-                    return (
-                      <Comments key={index} index={index} length={arr.length} />
-                    );
-                  })}
+                  {loading
+                    ? null
+                    : comments.map((_, index) => {
+                        return (
+                          <Comments
+                            key={index}
+                            index={index}
+                            length={arr.length}
+                          />
+                        );
+                      })}
                   {/* 댓글 작성 칸 */}
                   <WriteComment comment={comment} setComment={setComment} />
                 </div>
