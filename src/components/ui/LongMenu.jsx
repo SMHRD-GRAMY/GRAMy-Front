@@ -4,12 +4,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const options = ["수정", "삭제"];
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu({ comment }) {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,19 +25,21 @@ export default function LongMenu({ comment }) {
 
   const handleDelete = () => {
     const url = "http://localhost:8082/purchase/replydelete.do";
-    axios.get(
-      url,
-      {
-        params: {
-          pr_seq: comment.pr_seq,
+    axios
+      .get(
+        url,
+        {
+          params: {
+            pr_seq: comment.pr_seq,
+          },
         },
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(() => {});
   };
 
   return (
@@ -75,6 +79,7 @@ export default function LongMenu({ comment }) {
               } else if (option === "삭제") {
                 // 삭제 로직
                 handleDelete();
+                navigate(0);
               }
               setAnchorEl(null);
             }}
