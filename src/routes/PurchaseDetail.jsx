@@ -7,7 +7,7 @@ import WriteComment from "../components/WriteComment";
 import axios from "axios";
 import { Skeleton } from "@mui/material";
 import { getCookie } from "../components/auth/cookie";
-import { identifyUserName } from "../utils/utils";
+import { identifyUserId } from "../utils/utils";
 
 const PurchaseDetail = () => {
   const navigate = useNavigate();
@@ -191,9 +191,7 @@ const PurchaseDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
-                      {console.log(identifyUserName(userCookie, socialUser))}
-                      {console.log(data.user_id)}
-                      {identifyUserName(userCookie, socialUser) ===
+                      {identifyUserId(userCookie, socialUser) ===
                       data.user_id ? (
                         <>
                           <Link
