@@ -9,6 +9,10 @@ const Comments = ({ comment, index, length }) => {
     setEditComment(value);
   };
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+  };
+
   // TODO : 게시물 별 코멘트 처리해야함
   return (
     <>
@@ -27,7 +31,12 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          <div>수정</div>
+          <button
+            className="w-20 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
+            onClick={handleEdit}
+          >
+            등록
+          </button>
           <LongMenu comment={comment} setMode={setMode} />
         </div>
       ) : (
