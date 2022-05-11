@@ -31,12 +31,14 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          <button
-            className="w-20 py-2 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
-            onClick={handleEdit}
-          >
-            수정
-          </button>
+          <div className="flex items-center justify-center">
+            <button
+              className="w-20 py-2 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
+              onClick={handleEdit}
+            >
+              수정
+            </button>
+          </div>
           <LongMenu comment={comment} setMode={setMode} />
         </div>
       ) : (
