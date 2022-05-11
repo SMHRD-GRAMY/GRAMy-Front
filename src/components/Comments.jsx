@@ -13,7 +13,7 @@ const Comments = ({ comment, index, length }) => {
   return (
     <>
       {mode === "edit" ? (
-        <div className="flex w-full justify-between">
+        <div className="flex w-full justify-between items-center">
           <div>
             <div className="font-semibold text-base">{comment.user_name}</div>
             {/* 이 부분 */}
@@ -27,7 +27,7 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          수정
+          <div>수정</div>
           <LongMenu comment={comment} setMode={setMode} />
         </div>
       ) : (
