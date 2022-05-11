@@ -191,7 +191,7 @@ const PurchaseDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
-                      {console.log(socialUser.email)}
+                      {console.log(identifyUserName(userCookie, socialUser))}
                       {console.log(data.user_id)}
                       {identifyUserName(userCookie, socialUser) ===
                       data.user_id ? (
