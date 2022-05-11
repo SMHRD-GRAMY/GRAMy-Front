@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
@@ -7,6 +7,8 @@ import styled from "styled-components";
 import axios from "axios";
 import htmlToDraft from "html-to-draftjs";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../App";
+import { getCookie } from "./auth/cookie";
 
 const MyBlock = styled.div`
   background-color: white;
@@ -26,6 +28,9 @@ const MyBlock = styled.div`
 // 게시판 구분 : board
 // title props는 게시글 제목, mode props는 게시글 수정 모드
 const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
+  const loginContext = useContext(AppContext);
+  const { socialUser } = loginContext;
+  const userCookie = getCookie("x_auth");
   const navigate = useNavigate();
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
@@ -117,7 +122,10 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("구매 문의 게시글 등록!");
           url = "http://localhost:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
           data = {
-            user_id: "123",
+            user_id:
+              userCookie === undefined || userCookie.user_name === ""
+                ? socialUser.name
+                : userCookie.user_name,
             purchase_title: title,
             purchase_content: editorToHtml,
           };
