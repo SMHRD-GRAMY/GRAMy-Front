@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LongMenu from "../components/ui/LongMenu";
 const Comments = ({ comment, index, length }) => {
+  const navigate = useNavigate();
   const [mode, setMode] = useState();
   const [editComment, setEditComment] = useState(comment.pr_content);
 
@@ -24,7 +26,7 @@ const Comments = ({ comment, index, length }) => {
         },
       })
       .then(() => {
-        setMode(); // 모드 초기화
+        navigate(0);
       });
   };
 
