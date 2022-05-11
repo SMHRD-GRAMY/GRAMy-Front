@@ -65,7 +65,11 @@ const PurchaseDetail = () => {
                       {loading ? <Skeleton variant="text" /> : data.user_id}
                     </span>
                     <span className="text-sm text-gray-400">
-                      {data.purchase_date.substring(0, 11)}
+                      {loading ? (
+                        <Skeleton variant="text" />
+                      ) : (
+                        data.purchase_date.substring(0, 11)
+                      )}
                     </span>
                   </div>
                 </div>
