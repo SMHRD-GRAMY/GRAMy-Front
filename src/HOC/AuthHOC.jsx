@@ -25,7 +25,11 @@ const AuthHOC = (SpecificComponent, mode = null, option, adminRoute = null) => {
       }
     }, []);
 
-    return <SpecificComponent />;
+    if (mode === "edit") {
+      return <SpecificComponent mode={mode} />;
+    } else {
+      return <SpecificComponent />;
+    }
   };
 
   return <AuthenticationCheck />;
