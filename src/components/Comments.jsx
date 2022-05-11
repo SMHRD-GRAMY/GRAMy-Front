@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LongMenu from "../components/ui/LongMenu";
 import { getCookie } from "./auth/cookie";
@@ -11,10 +11,14 @@ const Comments = ({ comment, index, length }) => {
   const userCookie = getCookie("x_auth");
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
-  const currentUserName =
-    userCookie === undefined || userCookie.user_name === ""
-      ? socialUser.name
-      : userCookie.user_name;
+  let currentUserName;
+
+  if (userCookie || socialUser) {
+    currentUserName =
+      userCookie === undefined || userCookie.user_name === ""
+        ? socialUser.name
+        : userCookie.user_name;
+  }
 
   const onChangeEditComment = (e) => {
     const { value } = e.target;
@@ -38,6 +42,8 @@ const Comments = ({ comment, index, length }) => {
         navigate(0);
       });
   };
+
+  useEffect(() => {}, []);
 
   // TODO : 게시물 별 코멘트 처리해야함
   return (
