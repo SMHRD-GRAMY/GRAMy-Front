@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LongMenu from "../components/ui/LongMenu";
-import { identifyUserName } from "../utils/utils";
+import { identifyUserId, identifyUserName } from "../utils/utils";
 import { getCookie } from "./auth/cookie";
 const Comments = ({ comment, index, length }) => {
   const navigate = useNavigate();
@@ -13,9 +13,11 @@ const Comments = ({ comment, index, length }) => {
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
   let currentUserName;
+  let currentUserId;
 
   if (userCookie || socialUser) {
     currentUserName = identifyUserName(userCookie, socialUser);
+    currentUserId = identifyUserId(userCookie, socialUser);
   }
 
   const onChangeEditComment = (e) => {
