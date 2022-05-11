@@ -191,24 +191,27 @@ const PurchaseDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
-                      {console.log(data)}
-                      {identifyUserName(userCookie, socialUser)}
-                      <Link
-                        to="update"
-                        state={{
-                          title: data.purchase_title,
-                          content: data.purchase_content,
-                        }}
-                        className="cursor-pointer hover:border-b hover:border-gray-500"
-                      >
-                        수정
-                      </Link>
-                      <span
-                        className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
-                        onClick={handleDelete}
-                      >
-                        삭제
-                      </span>
+                      {identifyUserName(userCookie, socialUser) ===
+                      data.user_id ? (
+                        <>
+                          <Link
+                            to="update"
+                            state={{
+                              title: data.purchase_title,
+                              content: data.purchase_content,
+                            }}
+                            className="cursor-pointer hover:border-b hover:border-gray-500"
+                          >
+                            수정
+                          </Link>
+                          <span
+                            className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
+                            onClick={handleDelete}
+                          >
+                            삭제
+                          </span>
+                        </>
+                      ) : null}
                     </div>
                   </div>
                 </div>
