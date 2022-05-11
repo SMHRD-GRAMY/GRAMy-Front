@@ -28,7 +28,7 @@ const PurchaseDetail = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8082/purchase/content.do", postId)
+      .post("http://localhost:8082/purchase/content.do", postId)
       .then((res) => {
         console.log(res);
       });
