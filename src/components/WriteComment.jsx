@@ -24,6 +24,7 @@ const WriteComment = ({ postId, comment, setComment }) => {
       purchase_seq: postId,
       user_id: identifyUserId(userCookie, socialUser),
       user_name: identifyUserName(userCookie, socialUser),
+      pr_content: comment,
     };
     axios
       .post(url, data, {
