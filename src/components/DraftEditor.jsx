@@ -123,9 +123,9 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           url = "http://localhost:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
           data = {
             user_id:
-              userCookie === undefined || userCookie.user_name === ""
-                ? socialUser.name
-                : userCookie.user_name,
+              userCookie === undefined || userCookie.user_id === ""
+                ? socialUser.email
+                : userCookie.user_id,
             purchase_title: title,
             purchase_content: editorToHtml,
           };
