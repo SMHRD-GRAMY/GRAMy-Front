@@ -1,11 +1,20 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LongMenu from "../components/ui/LongMenu";
+import { getCookie } from "./auth/cookie";
 const Comments = ({ comment, index, length }) => {
   const navigate = useNavigate();
   const [mode, setMode] = useState();
   const [editComment, setEditComment] = useState(comment.pr_content);
+
+  const userCookie = getCookie("x_auth");
+  const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
+
+  const currentUserName =
+    userCookie === undefined || userCookie.user_name === ""
+      ? socialUser.name
+      : userCookie.user_name;
 
   const onChangeEditComment = (e) => {
     const { value } = e.target;
@@ -67,7 +76,9 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          <LongMenu comment={comment} setMode={setMode} />
+          {currentUserName === comment.user_name ? (
+            <LongMenu comment={comment} setMode={setMode} />
+          ) : null}
         </div>
       )}
 

@@ -8,7 +8,7 @@ const WriteComment = ({ postId, comment, setComment }) => {
   let userCookie = getCookie("x_auth");
   let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
-  let { isLogin, setIsLogin } = loginContext;
+  let { isLogin } = loginContext;
 
   const onChangeComment = (e) => {
     const { value } = e.target;

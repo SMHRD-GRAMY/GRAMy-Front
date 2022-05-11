@@ -16,8 +16,6 @@ const PurchaseDetail = () => {
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
-  const arr = comments;
-
   const [comment, setComment] = useState("");
 
   const handleDelete = (e) => {
@@ -67,6 +65,7 @@ const PurchaseDetail = () => {
 
   useEffect(() => {
     loadArticle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

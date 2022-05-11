@@ -21,8 +21,6 @@ export default function LongMenu({ comment, setMode }) {
     setAnchorEl(null);
   };
 
-  const handleUpdate = () => {};
-
   const handleDelete = () => {
     const url = "http://localhost:8082/purchase/replydelete.do";
     axios
