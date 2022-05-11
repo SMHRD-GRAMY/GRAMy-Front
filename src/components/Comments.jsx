@@ -33,7 +33,7 @@ const Comments = ({ comment, index, length }) => {
           </div>
           <div className="w-full flex items-center justify-center">
             <button
-              className="w-20 py-2 bg-[#132C4D] ml-3 text-sm rounded-md text-white"
+              className="w-20 py-2 bg-[#132C4D] text-sm rounded-md text-white"
               onClick={handleEdit}
             >
               수정
