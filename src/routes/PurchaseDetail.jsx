@@ -11,7 +11,7 @@ const PurchaseDetail = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
-  const [comments, setComments] = useState();
+  const [comments, setComments] = useState([]);
 
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
@@ -219,17 +219,15 @@ const PurchaseDetail = () => {
                 <div>
                   <div className="font-bold text-lg mb-4">댓글</div>
                   {/* 댓글 내용 */}
-                  {loading
-                    ? null
-                    : comments.map((_, index) => {
-                        return (
-                          <Comments
-                            key={index}
-                            index={index}
-                            length={arr.length}
-                          />
-                        );
-                      })}
+                  {comments.map((_, index) => {
+                    return (
+                      <Comments
+                        key={index}
+                        index={index}
+                        length={comments.length}
+                      />
+                    );
+                  })}
                   {/* 댓글 작성 칸 */}
                   <WriteComment comment={comment} setComment={setComment} />
                 </div>
