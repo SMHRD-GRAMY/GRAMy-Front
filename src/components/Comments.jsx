@@ -19,7 +19,7 @@ const Comments = ({ comment, index, length }) => {
             {/* 이 부분 */}
             <textarea
               placeholder="내용을 입력하세요."
-              className="w-[800px] h-10 resize-none text-sm border focus:ring-0 rounded-md my-2"
+              className="w-[800px] h-10 resize-none text-sm border-2 border-[#0000002c] focus:ring-0 rounded-md my-2"
               value={editComment}
               onChange={onChangeEditComment}
             />
