@@ -13,7 +13,7 @@ const PurchaseTableBody = ({ posts, loading, offset, limit }) => {
         ? posts.slice(offset, offset + limit).map((info, key) => {
             return (
               <tr key={key} className="border border-slate-500">
-                <td className="py-3 ">{info.purchase_cnt}</td>
+                <td className="py-3 ">{info.purchase_seq}</td>
                 <td>
                   <Link
                     to={`${info.purchase_seq}`}
