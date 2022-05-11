@@ -16,7 +16,7 @@ const Header = () => {
   let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
   const handleLogout = () => {
-    removeCookie("x_auth", { path: "/" });
+    removeCookie("x_auth", { path: "/*" });
     sessionStorage.clear();
     loginContext.setIsLogin(false);
   };
