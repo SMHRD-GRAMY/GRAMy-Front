@@ -10,8 +10,6 @@ const PurchaseDetail = () => {
   // 로딩은 어쩔수 없다! 스켈레톤 UI로 구현해보자!
   // 무엇을 로딩? -> 댓글, 게시글내용
 
-  useEffect(() => {}, []);
-
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
 
@@ -75,7 +73,7 @@ const PurchaseDetail = () => {
             </div>
             <hr className="mb-4" />
             {/* 게시글 몸 */}
-            <div className="pb-10">게시글게시글</div>
+            <div className="pb-10">{details.purchase_content}</div>
             <hr className="mb-3" />
             <div>
               <div className="font-bold text-lg mb-4">댓글</div>
