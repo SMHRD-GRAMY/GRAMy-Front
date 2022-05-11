@@ -12,7 +12,7 @@ const Comments = ({ comment, index, length }) => {
             {comment.pr_date.substring(0, 11)}
           </div>
         </div>
-        <LongMenu />
+        <LongMenu comment={comment} />
       </div>
       {index === length - 1 ? null : <hr className="mb-2" />}
     </>

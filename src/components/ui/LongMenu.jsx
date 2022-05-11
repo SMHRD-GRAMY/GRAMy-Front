@@ -3,12 +3,13 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import axios from "axios";
 
 const options = ["수정", "삭제"];
 
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu() {
+export default function LongMenu({ comment }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -16,6 +17,23 @@ export default function LongMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleUpdate = () => {};
+
+  const handleDelete = () => {
+    const url = "http://localhost:8082/replydelete.do";
+    axios.get(
+      url,
+      {
+        params: comment.pr_seq,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   return (
@@ -50,7 +68,12 @@ export default function LongMenu() {
             key={option}
             selected={option === "Pyxis"}
             onClick={() => {
-              console.log(option);
+              if (option === "수정") {
+                // 수정 로직
+              } else if (option === "삭제") {
+                // 삭제 로직
+                handleDelete();
+              }
               setAnchorEl(null);
             }}
           >
