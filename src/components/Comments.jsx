@@ -31,7 +31,7 @@ const Comments = ({ comment, index, length }) => {
               {comment.pr_date.substring(0, 11)}
             </div>
           </div>
-          <div className="w-full flex items-center justify-center relative left-0">
+          <div className="w-full flex items-center justify-center relative left-[-10px]">
             <button
               className="w-20 py-2 bg-[#132C4D] text-sm rounded-md text-white"
               onClick={handleEdit}
