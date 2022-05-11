@@ -19,7 +19,7 @@ const Comments = ({ comment, index, length }) => {
             {/* 이 부분 */}
             <textarea
               placeholder="내용을 입력하세요."
-              className="w-full h-10 resize-none text-sm border-0 focus:ring-0"
+              className="w-full h-10 resize-none text-sm border focus:ring"
               value={editComment}
               onChange={onChangeEditComment}
             />
