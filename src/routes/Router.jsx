@@ -52,7 +52,7 @@ const Router = () => {
           <Route path="/report/write" element={AuthHOC(ReportWrite, null)} />
           <Route
             path="/report/:id/update"
-            element={AuthHOC(<PurchaseWrite mode="edit" />, null)}
+            element={AuthHOC(PurchaseWrite, null)}
           />
           <Route
             path="/oauth/callback/kakao"
