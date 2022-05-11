@@ -6,7 +6,7 @@ font-family: 'Source Sans Pro', sans-serif;
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite,
-del, dfn, img, ins, kbd, q, s, samp,
+del, dfn, img, kbd, q, s, samp,
 small, strike, tt, var,
 b, u, i, center,
 dl, dt, dd, menu, ol, ul, li,
