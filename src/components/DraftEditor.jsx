@@ -75,9 +75,9 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("구매 문의 게시글 수정!");
           url = "http://localhost:8082/purchase/update.do"; // 구매 문의 게시글 수정 url
           data = {
-            articleId: articleId,
-            title: title,
-            content: editorToHtml,
+            purchase_seq: articleId,
+            purchase_title: title,
+            purchase_content: editorToHtml,
           };
           axios
             .post(url, data, {
@@ -117,8 +117,9 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("구매 문의 게시글 등록!");
           url = "http://localhost:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
           data = {
-            title: title,
-            content: editorToHtml,
+            user_id: "123",
+            purchase_title: title,
+            purchase_content: editorToHtml,
           };
           axios
             .post(url, data, {
