@@ -187,9 +187,9 @@ const PurchaseDetail = () => {
                 </div>
                 <hr className="mb-4" />
                 {/* 게시글 몸 */}
-                <div className="pb-10">
+                <div className="pb-10 ">
                   <div
-                    className="text-base"
+                    className="break-all"
                     dangerouslySetInnerHTML={{ __html: data.purchase_content }}
                   ></div>
                 </div>
