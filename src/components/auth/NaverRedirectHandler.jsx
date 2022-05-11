@@ -20,8 +20,8 @@ const NaverRedirectHandler = () => {
   naverLogin.init();
 
   useEffect(() => {
-    const location = window.location.href.split("=")[1];
-    const access_token = location.split("&")[0];
+    // const location = window.location.href.split("=")[1];
+    // const access_token = location.split("&")[0];
 
     naverLogin.getLoginStatus(async function (status) {
       if (status) {

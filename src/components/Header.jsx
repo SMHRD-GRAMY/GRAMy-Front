@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import * as Scroll from "react-scroll";
 import { getCookie } from "./auth/cookie";
 import { useCookies } from "react-cookie";
+import { identifyUserName } from "../utils/utils";
 
 const Header = () => {
   const location = useLocation();
@@ -69,9 +70,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <span className="font-semibold">
-                  {userCookie === undefined || userCookie.user_name === ""
-                    ? socialUser.name
-                    : userCookie.user_name}
+                  {identifyUserName(userCookie, socialUser)}
                 </span>
               </div>
             </Link>

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
+import { identifyUserId, identifyUserName } from "../utils/utils";
 import { getCookie } from "./auth/cookie";
 
 const WriteComment = ({ postId, comment, setComment }) => {
@@ -21,15 +22,8 @@ const WriteComment = ({ postId, comment, setComment }) => {
     const url = "http://localhost:8082/purchase/replyinsert.do"; // 댓글 등록 api 주소ㄴ
     let data = {
       purchase_seq: postId,
-      user_id:
-        userCookie === undefined || userCookie.user_name === ""
-          ? socialUser.email
-          : userCookie.user_id,
-      user_name:
-        userCookie === undefined || userCookie.user_name === ""
-          ? socialUser.name
-          : userCookie.user_name,
-      pr_content: comment,
+      user_id: identifyUserId(userCookie, socialUser),
+      user_name: identifyUserName(userCookie, socialUser),
     };
     axios
       .post(url, data, {

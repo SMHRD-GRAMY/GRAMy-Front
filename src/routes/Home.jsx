@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import Trail from "../components/ui/Trail";
 import styled from "styled-components";
@@ -45,6 +45,7 @@ const Home = () => {
     }
 
     return () => observer && observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onScroll]);
 
   return (
@@ -90,6 +91,7 @@ const Home = () => {
                 <img
                   src="img/realtime.webp"
                   className="w-[200px] h-[200px] drop-shadow-xl"
+                  alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
                   실시간 재고 확인
@@ -99,6 +101,7 @@ const Home = () => {
                 <img
                   src="img/graph.png"
                   className="w-[200px] h-[200px] drop-shadow-xl"
+                  alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
                   소모 재고 통계
@@ -108,6 +111,7 @@ const Home = () => {
                 <img
                   src="img/alarm.png"
                   className="w-[200px] h-[200px] drop-shadow-xl"
+                  alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
                   재고 부족 알림
@@ -119,7 +123,11 @@ const Home = () => {
         {/* 제품 소개 */}
         <div className="w-full h-[1800px]" id="productInfo">
           <div className="w-full h-[600px] bg-white flex">
-            <img src="img/sub_realtime.gif" className=" scale-75" />
+            <img
+              src="img/sub_realtime.gif"
+              className=" scale-75"
+              alt="이미지"
+            />
             <div className="p-4 py-10">
               <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
                 실시간 재고 관리
@@ -133,12 +141,14 @@ const Home = () => {
                   <img
                     src="img/realtime_img_1.png"
                     className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    alt="이미지"
                   />
                 </Fade>
                 <Fade when={fade.realtime} right>
                   <img
                     src="img/realtime_img_2.png"
                     className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    alt="이미지"
                   />
                 </Fade>
               </div>
@@ -163,16 +173,17 @@ const Home = () => {
                   <img
                     src="img/graph_img_1.png"
                     className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    alt="이미지"
                   />
                 </Fade>
               </div>
               {/* 위치 파악용 DIV */}
               <div {...graph} className="graph" />
             </div>
-            <img src="img/sub_graph.webp" className=" scale-75" />
+            <img src="img/sub_graph.webp" className=" scale-75" alt="이미지" />
           </div>
           <div className="w-full h-[600px] bg-[#27A389] flex">
-            <img src="img/sub_alarm.gif" className=" scale-75" />
+            <img src="img/sub_alarm.gif" className=" scale-75" alt="이미지" />
             <div className="p-4 py-10">
               <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
                 재고 부족 알림
@@ -185,6 +196,7 @@ const Home = () => {
                   <img
                     src="img/alarm_img_1.png"
                     className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    alt="이미지"
                   />
                 </Fade>
               </div>
