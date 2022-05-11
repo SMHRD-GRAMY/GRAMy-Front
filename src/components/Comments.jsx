@@ -22,6 +22,7 @@ const Comments = ({ comment, index, length }) => {
         "Content-Type": "application/json",
       },
     });
+    setMode(); // 모드 초기화
   };
 
   // TODO : 게시물 별 코멘트 처리해야함
