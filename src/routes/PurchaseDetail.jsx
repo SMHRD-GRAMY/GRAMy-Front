@@ -28,7 +28,11 @@ const PurchaseDetail = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8082/purchase/content.do", postId)
+      .post("http://localhost:8082/purchase/content.do", postId, {
+        headers: {
+          "Content-Type": "application/x-www.form-urlencoded;charset=UTF-8",
+        },
+      })
       .then((res) => {
         console.log(res);
       });
