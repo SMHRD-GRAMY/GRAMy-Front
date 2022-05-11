@@ -16,7 +16,7 @@ const PurchaseTableBody = ({ posts, loading, offset, limit }) => {
                 <td className="py-3 ">{info.purchase_cnt}</td>
                 <td>
                   <Link
-                    to={`${info.id}`}
+                    to={`${info.purchase_seq}`}
                     state={{
                       info: info,
                     }}
