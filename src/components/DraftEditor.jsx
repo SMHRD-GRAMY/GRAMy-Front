@@ -139,6 +139,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
             })
             .then((res) => {
               console.log(res);
+              navigate("/purchase");
             });
           break;
         case "report":
@@ -156,6 +157,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
             })
             .then((res) => {
               console.log(res);
+              navigate("/report");
             });
           break;
         default:
