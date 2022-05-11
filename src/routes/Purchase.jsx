@@ -16,7 +16,7 @@ const Purchase = () => {
   const offset = (page - 1) * limit; // 현재 페이지의 첫번
 
   useEffect(() => {
-    axios.get("http://localhost:8082/list.do").then((res) => {
+    axios.get("http://localhost:8082/purchase/list.do").then((res) => {
       console.log(res.data);
       setLoading(false);
       setPosts(res.data);
