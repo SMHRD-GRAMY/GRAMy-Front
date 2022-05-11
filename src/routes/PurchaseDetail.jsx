@@ -54,17 +54,25 @@ const PurchaseDetail = () => {
                     구매 문의
                   </div>
                   <div className="text-3xl font-semibold">
-                    <Skeleton variant="text" />
+                    <Skeleton variant="text" width={400} animation="wave" />
                   </div>
                   <div className="flex items-center py-2 justify-between">
                     <div className="flex items-center">
                       <div className="bg-slate-400 w-10 h-10 rounded-full mr-3" />
                       <div className="flex flex-col">
                         <span className="font-semibold text-base">
-                          <Skeleton variant="text" />
+                          <Skeleton
+                            variant="text"
+                            width={100}
+                            animation="wave"
+                          />
                         </span>
                         <span className="text-sm text-gray-400">
-                          <Skeleton variant="text" />
+                          <Skeleton
+                            variant="text"
+                            width={100}
+                            animation="wave"
+                          />
                         </span>
                       </div>
                     </div>
@@ -84,17 +92,23 @@ const PurchaseDetail = () => {
                 <hr className="mb-4" />
                 {/* 게시글 몸 */}
                 <div className="pb-10">
-                  <Skeleton variant="rectangular" width={210} height={118} />
+                  <Skeleton
+                    variant="rectangular"
+                    width={795}
+                    height={118}
+                    animation="wave"
+                  />
                 </div>
                 <hr className="mb-3" />
                 <div>
                   <div className="font-bold text-lg mb-4">댓글</div>
                   {/* 댓글 내용 */}
-                  {arr.map((_, index) => {
-                    return (
-                      <Comments key={index} index={index} length={arr.length} />
-                    );
-                  })}
+                  <Skeleton
+                    variant="rectangular"
+                    width={795}
+                    height={300}
+                    animation="wave"
+                  />
                   {/* 댓글 작성 칸 */}
                   <WriteComment comment={comment} setComment={setComment} />
                 </div>
