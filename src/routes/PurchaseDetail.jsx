@@ -92,7 +92,7 @@ const PurchaseDetail = () => {
               <button
                 className="border border-black py-3 px-10 mb-5 rounded-md font-bold"
                 onClick={() => {
-                  navigate("/report");
+                  navigate("/purchase");
                 }}
               >
                 목록
