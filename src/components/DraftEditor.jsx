@@ -6,6 +6,7 @@ import draftToHtml from "draftjs-to-html";
 import styled from "styled-components";
 import axios from "axios";
 import htmlToDraft from "html-to-draftjs";
+import { useNavigate } from "react-router-dom";
 
 const MyBlock = styled.div`
   background-color: white;
@@ -25,6 +26,7 @@ const MyBlock = styled.div`
 // 게시판 구분 : board
 // title props는 게시글 제목, mode props는 게시글 수정 모드
 const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
+  const navigate = useNavigate();
   // useState로 상태관리하기 초기값은 EditorState.createEmpty()
   // EditorState의 비어있는 ContentState 기본 구성으로 새 개체를 반환 => 이렇게 안하면 상태 값을 나중에 변경할 수 없음.
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -154,9 +156,9 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
   const writeCancel = (e) => {
     e.preventDefault();
     if (board === "purchase") {
-      window.location.href = "/purchase";
+      navigate(`/purchase/${articleId}`);
     } else if (board === "report") {
-      window.location.href = "/report";
+      navigate(`/report/${articleId}`);
     }
   };
 
