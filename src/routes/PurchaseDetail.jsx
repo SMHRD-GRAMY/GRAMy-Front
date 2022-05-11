@@ -230,7 +230,11 @@ const PurchaseDetail = () => {
                     );
                   })}
                   {/* 댓글 작성 칸 */}
-                  <WriteComment comment={comment} setComment={setComment} />
+                  <WriteComment
+                    postId={postId}
+                    comment={comment}
+                    setComment={setComment}
+                  />
                 </div>
                 <div className="w-full flex justify-end items-center">
                   <button

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { getCookie } from "./auth/cookie";
 
-const WriteComment = ({ comment, setComment }) => {
+const WriteComment = ({ postId, comment, setComment }) => {
   const loginContext = useContext(AppContext);
   let userCookie = getCookie("x_auth");
   let socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
@@ -16,12 +16,17 @@ const WriteComment = ({ comment, setComment }) => {
   };
 
   const handleSubmit = () => {
-    const url = "/"; // 댓글 등록 api 주소ㄴ
+    const url = "http://localhost:8082/purchase/replyinsert.do"; // 댓글 등록 api 주소ㄴ
     let data = {
+      purchase_seq: postId,
       user_id:
         userCookie === undefined || userCookie.user_name === ""
           ? socialUser.email
           : userCookie.user_id,
+      user_name:
+        userCookie === undefined || userCookie.user_name === ""
+          ? socialUser.name
+          : userCookie.user_name,
       comment: comment,
     };
     axios.post(url, data, {
