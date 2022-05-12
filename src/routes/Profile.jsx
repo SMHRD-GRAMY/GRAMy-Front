@@ -21,7 +21,7 @@ const Profile = () => {
         },
       })
       .then((res) => {
-        setUserData(res);
+        setUserData(res.data);
       });
   };
 
