@@ -50,6 +50,8 @@ const EditProfile = () => {
           user_gender: res.data.user_gender,
           user_addr: res.data.user_addr,
         });
+
+        console.log(input.user_addr);
         setLoading(false);
       });
   };
