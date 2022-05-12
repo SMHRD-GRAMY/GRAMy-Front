@@ -14,22 +14,13 @@ const PurchaseDetail = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
   const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState(""); // WriteComment 컴포넌트로 넘겨주는 State
 
   const userCookie = getCookie("x_auth");
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
 
-  let currentUserName;
-  let currentUserId;
-
-  if (userCookie || socialUser) {
-    currentUserName = identifyUserName(userCookie, socialUser);
-    currentUserId = identifyUserId(userCookie, socialUser);
-  }
-
   const params = useParams();
   const postId = params.id; // 게시글번호, 삭제할 때 사용할 것
-
-  const [comment, setComment] = useState("");
 
   const handleDelete = (e) => {
     e.preventDefault();

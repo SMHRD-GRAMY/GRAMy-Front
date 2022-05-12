@@ -16,7 +16,7 @@ const Report = () => {
   const offset = (page - 1) * limit; // 현재 페이지의 첫번
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+    axios.get("http://localhost:8082/report/list.do").then((res) => {
       setLoading(false);
       setPosts(res.data);
     });
