@@ -97,9 +97,9 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("고장 신고 게시글 수정!");
           url = "http://localhost:8082/report/update.do"; // 고장 신고 게시글 수정 url
           data = {
-            articleId: articleId,
-            title: title,
-            content: editorToHtml,
+            report_seq: articleId,
+            report_title: title,
+            report_content: editorToHtml,
           };
           axios
             .post(url, data, {
@@ -141,8 +141,10 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           console.log("고장 신고 게시글 등록!");
           url = "http://localhost:8082/report/insert.do"; // 고장 신고 게시글 등록 url
           data = {
-            title: title,
-            content: editorToHtml,
+            user_id: identifyUserId(userCookie, socialUser),
+            user_name: identifyUserName(userCookie, socialUser),
+            report_title: title,
+            report_content: editorToHtml,
           };
           axios
             .post(url, data, {
