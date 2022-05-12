@@ -19,6 +19,8 @@ import ServiceJoin from "../components/ServiceJoin";
 import ServiceModal from "../components/ui/ServiceModal";
 import AuthHOC from "../HOC/AuthHOC";
 import Profile from "./Profile";
+import EditProfile from "./EditProfile";
+import MyArticle from "./MyArticle";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -37,6 +39,8 @@ const Router = () => {
           <Route path="/login" element={AuthHOC(Login, null)} />
           <Route path="/join" element={AuthHOC(Join, null)} />
           <Route path="/user/:id" element={AuthHOC(Profile, null)} />
+          <Route path="/user/:id/edit" element={AuthHOC(EditProfile, null)} />
+          <Route path="/user/:id/article" element={AuthHOC(MyArticle, null)} />
           <Route path="/purchase" element={AuthHOC(Purchase, null)} />
           <Route path="/purchase/:id" element={AuthHOC(PurchaseDetail, null)} />
           <Route
