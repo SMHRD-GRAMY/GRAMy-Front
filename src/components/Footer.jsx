@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { cls } from "../utils/utils";
 
-const Footer = (currntPage, setCurrentPage) => {
+const Footer = ({ currntPage, setCurrentPage }) => {
   useEffect(() => {
     return () => {
       setCurrentPage();
