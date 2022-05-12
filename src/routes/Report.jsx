@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import Pagination from "../components/Pagination";
 import ReportTableBody from "../components/ReportTableBody";
-import { AppContext } from "../App";
 
 const Report = () => {
   const [posts, setPosts] = useState();

@@ -1,11 +1,10 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import BoardTitle from "../components/BoardTitle";
 import PurchaseTableBody from "../components/PurchaseTableBody";
 import Pagination from "../components/Pagination";
-import { AppContext } from "../App";
 
 const Purchase = () => {
   const [posts, setPosts] = useState();
