@@ -114,9 +114,7 @@ const EditProfile = () => {
                 disabled
                 required
                 name="user_id"
-                value={
-                  loading ? "정보를 불러오는중입니다..." : userData.user_id
-                }
+                value={loading ? "정보를 불러오는중입니다..." : input.user_id}
               />
               <input
                 className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
