@@ -15,6 +15,7 @@ const ReportDetail = () => {
   const [data, setData] = useState();
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState(""); // WriteComment 컴포넌트로 넘겨주는 State
+  const [progress, setProgress] = useState("");
 
   const userCookie = getCookie("x_auth");
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
@@ -52,19 +53,17 @@ const ReportDetail = () => {
       })
       .then((res) => {
         setData(res.data);
-        loadComment();
-      })
-      .then(() => {
-        if (data.report_status === "n") {
+        if (res.data.report_status === "n") {
           // default : n
-          post_progress = "고장접수";
-        } else if (data.report_status === "p") {
+          setProgress("고장접수");
+        } else if (res.data.report_status === "p") {
           // progressing
-          post_progress = "처리중";
-        } else if (data.report_status === "d") {
+          setProgress("처리중");
+        } else if (res.data.report_status === "d") {
           // done
-          post_progress = "처리완료";
+          setProgress("처리완료");
         }
+        loadComment();
       });
   };
 
@@ -188,17 +187,13 @@ const ReportDetail = () => {
                   <div className="text-[#132C4D] text-sm font-bold mb-1">
                     고장 신고
                   </div>
-                  {post_progress === "고장접수" ? (
-                    <div className="text-gray-600 text-sm mb-1">
-                      {post_progress}
-                    </div>
-                  ) : post_progress === "처리중" ? (
-                    <div className="text-red-600 text-sm mb-1">
-                      {post_progress}
-                    </div>
+                  {progress === "고장접수" ? (
+                    <div className="text-gray-600 text-sm mb-1">{progress}</div>
+                  ) : progress === "처리중" ? (
+                    <div className="text-red-600 text-sm mb-1">{progress}</div>
                   ) : (
                     <div className="text-green-600 text-sm mb-1">
-                      {post_progress}
+                      {progress}
                     </div>
                   )}
                   <div className="text-3xl font-semibold">
