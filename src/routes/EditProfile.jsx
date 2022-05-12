@@ -71,7 +71,9 @@ const EditProfile = () => {
   console.log(input);
 
   useEffect(() => {
-    loadUserInfo();
+    if (loading) {
+      loadUserInfo();
+    }
     if (!loading) {
       setInput({
         user_id: userData.user_id,
