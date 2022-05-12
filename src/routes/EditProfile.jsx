@@ -11,14 +11,7 @@ const EditProfile = () => {
   const [userData, setUserData] = useState();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [preAddress, setPreAddress] = useState();
-  const [input, setInput] = useState({
-    user_id: "",
-    user_pw: "",
-    user_name: "",
-    user_phone: "",
-    user_gender: "",
-    user_addr: "",
-  });
+  const [input, setInput] = useState({});
 
   const [address, setAddress] = useState({
     addr: "",
@@ -51,6 +44,14 @@ const EditProfile = () => {
       .then((res) => {
         console.log(res.data);
         setUserData(res.data);
+        setInput({
+          user_id: userData.user_id,
+          user_pw: "",
+          user_name: userData.user_name,
+          user_phone: "",
+          user_gender: userData.user_gender,
+          user_addr: userData.user_addr,
+        });
         setLoading(false);
       });
   };
