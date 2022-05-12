@@ -10,7 +10,7 @@ const Footer = (currntPage, setCurrentPage) => {
   return (
     <div
       className={cls(
-        "w-full h-[300px] bg-[#222222] px-40 flex items-center",
+        "w-full h-[300px] bg-[#222222] px-40 flex items-center ",
         currntPage === "purchase" || currntPage === "report"
           ? "absolute bottom-0"
           : ""
