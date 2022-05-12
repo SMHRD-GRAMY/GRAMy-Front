@@ -8,7 +8,6 @@ import PopupPostCode from "../components/PopupPostCode";
 const EditProfile = () => {
   const location = useLocation();
   const { user_id } = location.state;
-  const [userData, setUserData] = useState();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [preAddress, setPreAddress] = useState();
   const [input, setInput] = useState({});
@@ -43,16 +42,13 @@ const EditProfile = () => {
       })
       .then((res) => {
         console.log(res.data);
-        setUserData(res.data);
-      })
-      .then((res) => {
         setInput({
-          user_id: userData.user_id,
+          user_id: res.data.user_id,
           user_pw: "",
-          user_name: userData.user_name,
+          user_name: res.data.user_name,
           user_phone: "",
-          user_gender: userData.user_gender,
-          user_addr: userData.user_addr,
+          user_gender: res.data.user_gender,
+          user_addr: res.data.user_addr,
         });
         setLoading(false);
       });
