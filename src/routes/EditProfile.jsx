@@ -9,7 +9,6 @@ const EditProfile = () => {
   const location = useLocation();
   const { user_id } = location.state;
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [preAddress, setPreAddress] = useState();
   const [input, setInput] = useState({});
 
   const [address, setAddress] = useState({
@@ -51,7 +50,6 @@ const EditProfile = () => {
           user_addr: res.data.user_addr,
         });
 
-        console.log(input.user_addr);
         setLoading(false);
       });
   };
