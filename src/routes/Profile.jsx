@@ -8,16 +8,6 @@ const Profile = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const onClickEditProfile = (e) => {
-    e.preventDefault();
-    navigate("edit");
-  };
-
-  const onClickMyBoard = (e) => {
-    e.preventDefault();
-    navigate("article");
-  };
-
   console.log(params.id);
 
   useEffect(() => {}, []);
@@ -27,7 +17,7 @@ const Profile = () => {
         <span className=" font-semibold text-3xl">OOO님 어서오세요</span>
       </div>
       <div className="bg-white w-[70%] h-[450px] flex justify-evenly items-center shadow-2xl">
-        <Link to="edit">
+        <Link to="edit" state={{ user_id: params.id }}>
           <div className="border-2 border-black w-[300px] h-[300px] flex flex-col items-center cursor-pointer">
             <svg
               className="w-[80%] h-[80%]"
@@ -46,7 +36,7 @@ const Profile = () => {
             <span className=" text-3xl">회원 정보 수정</span>
           </div>
         </Link>
-        <Link to="article">
+        <Link to="article" state={{ user_id: params.id }}>
           <div className="border-2 border-black w-[300px] h-[300px] flex flex-col items-center cursor-pointer">
             <svg
               className="w-[80%] h-[80%]"
