@@ -84,25 +84,25 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <button className="bg-[#2F74F1] text-white w-[100px] py-3 text-base rounded-md font-semibold">
-                로그인
-              </button>
+              <div className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center">
+                <span className=" leading-[40px] font-semibold">로그인</span>
+              </div>
             </Link>
           )}
           {loginContext.isLogin ? (
             <div>
-              <button
-                className="bg-[#2F74F1] text-white w-[100px] py-3 rounded-md text-base font-semibold"
+              <div
+                className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center"
                 onClick={handleLogout}
               >
-                로그아웃
-              </button>
+                <span className=" leading-[40px] font-semibold">로그아웃</span>
+              </div>
             </div>
           ) : (
             <Link to="/join">
-              <button className="bg-[#2F74F1] text-white w-[100px] py-3 rounded-md text-base font-semibold">
-                회원가입
-              </button>
+              <div className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center">
+                <span className=" leading-[40px] font-semibold">회원가입</span>
+              </div>
             </Link>
           )}
         </div>
