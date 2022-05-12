@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full h-[300px] bg-[#222222] px-40 flex items-center ">
+    <div className="w-screen h-[300px] bg-[#222222] px-40 flex items-center ">
       <div>
         <p className="text-2xl font-serif text-[#777777]">GRAMy</p>
         <p className="text-base text-white">스마트 재고관리 서비스</p>
