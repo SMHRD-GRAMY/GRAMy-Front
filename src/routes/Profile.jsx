@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AppContext } from "../App";
 
 const Profile = () => {
   // const loginContext = useContext(AppContext);
