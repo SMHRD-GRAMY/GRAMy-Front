@@ -7,6 +7,7 @@ const Profile = () => {
   // const loginContext = useContext(AppContext);
   // const { isLogin } = loginContext;
   const params = useParams();
+  const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState();
 
   const loadUserInfo = () => {
@@ -22,6 +23,7 @@ const Profile = () => {
       })
       .then((res) => {
         setUserData(res.data);
+        setLoading(false);
       });
   };
 
@@ -31,7 +33,9 @@ const Profile = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
       <div className="mb-10">
-        <span className=" font-semibold text-3xl">{`${userData.user_name}님 어서오세요`}</span>
+        <span className=" font-semibold text-3xl">
+          {loading ? `누구세요~?` : `${userData.user_name}님 어서오세요`}
+        </span>
       </div>
       <div className="bg-white w-[70%] h-[450px] flex justify-evenly items-center shadow-2xl">
         <Link to="edit" state={{ user_id: params.id }}>
