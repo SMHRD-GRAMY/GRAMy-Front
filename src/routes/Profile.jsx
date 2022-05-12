@@ -1,16 +1,35 @@
-import React, { useContext, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import { AppContext } from "../App";
 
 const Profile = () => {
-  const loginContext = useContext(AppContext);
-  const { isLogin } = loginContext;
+  // const loginContext = useContext(AppContext);
+  // const { isLogin } = loginContext;
   const params = useParams();
-  const navigate = useNavigate();
+  const [userData, setUserData] = useState();
 
-  console.log(params.id);
+  const loadUserInfo = () => {
+    let url = "http://localhost:8082/selectOne.do";
+    let data = {
+      user_id: params.id,
+    };
+    axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        setUserData(res);
+      });
+  };
 
-  useEffect(() => {}, []);
+  console.log(userData);
+
+  useEffect(() => {
+    loadUserInfo();
+  }, []);
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
       <div className="mb-10">
