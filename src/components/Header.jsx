@@ -94,7 +94,7 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
                 로그인
               </button>
             </Link>
@@ -102,7 +102,7 @@ const Header = () => {
           {loginContext.isLogin ? (
             <div>
               <button
-                className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150"
+                className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150"
                 onClick={handleLogout}
               >
                 로그아웃
@@ -110,7 +110,7 @@ const Header = () => {
             </div>
           ) : (
             <Link to="/join">
-              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
                 회원가입
               </button>
             </Link>
