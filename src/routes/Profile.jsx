@@ -7,7 +7,7 @@ const Profile = () => {
   const { isLogin } = loginContext;
   const params = useParams();
 
-  console.log(params);
+  console.log(params.id);
   return <div>유저 프로필</div>;
 };
 
