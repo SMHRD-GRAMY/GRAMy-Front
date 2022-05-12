@@ -53,7 +53,7 @@ const Home = () => {
       <Helmet>
         <title>GRAMy | 홈</title>
       </Helmet>
-      <div className="w-screen h-auto">
+      <div className="w-full h-auto">
         <Banner className=" w-full h-[660px] px-48 ">
           <div className="px-14">
             <div className="h-36 flex items-center"></div>
