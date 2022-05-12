@@ -45,17 +45,11 @@ const ReportDetail = () => {
 
   const loadArticle = () => {
     axios
-      .post(
-        "http://localhost:8082/report/content.do",
-        {
-          report_seq: postId,
+      .post("http://localhost:8082/report/content.do", postId, {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
+      })
       .then((res) => {
         setData(res.data);
         loadComment();
