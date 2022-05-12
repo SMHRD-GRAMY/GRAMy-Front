@@ -29,7 +29,7 @@ const Purchase = () => {
       <Helmet>
         <title>GRAMy | 구매 문의</title>
       </Helmet>
-      <div className="w-full h-full mb-20">
+      <div className="w-full h-full mb-24">
         <BoardTitle title="구매 문의 게시판" />
         <div className="w-full h-full flex flex-col">
           <div className="w-full h-full flex justify-center items-center">
