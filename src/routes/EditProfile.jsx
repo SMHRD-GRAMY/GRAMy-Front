@@ -73,10 +73,13 @@ const EditProfile = () => {
     });
   };
 
-  console.log(input);
+  const handleSubmit = () => {
+    const url = "";
+  };
 
   useEffect(() => {
     loadUserInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
@@ -102,7 +105,7 @@ const EditProfile = () => {
             <div className="font-semibold text-2xl w-full flex justify-center items-center mt-10 mb-5">
               회원 정보 수정
             </div>
-            <form className="flex flex-col">
+            <form className="flex flex-col" onSubmit={handleSubmit}>
               <input
                 className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
                 type="email"

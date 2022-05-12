@@ -80,7 +80,7 @@ const Join = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
     const result = await fetch("http://localhost:8082/join.do", {
       method: "POST", // *GET, POST, PUT, DELETE 등
       mode: "cors", // no-cors, *cors, same-origin

@@ -84,7 +84,7 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md font-semibold">
+              <button className="bg-[#2F74F1] text-white w-[100px] py-3 rounded-md font-semibold">
                 로그인
               </button>
             </Link>
@@ -92,7 +92,7 @@ const Header = () => {
           {loginContext.isLogin ? (
             <div>
               <button
-                className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md font-semibold"
+                className="bg-[#2F74F1] text-white w-[100px] py-3 rounded-md font-semibold"
                 onClick={handleLogout}
               >
                 로그아웃
@@ -100,7 +100,7 @@ const Header = () => {
             </div>
           ) : (
             <Link to="/join">
-              <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md font-semibold">
+              <button className="bg-[#2F74F1] text-white w-[100px] py-3 rounded-md font-semibold">
                 회원가입
               </button>
             </Link>
