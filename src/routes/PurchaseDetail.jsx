@@ -242,6 +242,7 @@ const PurchaseDetail = () => {
                     postId={postId}
                     comment={comment}
                     setComment={setComment}
+                    article="purchase"
                   />
                 </div>
                 <div className="w-full flex justify-end items-center">
