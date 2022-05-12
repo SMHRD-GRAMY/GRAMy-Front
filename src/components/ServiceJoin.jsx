@@ -10,10 +10,10 @@ const ServiceJoin = () => {
 
   return (
     <div
-      className="fixed right-8 bottom-10 h-12 w-32 bg-white z-40 rounded-md flex justify-center items-center shadow-xl cursor-pointer border-2 border-black hover:scale-125 active:scale-100 transition-all"
+      className="fixed right-8 bottom-10 cursor-pointer bg-white inline-flex items-center justify-center px-5 py-3 border-transparent text-base hover:bg-gray-600 hover:text-white leading-6 rounded-md text-gray-800 focus:outline-none focus:ring border-2 border-gray-700 transition duration-150 ease-in-out md:text-lg md:px-6 z-10"
       onClick={onClickServiceJoin}
     >
-      <span className=" font-bold text-black mr-2">서비스 신청</span>
+      <span className=" font-bold mr-2">서비스 신청</span>
       <svg
         className="w-6 h-6"
         fill="none"
