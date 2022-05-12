@@ -44,6 +44,16 @@ const EditProfile = () => {
       .then((res) => {
         console.log(res.data);
         setUserData(res.data);
+      })
+      .then(() => {
+        setInput({
+          user_id: userData.user_id,
+          user_pw: "",
+          user_name: userData.user_name,
+          user_phone: "",
+          user_gender: userData.user_gender,
+          user_addr: userData.user_addr,
+        });
         setLoading(false);
       });
   };
@@ -72,14 +82,6 @@ const EditProfile = () => {
 
   useEffect(() => {
     loadUserInfo();
-    setInput({
-      user_id: userData.user_id,
-      user_pw: "",
-      user_name: userData.user_name,
-      user_phone: "",
-      user_gender: userData.user_gender,
-      user_addr: userData.user_addr,
-    });
   }, []);
   return (
     <>
