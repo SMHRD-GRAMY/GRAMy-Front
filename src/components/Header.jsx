@@ -52,11 +52,11 @@ const Header = () => {
         <div className=" flex items-center justify-evenly w-[310px]">
           {loginContext.isLogin ? (
             <Link
-              to={
-                `/user/` + userCookie || socialUser
+              to={`/user/${
+                userCookie || socialUser
                   ? identifyUserId(userCookie, socialUser)
                   : null
-              }
+              }`}
             >
               <div className="flex items-center">
                 <div className="rounded-full w-10 h-10 mr-2 flex items-center justify-center border border-green-200 bg-[#90C8B4]">
