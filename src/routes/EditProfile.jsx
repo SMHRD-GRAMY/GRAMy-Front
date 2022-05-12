@@ -75,6 +75,8 @@ const EditProfile = () => {
     });
   };
 
+  console.log(input);
+
   useEffect(() => {
     loadUserInfo();
   }, []);
