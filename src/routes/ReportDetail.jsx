@@ -45,11 +45,17 @@ const ReportDetail = () => {
 
   const loadArticle = () => {
     axios
-      .post("http://localhost:8082/report/content.do", postId, {
-        headers: {
-          "Content-Type": "application/json",
+      .post(
+        "http://localhost:8082/report/content.do",
+        {
+          report_seq: postId,
         },
-      })
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((res) => {
         setData(res.data);
         loadComment();
@@ -221,8 +227,6 @@ const ReportDetail = () => {
                         to="update"
                         state={{
                           title: data.report_title,
-                          // content : useEffect로 게시글 상세 정보 받아와서 여기다가 처박은 후 수정
-                          // 우선은 백엔드 완성 전까지 테스트만
                           content: data.report_content,
                         }}
                         className="cursor-pointer hover:border-b hover:border-gray-500"
