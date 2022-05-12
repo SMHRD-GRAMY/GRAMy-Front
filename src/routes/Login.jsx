@@ -85,7 +85,7 @@ const Login = () => {
               </div>
               <button
                 onClick={handleLogin}
-                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold"
+                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold hover:bg-[#284770] transition ease-in-out duration-150"
               >
                 로그인
               </button>
@@ -106,7 +106,7 @@ const Login = () => {
             <hr className="mb-10" />
             <div className="w-full h-auto">
               <Link to="/join">
-                <div className="w-full h-10 bg-white rounded-md text-black font-bold flex justify-center items-center border border-black">
+                <div className="w-full h-10 bg-white rounded-md text-black font-bold flex justify-center items-center border border-black hover:bg-[#132C4D] hover:text-white transition ease-in-out duration-150">
                   회원가입
                 </div>
               </Link>

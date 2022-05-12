@@ -165,7 +165,7 @@ const Join = () => {
                   onChange={onChangeInput}
                 />
                 <button
-                  className="h-10 bg-[#132C4D] rounded-md text-white font-bold w-28"
+                  className="h-10 bg-[#132C4D] rounded-md text-white font-bold w-28 hover:bg-[#284770] transition ease-in-out duration-150"
                   onClick={handlePhoneAuth}
                 >
                   인증 하기
@@ -329,7 +329,7 @@ const Join = () => {
                 </div>
               </div>
               <input
-                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold cursor-pointer"
+                className=" bg-[#132C4D] rounded-md text-white h-10 font-bold cursor-pointer hover:bg-[#284770] transition ease-in-out duration-150"
                 type="submit"
                 value="회원가입"
               />

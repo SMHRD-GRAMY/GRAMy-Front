@@ -44,7 +44,12 @@ const Header = () => {
               제품 소개
             </Scroll.Link>
           ) : (
-            <Link to="/">제품 소개</Link>
+            <Link
+              to="/"
+              className="cursor-pointer inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md font-medium leading-5 text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out"
+            >
+              제품 소개
+            </Link>
           )}
           <Link
             to="/purchase"
