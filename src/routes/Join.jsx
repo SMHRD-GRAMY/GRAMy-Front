@@ -81,9 +81,6 @@ const Join = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
     const result = await fetch("http://localhost:8082/join.do", {
       method: "POST", // *GET, POST, PUT, DELETE 등
       mode: "cors", // no-cors, *cors, same-origin
@@ -129,7 +126,7 @@ const Join = () => {
             <div className="font-semibold text-2xl w-full flex justify-center items-center mt-10 mb-5">
               회원가입
             </div>
-            <form className="flex flex-col">
+            <form className="flex flex-col" onSubmit={handleSubmit}>
               <input
                 className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
                 type="email"
@@ -335,7 +332,6 @@ const Join = () => {
                 className=" bg-[#132C4D] rounded-md text-white h-10 font-bold cursor-pointer"
                 type="submit"
                 value="회원가입"
-                onClick={handleSubmit}
               />
             </form>
           </div>
