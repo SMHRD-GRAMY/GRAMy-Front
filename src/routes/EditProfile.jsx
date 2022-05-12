@@ -20,6 +20,8 @@ const EditProfile = () => {
     user_addr: "",
   });
 
+  console.log(input);
+
   const [address, setAddress] = useState({
     addr: "",
     zonecode: "",
