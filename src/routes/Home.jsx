@@ -122,7 +122,7 @@ const Home = () => {
         </div>
         {/* 제품 소개 */}
         <div className="w-full h-auto" id="productInfo">
-          <div className="w-full h-[450px] bg-white flex px-24">
+          <div className="w-full h-[450px] bg-white flex px-20">
             <img
               src="img/sub_realtime.gif"
               className=" scale-75"
@@ -159,7 +159,7 @@ const Home = () => {
               <div {...realtime} className="realtime" />
             </div>
           </div>
-          <div className="w-full h-[450px] bg-[#F7F8F8] flex justify-around px-24">
+          <div className="w-full h-[450px] bg-[#F7F8F8] flex justify-around px-20">
             <div className="py-10">
               <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
                 소모 재고 통계
@@ -181,7 +181,7 @@ const Home = () => {
             </div>
             <img src="img/sub_graph.webp" className="scale-50" alt="이미지" />
           </div>
-          <div className="w-full h-[450px] bg-[#27A389] flex px-24">
+          <div className="w-full h-[450px] bg-[#27A389] flex px-20">
             <img src="img/sub_alarm.gif" className=" scale-75" alt="이미지" />
             <div className="p-4 py-10">
               <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
