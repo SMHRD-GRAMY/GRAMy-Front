@@ -90,7 +90,7 @@ const Home = () => {
               <div className="flex flex-col items-center">
                 <img
                   src="img/realtime.webp"
-                  className="w-[200px] h-[200px] drop-shadow-xl"
+                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
                   alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
@@ -100,7 +100,7 @@ const Home = () => {
               <div className="flex flex-col items-center">
                 <img
                   src="img/graph.png"
-                  className="w-[200px] h-[200px] drop-shadow-xl"
+                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
                   alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
@@ -110,7 +110,7 @@ const Home = () => {
               <div className="flex flex-col items-center">
                 <img
                   src="img/alarm.png"
-                  className="w-[200px] h-[200px] drop-shadow-xl"
+                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
                   alt="이미지"
                 />
                 <div className="text-xl font-semibold text-[#DAE2EF]">
@@ -121,38 +121,37 @@ const Home = () => {
           </div>
         </div>
         {/* 제품 소개 */}
-        <div className="w-full h-[1800px]" id="productInfo">
-          <div className="w-full h-[600px] bg-white flex">
+        <div className="w-full h-auto" id="productInfo">
+          <div className="w-full h-[450px] bg-white flex px-24">
             <img
               src="img/sub_realtime.gif"
               className=" scale-75"
               alt="이미지"
             />
-            <div className="p-4 py-10">
-              <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
+            <div className="py-10">
+              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
                 실시간 재고 관리
               </p>
-              <p className=" text-xl mb-10">
+              <p className=" text-lg mb-10">
                 GRAMy는 실시간으로 재고를 파악하여 사용자가 언제 어디서든 쉽게
                 재고를 확인할 수 있도록 도와줍니다.
               </p>
-              <div className="flex justify-around mb-3">
+              <div className="flex justify-around mb-4">
                 <Fade when={fade.realtime} bottom>
                   <img
                     src="img/realtime_img_1.png"
-                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
                     alt="이미지"
                   />
                 </Fade>
                 <Fade when={fade.realtime} right>
                   <img
                     src="img/realtime_img_2.png"
-                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
                     alt="이미지"
                   />
                 </Fade>
               </div>
-
               <span className=" text-slate-400 text-sm">
                 * 실제 앱 화면과 다를 수 있습니다.
               </span>
@@ -160,19 +159,19 @@ const Home = () => {
               <div {...realtime} className="realtime" />
             </div>
           </div>
-          <div className="w-full h-[600px] bg-[#F7F8F8] flex justify-between">
-            <div className="px-32 py-10">
-              <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
+          <div className="w-full h-[450px] bg-[#F7F8F8] flex justify-around px-24">
+            <div className="py-10">
+              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
                 소모 재고 통계
               </p>
-              <p className=" text-xl mb-10">
+              <p className=" text-lg mb-10">
                 재고 소모 통계를 확인하여 필요한 만큼만 주문해보세요!
               </p>
               <div className="flex justify-around mb-3">
                 <Fade when={fade.graph} bottom>
                   <img
                     src="img/graph_img_1.png"
-                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
                     alt="이미지"
                   />
                 </Fade>
@@ -180,22 +179,22 @@ const Home = () => {
               {/* 위치 파악용 DIV */}
               <div {...graph} className="graph" />
             </div>
-            <img src="img/sub_graph.webp" className=" scale-75" alt="이미지" />
+            <img src="img/sub_graph.webp" className="scale-50" alt="이미지" />
           </div>
-          <div className="w-full h-[600px] bg-[#27A389] flex">
+          <div className="w-full h-[450px] bg-[#27A389] flex px-24">
             <img src="img/sub_alarm.gif" className=" scale-75" alt="이미지" />
             <div className="p-4 py-10">
-              <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
+              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
                 재고 부족 알림
               </p>
-              <p className=" text-xl mb-10 text-white">
+              <p className=" text-lg mb-10 text-white">
                 현재 관리하고 있는 품목의 재고가 부족하면 알림으로 알려줘요!
               </p>
               <div className="flex justify-around mb-3">
                 <Fade when={fade.alarm} top>
                   <img
                     src="img/alarm_img_1.png"
-                    className="h-[400px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
                     alt="이미지"
                   />
                 </Fade>
