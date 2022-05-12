@@ -11,7 +11,7 @@ const EditProfile = () => {
   const [userData, setUserData] = useState();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [preAddress, setPreAddress] = useState();
-  const { input, setInput } = useState({
+  const [input, setInput] = useState({
     user_id: "",
     user_pw: "",
     user_name: "",
@@ -19,8 +19,6 @@ const EditProfile = () => {
     user_gender: "",
     user_addr: "",
   });
-
-  console.log(input);
 
   const [address, setAddress] = useState({
     addr: "",
