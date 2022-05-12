@@ -23,8 +23,6 @@ const ReportDetail = () => {
   const params = useParams();
   const postId = params.id; // 게시글번호
 
-  let post_progress;
-
   const handleDelete = (e) => {
     e.preventDefault();
     axios
@@ -212,22 +210,27 @@ const ReportDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
-                      <Link
-                        to="update"
-                        state={{
-                          title: data.report_title,
-                          content: data.report_content,
-                        }}
-                        className="cursor-pointer hover:border-b hover:border-gray-500"
-                      >
-                        수정
-                      </Link>
-                      <span
-                        className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
-                        onClick={handleDelete}
-                      >
-                        삭제
-                      </span>
+                      {identifyUserId(userCookie, socialUser) ===
+                      data.user_id ? (
+                        <>
+                          <Link
+                            to="update"
+                            state={{
+                              title: data.report_title,
+                              content: data.report_content,
+                            }}
+                            className="cursor-pointer hover:border-b hover:border-gray-500"
+                          >
+                            수정
+                          </Link>
+                          <span
+                            className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
+                            onClick={handleDelete}
+                          >
+                            삭제
+                          </span>
+                        </>
+                      ) : null}
                     </div>
                   </div>
                 </div>
