@@ -21,8 +21,6 @@ const App = () => {
 
   const [isLogin, setIsLogin] = useState(false);
 
-  const [currntPage, setCurrentPage] = useState();
-
   return (
     <>
       <CookiesProvider>
@@ -36,8 +34,6 @@ const App = () => {
             setSocialUser,
             serviceModal,
             setServiceModal,
-            currntPage,
-            setCurrentPage,
           }}
         >
           <GlobalStyle />

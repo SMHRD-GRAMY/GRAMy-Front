@@ -10,15 +10,12 @@ import { AppContext } from "../App";
 const Report = () => {
   const [posts, setPosts] = useState();
   const [loading, setLoading] = useState(true);
-  const PageContext = useContext(AppContext);
-  const { setCurrentPage } = PageContext;
   // eslint-disable-next-line no-unused-vars
   const [limit, setLimit] = useState(10); // 한 페이지에 보여줄 게시글 수
   const [page, setPage] = useState(1); // 현재 페이지
   const offset = (page - 1) * limit; // 현재 페이지의 첫번
 
   useEffect(() => {
-    setCurrentPage("report");
     axios.get("http://localhost:8082/report/list.do").then((res) => {
       setLoading(false);
       setPosts(res.data);
