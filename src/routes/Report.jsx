@@ -27,7 +27,7 @@ const Report = () => {
       <Helmet>
         <title>GRAMy | 고장 신고</title>
       </Helmet>
-      <div className="w-full h-full mb-10">
+      <div className="w-full h-full mb-20">
         <BoardTitle title="고장 신고 게시판" />
         <div className="w-full h-full flex flex-col">
           <div className="w-full h-full flex justify-center items-center">
