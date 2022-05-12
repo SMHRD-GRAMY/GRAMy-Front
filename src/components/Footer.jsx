@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { cls } from "../utils/utils";
 
-const Footer = () => {
+const Footer = (currntPage, setCurrentPage) => {
+  useEffect(() => {
+    return () => {
+      setCurrentPage();
+    };
+  }, []);
   return (
-    <div className="w-full h-[300px] bg-[#222222] px-40 flex items-center">
+    <div
+      className={cls(
+        "w-full h-[300px] bg-[#222222] px-40 flex items-center",
+        currntPage === "purchase" || currntPage === "report"
+          ? "absolute bottom-0"
+          : ""
+      )}
+    >
       <div>
         <p className="text-2xl font-serif text-[#777777]">GRAMy</p>
         <p className="text-base text-white">스마트 재고관리 서비스</p>

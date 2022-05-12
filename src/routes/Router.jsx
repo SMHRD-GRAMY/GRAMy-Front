@@ -22,6 +22,9 @@ import Profile from "./Profile";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
+  const PageContext = useContext(AppContext);
+
+  const { currntPage, setCurrentPagePage } = PageContext;
 
   return (
     <>
@@ -63,7 +66,10 @@ const Router = () => {
             element={<NaverRedirectHandler />}
           />
         </Routes>
-        <Footer />
+        <Footer
+          currntPage={currntPage}
+          setCurrentPagePage={setCurrentPagePage}
+        />
       </BrowserRouter>
     </>
   );

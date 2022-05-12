@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import BoardTitle from "../components/BoardTitle";
 import PurchaseTableBody from "../components/PurchaseTableBody";
 import Pagination from "../components/Pagination";
+import { AppContext } from "../App";
 
 const Purchase = () => {
   const [posts, setPosts] = useState();
   const [loading, setLoading] = useState(true);
+  const PageContext = useContext(AppContext);
+  const { setCurrentPage } = PageContext;
 
   // eslint-disable-next-line no-unused-vars
   const [limit, setLimit] = useState(10); // 한 페이지에 보여줄 게시글 수
@@ -16,6 +19,7 @@ const Purchase = () => {
   const offset = (page - 1) * limit; // 현재 페이지의 첫번
 
   useEffect(() => {
+    setCurrentPage("purchase");
     axios.get("http://localhost:8082/purchase/list.do").then((res) => {
       console.log(res.data);
       setLoading(false);
