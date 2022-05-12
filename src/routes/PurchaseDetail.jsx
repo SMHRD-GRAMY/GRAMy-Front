@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import BoardTitle from "../components/BoardTitle";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import axios from "axios";
 import { Skeleton } from "@mui/material";
 import { getCookie } from "../components/auth/cookie";
 import { identifyUserId, identifyUserName } from "../utils/utils";
+import { AppContext } from "../App";
 
 const PurchaseDetail = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ const PurchaseDetail = () => {
   const [data, setData] = useState();
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState(""); // WriteComment 컴포넌트로 넘겨주는 State
+
+  const loginContext = useContext(AppContext);
+  const { isLogin } = loginContext;
 
   const userCookie = getCookie("x_auth");
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
@@ -191,26 +195,28 @@ const PurchaseDetail = () => {
                       </div>
                     </div>
                     <div className=" text-base text-gray-500">
-                      {identifyUserId(userCookie, socialUser) ===
-                      data.user_id ? (
-                        <>
-                          <Link
-                            to="update"
-                            state={{
-                              title: data.purchase_title,
-                              content: data.purchase_content,
-                            }}
-                            className="cursor-pointer hover:border-b hover:border-gray-500"
-                          >
-                            수정
-                          </Link>
-                          <span
-                            className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
-                            onClick={handleDelete}
-                          >
-                            삭제
-                          </span>
-                        </>
+                      {isLogin ? (
+                        identifyUserId(userCookie, socialUser) ===
+                        data.user_id ? (
+                          <>
+                            <Link
+                              to="update"
+                              state={{
+                                title: data.purchase_title,
+                                content: data.purchase_content,
+                              }}
+                              className="cursor-pointer hover:border-b hover:border-gray-500"
+                            >
+                              수정
+                            </Link>
+                            <span
+                              className="ml-2 cursor-pointer hover:border-b hover:border-gray-500"
+                              onClick={handleDelete}
+                            >
+                              삭제
+                            </span>
+                          </>
+                        ) : null
                       ) : null}
                     </div>
                   </div>
