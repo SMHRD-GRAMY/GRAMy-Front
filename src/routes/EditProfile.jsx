@@ -43,15 +43,7 @@ const EditProfile = () => {
       })
       .then((res) => {
         console.log(res.data);
-        setUserData(res.data);
-        setInput({
-          user_id: userData.user_id,
-          user_pw: "",
-          user_name: userData.user_name,
-          user_phone: "",
-          user_gender: userData.user_gender,
-          user_addr: userData.user_addr,
-        });
+        setInput(res.data);
         setLoading(false);
       });
   };
@@ -112,9 +104,7 @@ const EditProfile = () => {
                 disabled
                 required
                 name="user_id"
-                value={
-                  loading ? "정보를 불러오는중입니다..." : userData.user_id
-                }
+                value={loading ? "정보를 불러오는중입니다..." : input.user_id}
               />
               <input
                 className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
