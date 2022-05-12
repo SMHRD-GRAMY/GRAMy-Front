@@ -245,6 +245,7 @@ const ReportDetail = () => {
                         key={index}
                         index={index}
                         length={comments.length}
+                        article="report"
                       />
                     );
                   })}

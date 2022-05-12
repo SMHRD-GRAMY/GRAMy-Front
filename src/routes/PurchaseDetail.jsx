@@ -234,6 +234,7 @@ const PurchaseDetail = () => {
                         key={index}
                         index={index}
                         length={comments.length}
+                        article="purchase"
                       />
                     );
                   })}

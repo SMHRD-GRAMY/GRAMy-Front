@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import LongMenu from "../components/ui/LongMenu";
 import { identifyUserId, identifyUserName } from "../utils/utils";
 import { getCookie } from "./auth/cookie";
-const Comments = ({ comment, index, length }) => {
+const Comments = ({ comment, index, length, article }) => {
   const navigate = useNavigate();
   const [mode, setMode] = useState();
-  const [editComment, setEditComment] = useState(comment.pr_content);
+  const [editComment, setEditComment] = useState(
+    article === "purchase" ? comment.pr_content : comment.reply_content
+  );
 
   const userCookie = getCookie("x_auth");
   const socialUser = JSON.parse(sessionStorage.getItem("socialUser"));
@@ -27,20 +29,39 @@ const Comments = ({ comment, index, length }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:8082/purchase/replyupdate.do";
-    let data = {
-      pr_seq: comment.pr_seq,
-      pr_content: editComment,
-    };
-    axios
-      .post(url, data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then(() => {
-        navigate(0);
-      });
+    let url;
+    let data;
+    if (article === "purchase") {
+      url = "http://localhost:8082/purchase/replyupdate.do";
+      data = {
+        pr_seq: comment.pr_seq,
+        pr_content: editComment,
+      };
+      axios
+        .post(url, data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(() => {
+          navigate(0);
+        });
+    } else if (article === "report") {
+      url = "http://localhost:8082/report/replyupdate.do";
+      data = {
+        reply_seq: comment.reply_seq,
+        reply_content: editComment,
+      };
+      axios
+        .post(url, data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(() => {
+          navigate(0);
+        });
+    }
   };
 
   useEffect(() => {}, []);
@@ -60,7 +81,9 @@ const Comments = ({ comment, index, length }) => {
               onChange={onChangeEditComment}
             />
             <div className="text-xs mb-2 text-gray-500">
-              {comment.pr_date.substring(0, 11)}
+              {article === "purchase"
+                ? comment.pr_date.substring(0, 11)
+                : comment.reply_date}
             </div>
           </div>
           <div className="w-full flex items-center justify-center relative left-[-30px]">
@@ -77,9 +100,15 @@ const Comments = ({ comment, index, length }) => {
         <div className="flex w-full justify-between">
           <div>
             <div className="font-semibold text-base">{comment.user_name}</div>
-            <div className="text-sm">{comment.pr_content}</div>
+            <div className="text-sm">
+              {article === "purchase"
+                ? comment.pr_content
+                : comment.reply_content}
+            </div>
             <div className="text-xs mb-2 text-gray-500">
-              {comment.pr_date.substring(0, 11)}
+              {article === "purchase"
+                ? comment.pr_date.substring(0, 11)
+                : comment.reply_date}
             </div>
           </div>
           {currentUserName === comment.user_name ? (
