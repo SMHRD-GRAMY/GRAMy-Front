@@ -5,7 +5,7 @@ import { AppContext } from "../App";
 import { identifyUserId, identifyUserName } from "../utils/utils";
 import { getCookie } from "./auth/cookie";
 
-const WriteComment = ({ postId, comment, setComment }) => {
+const WriteComment = ({ postId, comment, setComment, article }) => {
   const navigate = useNavigate();
   const loginContext = useContext(AppContext);
   let userCookie = getCookie("x_auth");
@@ -19,13 +19,25 @@ const WriteComment = ({ postId, comment, setComment }) => {
   };
 
   const handleSubmit = () => {
-    const url = "http://localhost:8082/purchase/replyinsert.do"; // 댓글 등록 api 주소ㄴ
-    let data = {
-      purchase_seq: postId,
-      user_id: identifyUserId(userCookie, socialUser),
-      user_name: identifyUserName(userCookie, socialUser),
-      pr_content: comment,
-    };
+    let url;
+    let data;
+    if (article === "purchase") {
+      url = "http://localhost:8082/purchase/replyinsert.do";
+      data = {
+        purchase_seq: postId,
+        user_id: identifyUserId(userCookie, socialUser),
+        user_name: identifyUserName(userCookie, socialUser),
+        pr_content: comment,
+      };
+    } else if (article === "report") {
+      url = "http://localhost:8082/report/replyinsert.do";
+      data = {
+        report_seq: postId,
+        user_id: identifyUserId(userCookie, socialUser),
+        user_name: identifyUserName(userCookie, socialUser),
+        reply_content: comment,
+      };
+    }
     axios
       .post(url, data, {
         headers: {
@@ -42,11 +54,7 @@ const WriteComment = ({ postId, comment, setComment }) => {
       <div className="mb-2 font-semibold text-sm">
         {/* 작성자 이름 */}
         {isLogin ? (
-          userCookie === undefined || userCookie.user_name === "" ? (
-            socialUser.name
-          ) : (
-            userCookie.user_name
-          )
+          identifyUserName(userCookie, socialUser)
         ) : (
           <span>비회원</span>
         )}

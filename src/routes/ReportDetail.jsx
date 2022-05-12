@@ -254,7 +254,12 @@ const ReportDetail = () => {
                     );
                   })}
                   {/* 댓글 작성 칸 */}
-                  <WriteComment comment={comment} setComment={setComment} />
+                  <WriteComment
+                    comment={comment}
+                    setComment={setComment}
+                    postId={postId}
+                    article="report"
+                  />
                 </div>
                 <div className="w-full flex justify-end items-center">
                   <button
