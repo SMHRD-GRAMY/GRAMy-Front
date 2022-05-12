@@ -84,25 +84,25 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <div className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center">
-                <span className=" leading-[40px] font-semibold">로그인</span>
-              </div>
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+                로그인
+              </button>
             </Link>
           )}
           {loginContext.isLogin ? (
             <div>
-              <div
-                className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center"
+              <button
+                className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150"
                 onClick={handleLogout}
               >
-                <span className=" leading-[40px] font-semibold">로그아웃</span>
-              </div>
+                로그아웃
+              </button>
             </div>
           ) : (
             <Link to="/join">
-              <div className="bg-[#2F74F1] text-white w-[100px] h-[40px] rounded-md flex justify-center items-center">
-                <span className=" leading-[40px] font-semibold">회원가입</span>
-              </div>
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+                회원가입
+              </button>
             </Link>
           )}
         </div>
