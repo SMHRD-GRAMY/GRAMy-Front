@@ -39,15 +39,25 @@ const Header = () => {
               to="productInfo"
               spy={true}
               smooth={true}
-              className="cursor-pointer"
+              className="cursor-pointer inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md font-medium leading-5 text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out"
             >
               제품 소개
             </Scroll.Link>
           ) : (
             <Link to="/">제품 소개</Link>
           )}
-          <Link to="/purchase">구매 문의</Link>
-          <Link to="/report">고장 신고</Link>
+          <Link
+            to="/purchase"
+            className="cursor-pointer inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md font-medium leading-5 text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out"
+          >
+            구매 문의
+          </Link>
+          <Link
+            to="/report"
+            className="cursor-pointer inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md font-medium leading-5 text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out"
+          >
+            고장 신고
+          </Link>
         </div>
         <div className=" flex items-center justify-evenly w-[310px]">
           {loginContext.isLogin ? (
@@ -84,7 +94,7 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
                 로그인
               </button>
             </Link>
@@ -92,7 +102,7 @@ const Header = () => {
           {loginContext.isLogin ? (
             <div>
               <button
-                className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150"
+                className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150"
                 onClick={handleLogout}
               >
                 로그아웃
@@ -100,7 +110,7 @@ const Header = () => {
             </div>
           ) : (
             <Link to="/join">
-              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
+              <button className="relative inline-flex items-center px-8 py-2 border border-transparent text-md leading-5 font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-400 active:bg-blue-700 transition ease-in-out duration-150">
                 회원가입
               </button>
             </Link>
