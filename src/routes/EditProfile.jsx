@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import PopupDom from "../components/PopupDom";
 import PopupPostCode from "../components/PopupPostCode";
 
 const EditProfile = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { user_id } = location.state;
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [input, setInput] = useState({});
@@ -84,7 +85,7 @@ const EditProfile = () => {
         },
       })
       .then((res) => {
-        console.log(res);
+        navigate("/");
       });
   };
 
