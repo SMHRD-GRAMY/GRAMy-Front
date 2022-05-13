@@ -74,7 +74,17 @@ const EditProfile = () => {
   };
 
   const handleSubmit = () => {
-    const url = "";
+    let url = "http://localhost:8082/updateUser.do";
+    let data = input;
+    axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   useEffect(() => {
