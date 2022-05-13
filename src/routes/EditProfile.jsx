@@ -73,7 +73,8 @@ const EditProfile = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     let url = "http://localhost:8082/updateUser.do";
     let data = input;
     axios
