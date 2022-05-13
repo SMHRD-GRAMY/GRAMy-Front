@@ -36,7 +36,6 @@ footer, header, hgroup, main, menu, nav, section {
     display: none;
 }
 body {
-  line-height: 1;
   font-family: "Nanum Gothic Neo";
 }
 menu, ol, ul {
