@@ -24,6 +24,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -36,6 +37,7 @@ footer, header, hgroup, main, menu, nav, section {
     display: none;
 }
 body {
+  line-height: 1;
   font-family: "Nanum Gothic Neo";
 }
 menu, ol, ul {
