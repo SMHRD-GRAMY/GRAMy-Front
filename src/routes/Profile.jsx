@@ -36,7 +36,7 @@ const Profile = () => {
           {loading ? `누구세요~?` : `${userData.user_name}님 어서오세요`}
         </span>
       </div>
-      <div className="bg-white w-[70%] h-[450px] flex justify-evenly items-center shadow-2xl">
+      <div className="bg-white w-[30%] h-[450px] flex justify-evenly items-center shadow-2xl">
         <Link to="edit" state={{ user_id: params.id }}>
           <div className="border-2 border-black w-[300px] h-[300px] flex flex-col items-center cursor-pointer">
             <svg
