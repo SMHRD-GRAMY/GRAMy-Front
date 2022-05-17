@@ -150,7 +150,7 @@ const Home = () => {
                   label="김다빈"
                   size="small"
                   variant="outlined"
-                  className="mb-1"
+                  className="mb-2"
                 />
                 <Chip
                   label="조원"
@@ -181,7 +181,7 @@ const Home = () => {
                   label="조영혜"
                   size="small"
                   variant="outlined"
-                  className="mb-1"
+                  className="mb-2"
                 />
                 <Chip
                   label="조원"
@@ -216,7 +216,7 @@ const Home = () => {
                   label="박종재"
                   size="small"
                   variant="outlined"
-                  className="mb-1"
+                  className="mb-2"
                 />
                 <Chip
                   label="조장"
@@ -247,7 +247,7 @@ const Home = () => {
                   label="김민석"
                   size="small"
                   variant="outlined"
-                  className="mb-1"
+                  className="mb-2"
                 />
 
                 <Chip
@@ -284,7 +284,7 @@ const Home = () => {
                   label="김정준"
                   size="small"
                   variant="outlined"
-                  className="mb-1"
+                  className="mb-2"
                 />
                 <Chip
                   label="조원"
