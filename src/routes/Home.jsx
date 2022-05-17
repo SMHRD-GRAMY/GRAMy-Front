@@ -4,6 +4,8 @@ import Trail from "../components/ui/Trail";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import useScrollFadeIn from "../components/hooks/useScrollFadeIn";
+import ServiceJoin from "../components/ServiceJoin";
+import { Chip } from "@mui/material";
 
 const Banner = styled.div`
   /* background-image: url("img/gramy_bg.png");
@@ -54,7 +56,7 @@ const Home = () => {
         <title>GRAMy | 홈</title>
       </Helmet>
       <div className="w-full h-auto">
-        <Banner className=" w-full h-[660px] px-48 ">
+        <Banner className=" w-full h-[900px] px-48 bg-[url('/public/img/gramybg.png')] bg-cover">
           <div className="px-14">
             <div className="h-36 flex items-center"></div>
             <div className="w-full h-[500px] flex">
@@ -73,134 +75,278 @@ const Home = () => {
                     언제, 어디서든, 간편하게 재고를 관리해보세요.
                   </div>
                 </Trail>
+                <ServiceJoin />
               </div>
-
-              {/* 분리 */}
-              <img src="img/boxe.png" alt="박스이미지" />
             </div>
           </div>
         </Banner>
         {/* 제품 특징 */}
-        <div className="bg-[#132C4D] h-[400px] w-full px-48">
-          <div className="w-full h-full">
-            <div className="font-semibold w-full h-auto pt-8 pl-8 text-2xl mb-6 text-white">
-              Why GRAMy?
-            </div>
-            <div className="flex w-full justify-between px-24">
-              <div className="flex flex-col items-center">
+        <div className="w-full h-[800px] bg-white flex items-center justify-around px-20 relative">
+          <div className="w-[400px] h-[400px] shadow-xl  rounded-3xl flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF] ">
+            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <span className="my-5 text-2xl">실시간 재고 확인</span>
+            <span>GRAMy는 실시간으로 재고를 파악하여</span>
+            <br />
+            <span>사용자가 언제 어디서든 쉽게</span>
+            <br />
+            <span>재고를 확인할 수 있도록 도와줍니다.</span>
+          </div>
+          <div className="bg-white w-[400px] h-[400px] shadow-xl rounded-3xl relative bottom-20 flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF]">
+            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <span className="my-5 text-2xl">소모 재고 통계</span>
+            <span>재고 소모 통계를 확인하여</span>
+            <br />
+            <span>필요한 만큼만 주문해보세요!</span>
+          </div>
+          <div className="bg-white w-[400px] h-[400px] shadow-xl rounded-3xl flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF]">
+            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <span className="my-5 text-2xl">재고 부족 알림</span>
+            <span>현재 관리하고 있는 품목의</span>
+            <br />
+            <span>재고가 부족하면 알림으로 알려줘요!</span>
+          </div>
+        </div>
+        {/* 제품 소개 */}
+        <div
+          className="bg-[url('/public/img/gramybox.png')] bg-cover bg-no-repeat h-[800px] w-full px-48 "
+          id="productInfo"
+        >
+          <div className="w-full h-full flex items-center">
+            <div className="w-full h-[450px] flex justify-between">
+              <Fade when={fade.realtime} bottom>
                 <img
-                  src="img/realtime.webp"
-                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
+                  src="img/realtime_img_1.png"
+                  className="rounded-2xl hover:scale-110 transition-all shadow-2xl"
                   alt="이미지"
                 />
-                <div className="text-xl font-semibold text-[#DAE2EF]">
-                  실시간 재고 확인
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <img
-                  src="img/graph.png"
-                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
-                  alt="이미지"
-                />
-                <div className="text-xl font-semibold text-[#DAE2EF]">
-                  소모 재고 통계
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <img
-                  src="img/alarm.png"
-                  className="w-[200px] h-[200px] drop-shadow-xl hover:scale-110 transition-all"
-                  alt="이미지"
-                />
-                <div className="text-xl font-semibold text-[#DAE2EF]">
-                  재고 부족 알림
-                </div>
+              </Fade>
+              <div>
+                <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
+                  다양한 서비스
+                </p>
+                <p className=" text-lg">
+                  지금 바로 GRAMy를 주변에게 공유해보세요.
+                </p>
+                <p className="text-lg">
+                  GRAMy는 사용자에게 다양한 기능을 제공하고자
+                </p>
+                <p className="text-lg">다양한 노력을 하고있습니다.</p>
+                {/* 위치 파악용 DIV */}
+                <div {...realtime} className="realtime" />
               </div>
             </div>
           </div>
         </div>
-        {/* 제품 소개 */}
-        <div className="w-full h-auto" id="productInfo">
-          <div className="w-full h-[450px] bg-white flex justify-center">
-            <img
-              src="img/sub_realtime.gif"
-              className=" scale-75"
-              alt="이미지"
-            />
-            <div className="py-10">
-              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
-                실시간 재고 관리
-              </p>
-              <p className=" text-lg mb-10">
-                GRAMy는 실시간으로 재고를 파악하여 사용자가 언제 어디서든 쉽게
-                재고를 확인할 수 있도록 도와줍니다.
-              </p>
-              <div className="flex justify-around mb-4">
-                <Fade when={fade.realtime} bottom>
-                  <img
-                    src="img/realtime_img_1.png"
-                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                    alt="이미지"
-                  />
-                </Fade>
-                <Fade when={fade.realtime} right>
-                  <img
-                    src="img/realtime_img_2.png"
-                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                    alt="이미지"
-                  />
-                </Fade>
-              </div>
-              <span className=" text-slate-400 text-sm">
-                * 실제 앱 화면과 다를 수 있습니다.
-              </span>
-              {/* 위치 파악용 DIV */}
-              <div {...realtime} className="realtime" />
+        <div className="w-full h-[1200px] bg-white py-40">
+          <div className="flex flex-col w-full h-auto items-center">
+            <div className="mb-20 text-4xl text-[#132C4D]">
+              <span className="font-bold ">팀 </span>
+              <span className="font-serif">GRAMy</span>
             </div>
-          </div>
-          <div className="w-full h-[450px] bg-[#F7F8F8] flex justify-center">
-            <div className="py-10">
-              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
-                소모 재고 통계
-              </p>
-              <p className=" text-lg mb-10">
-                재고 소모 통계를 확인하여 필요한 만큼만 주문해보세요!
-              </p>
-              <div className="flex justify-around mb-3">
-                <Fade when={fade.graph} bottom>
-                  <img
-                    src="img/graph_img_1.png"
-                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                    alt="이미지"
+            <div className="flex w-[65%] justify-evenly mb-14">
+              <div className="flex flex-col items-center">
+                <div className="w-[150px] h-[150px] bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <Chip
+                  label="김다빈"
+                  size="small"
+                  variant="outlined"
+                  className="mb-1"
+                />
+                <Chip
+                  label="조원"
+                  color="primary"
+                  size="small"
+                  className="mb-4"
+                />
+                <div className="flex">
+                  <Chip
+                    label="App"
+                    color="success"
+                    variant="outlined"
+                    size="small"
+                    className="mb-1"
                   />
-                </Fade>
+                </div>
               </div>
-              {/* 위치 파악용 DIV */}
-              <div {...graph} className="graph" />
+              <div className="flex flex-col items-center">
+                <div className="w-[150px] h-[150px]  bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <Chip
+                  label="조영혜"
+                  size="small"
+                  variant="outlined"
+                  className="mb-1"
+                />
+                <Chip
+                  label="조원"
+                  color="primary"
+                  size="small"
+                  className="mb-4"
+                />
+                <div className="flex">
+                  <Chip
+                    label="App"
+                    color="success"
+                    size="small"
+                    variant="outlined"
+                    className="mb-1 mr-2"
+                  />
+                  <Chip
+                    label="Back-End"
+                    color="error"
+                    variant="outlined"
+                    size="small"
+                    className="mb-1"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <img
+                  className="w-[150px] h-[150px] rounded-full shadow-2xl border border-[#CFDAED] mb-5 cursor-pointer hover:scale-110 transition-all"
+                  src="img/jongjae.png"
+                  alt="team"
+                />
+                <Chip
+                  label="박종재"
+                  size="small"
+                  variant="outlined"
+                  className="mb-1"
+                />
+                <Chip
+                  label="조장"
+                  color="warning"
+                  size="small"
+                  className="mb-4"
+                />
+                <div>
+                  <Chip
+                    label="App"
+                    color="success"
+                    size="small"
+                    variant="outlined"
+                    className="mb-1 mr-2"
+                  />
+                  <Chip
+                    label="Front-End"
+                    color="primary"
+                    size="small"
+                    variant="outlined"
+                    className="mb-1"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-[150px] h-[150px]  bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <Chip
+                  label="김민석"
+                  size="small"
+                  variant="outlined"
+                  className="mb-1"
+                />
+
+                <Chip
+                  label="조원"
+                  color="primary"
+                  size="small"
+                  className="mb-4"
+                />
+                <Chip
+                  label="Back-End"
+                  color="error"
+                  size="small"
+                  variant="outlined"
+                  className="mb-2"
+                />
+                <Chip
+                  label="App"
+                  color="success"
+                  size="small"
+                  variant="outlined"
+                  className="mb-2"
+                />
+                <Chip
+                  label="Raspberry Pi"
+                  color="secondary"
+                  size="small"
+                  variant="outlined"
+                  className="mb-2"
+                />
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-[150px] h-[150px] bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <Chip
+                  label="김정준"
+                  size="small"
+                  variant="outlined"
+                  className="mb-1"
+                />
+                <Chip
+                  label="조원"
+                  color="primary"
+                  size="small"
+                  className="mb-4"
+                />
+                <div className="flex ">
+                  <Chip
+                    label="App"
+                    color="success"
+                    size="small"
+                    variant="outlined"
+                    className="mb-2 mr-2"
+                  />
+                  <Chip
+                    label="Raspberry Pi"
+                    color="secondary"
+                    variant="outlined"
+                    size="small"
+                    className="mb-2"
+                  />
+                </div>
+              </div>
             </div>
-            <img src="img/sub_graph.webp" className="scale-50" alt="이미지" />
-          </div>
-          <div className="w-full h-[450px] bg-[#27A389] flex justify-center">
-            <img src="img/sub_alarm.gif" className=" scale-75" alt="이미지" />
-            <div className="p-4 py-10">
-              <p className=" text-3xl text-[#132C4D] font-semibold mb-2">
-                재고 부족 알림
-              </p>
-              <p className=" text-lg mb-10 text-white">
-                현재 관리하고 있는 품목의 재고가 부족하면 알림으로 알려줘요!
-              </p>
-              <div className="flex justify-around mb-3">
-                <Fade when={fade.alarm} top>
+            <div className="w-full flex flex-col items-center">
+              <span className="text-4xl text-[#132C4D] mb-20">Use</span>
+              <div className="flex w-[70%] justify-evenly">
+                <div className="flex flex-col items-center">
                   <img
-                    src="img/alarm_img_1.png"
-                    className="h-[250px] rounded-2xl hover:scale-110 transition-all shadow-2xl"
-                    alt="이미지"
+                    src="img/react.webp"
+                    alt="react"
+                    className="mb-10 w-[100px] h-[100px] rounded-full shadow-2xl"
                   />
-                </Fade>
+                  <span className="text-xl font-semibold">React</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src="img/springboot.png"
+                    alt="springboot"
+                    className="mb-10 w-[100px] h-[100px] rounded-full shadow-2xl"
+                  />
+                  <span className="text-xl font-semibold">Spring Boot</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src="img/raspberry.png"
+                    alt="raspberry"
+                    className="mb-10 w-[100px] h-[100px] rounded-full shadow-2xl"
+                  />
+                  <span className="text-xl font-semibold">Raspberry Pi</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src="img/android.png"
+                    alt="android"
+                    className="mb-10 w-[100px] h-[100px] rounded-full shadow-2xl"
+                  />
+                  <span className="text-xl font-semibold">Android Studio</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img
+                    src="img/oracle.png"
+                    alt="oracle"
+                    className="mb-10 w-[100px] h-[100px] rounded-full shadow-2xl"
+                  />
+                  <span className="text-xl font-semibold">Oracle DataBase</span>
+                </div>
               </div>
-              {/* 위치 파악용 DIV */}
-              <div {...alarm} className="alarm"></div>
             </div>
           </div>
         </div>

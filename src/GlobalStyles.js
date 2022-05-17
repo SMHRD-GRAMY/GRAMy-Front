@@ -59,7 +59,7 @@ table {
 }
 
 body {
-    background-color: #DAE2EF ;
+    background-color: white ;
 }
 
 /* input type number  */
