@@ -4,8 +4,10 @@ const GlobalStyle = createGlobalStyle`
 
 
 @font-face {
-  font-family: "Nanum Gothic Neo";
-  src: url("fonts/AppleSDGothicNeoM.ttf");
+    font-family: 'MinSans-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -37,7 +39,7 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
-  font-family: "Nanum Gothic Neo";
+  font-family: "MinSans-Medium";
 }
 menu, ol, ul {
   list-style: none;
