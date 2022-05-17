@@ -41,18 +41,17 @@ const Login = () => {
         },
       })
       .then((res, err) => {
-        if (err) {
-          setAlertOpen(true);
-        }
-        console.log(res);
         setCookie("x_auth", {
           user_id: res.data.user_id,
           user_name: res.data.user_name,
         });
-      })
-      .then(() => {
         loginContext.setIsLogin(true);
         navigate("/");
+      })
+      .catch((err) => {
+        if (err) {
+          setAlertOpen(true);
+        }
       });
   };
 
@@ -79,7 +78,7 @@ const Login = () => {
           severity="error"
           sx={{ width: "100%" }}
         >
-          This is a success message!
+          아이디 또는 비밀번호가 틀렸습니다.
         </Alert>
       </Snackbar>
       <div className="w-full h-full my-14 flex justify-center items-center">
