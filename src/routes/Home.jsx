@@ -164,6 +164,13 @@ const Home = () => {
                     color="success"
                     variant="outlined"
                     size="small"
+                    className="mb-1 mr-2"
+                  />
+                  <Chip
+                    label="Back-End"
+                    color="error"
+                    variant="outlined"
+                    size="small"
                     className="mb-1"
                   />
                 </div>
