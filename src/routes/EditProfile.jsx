@@ -4,15 +4,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import PopupDom from "../components/PopupDom";
 import PopupPostCode from "../components/PopupPostCode";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 
 const EditProfile = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user_id } = location.state;
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [alertOpen, setAlertOpen] = useState(false);
 
   const [input, setInput] = useState({});
 
@@ -93,18 +90,10 @@ const EditProfile = () => {
       });
   };
 
-  const handleAlertClose = () => {
-    setAlertOpen(false);
-  };
-
   useEffect(() => {
     loadUserInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
 
   return (
     <>
@@ -267,19 +256,6 @@ const EditProfile = () => {
           </div>
         </div>
       </div>
-      <Snackbar
-        open={alertOpen}
-        autoHideDuration={6000}
-        onClose={handleAlertClose}
-      >
-        <Alert
-          onClose={handleAlertClose}
-          severity="success"
-          sx={{ width: "100%" }}
-        >
-          성공적으로 수정되었습니다!
-        </Alert>
-      </Snackbar>
     </>
   );
 };
