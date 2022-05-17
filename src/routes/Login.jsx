@@ -7,12 +7,15 @@ import KaKaoLogin from "../components/auth/KaKaoLogin";
 import NaverLogin from "../components/auth/NaverLogin";
 import { getCookie, setCookie } from "../components/auth/cookie";
 import { AppContext } from "../App";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 // 로그인
 
 const Login = () => {
   const navigate = useNavigate();
   const loginContext = useContext(AppContext);
+  const [alertOpen, setAlertOpen] = useState(false);
   const [input, setinput] = useState({
     userId: "",
     userPw: "",
@@ -38,6 +41,9 @@ const Login = () => {
         },
       })
       .then((res, err) => {
+        if (err) {
+          setAlertOpen(true);
+        }
         console.log(res);
         setCookie("x_auth", {
           user_id: res.data.user_id,
@@ -50,11 +56,32 @@ const Login = () => {
       });
   };
 
+  const handleAlertClose = () => {
+    setAlertOpen(false);
+  };
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   return (
     <>
       <Helmet>
         <title>GRAMy | 로그인</title>
       </Helmet>
+      <Snackbar
+        open={alertOpen}
+        autoHideDuration={6000}
+        onClose={handleAlertClose}
+      >
+        <Alert
+          onClose={handleAlertClose}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          This is a success message!
+        </Alert>
+      </Snackbar>
       <div className="w-full h-full my-14 flex justify-center items-center">
         <div className=" bg-white w-[600px] h-[800px] shadow-lg">
           <div className=" px-10">
