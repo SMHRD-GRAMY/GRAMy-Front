@@ -83,7 +83,11 @@ const Home = () => {
         {/* 제품 특징 */}
         <div className="w-full h-[800px] bg-white flex items-center justify-around px-20 relative">
           <div className="w-[400px] h-[400px] shadow-xl  rounded-3xl flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF] ">
-            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <img
+              src="img/phoneTime.png"
+              alt="실시간"
+              className="w-[140px] h-[100px] mt-10"
+            />
             <span className="my-5 text-2xl">실시간 재고 확인</span>
             <span>GRAMy는 실시간으로 재고를 파악하여</span>
             <br />
@@ -92,14 +96,22 @@ const Home = () => {
             <span>재고를 확인할 수 있도록 도와줍니다.</span>
           </div>
           <div className="bg-white w-[400px] h-[400px] shadow-xl rounded-3xl relative bottom-20 flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF]">
-            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <img
+              src="img/phoneGraph.png"
+              alt="통계"
+              className="w-[120px] h-[100px] mt-10"
+            />
             <span className="my-5 text-2xl">소모 재고 통계</span>
             <span>재고 소모 통계를 확인하여</span>
             <br />
             <span>필요한 만큼만 주문해보세요!</span>
           </div>
           <div className="bg-white w-[400px] h-[400px] shadow-xl rounded-3xl flex flex-col items-center hover:bg-[url('/public/img/gramymiddlebox.png')] hover:border border-[#BCD4FF]">
-            <div className="w-[100px] h-[100px] bg-slate-400 rounded-full mt-10" />
+            <img
+              src="img/phoneAlert.png"
+              alt="알림"
+              className="w-[150px] h-[100px] mt-10"
+            />
             <span className="my-5 text-2xl">재고 부족 알림</span>
             <span>현재 관리하고 있는 품목의</span>
             <br />
