@@ -68,19 +68,6 @@ const Login = () => {
       <Helmet>
         <title>GRAMy | 로그인</title>
       </Helmet>
-      <Snackbar
-        open={alertOpen}
-        autoHideDuration={6000}
-        onClose={handleAlertClose}
-      >
-        <Alert
-          onClose={handleAlertClose}
-          severity="error"
-          sx={{ width: "100%" }}
-        >
-          아이디 또는 비밀번호가 틀렸습니다.
-        </Alert>
-      </Snackbar>
       <div className="w-full h-full my-14 flex justify-center items-center">
         <div className=" bg-white w-[600px] h-[800px] shadow-lg">
           <div className=" px-10">
@@ -140,6 +127,19 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Snackbar
+        open={alertOpen}
+        autoHideDuration={6000}
+        onClose={handleAlertClose}
+      >
+        <Alert
+          onClose={handleAlertClose}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          아이디 또는 비밀번호가 틀렸습니다.
+        </Alert>
+      </Snackbar>
     </>
   );
 };
