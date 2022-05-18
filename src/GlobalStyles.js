@@ -4,8 +4,8 @@ const GlobalStyle = createGlobalStyle`
 
 
 @font-face {
-    font-family: 'MinSans-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +39,8 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
-  font-family: "MinSans-Medium";
+  font-family: "GangwonEduPowerExtraBoldA";
+  color: #272727;
 }
 menu, ol, ul {
   list-style: none;

@@ -60,7 +60,7 @@ const Home = () => {
                     <span>재고관리</span>
                   </div>
                   <div className="text-4xl font-extrabold mb-2">
-                    <span className="text-[#3E72AF] font-serif">GRAMy </span>
+                    <span className="text-[#3E72AF] font-bold">GRAMy </span>
                     <span>에게 맡겨보실래요?</span>
                   </div>
                   <div className="text-lg">

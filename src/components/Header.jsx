@@ -31,7 +31,7 @@ const Header = () => {
             <img
               src="/img/logo.png"
               alt="로고"
-              className=" w-[80px] h-[80px]"
+              className=" w-[105px] h-[55px]"
             />
           </Link>
           {location.pathname === "/" ? (
