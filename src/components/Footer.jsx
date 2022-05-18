@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="w-full h-[300px] bg-[url('/public/img/gramyfooter.png')] px-40 flex items-center ">
       <div>
-        <p className="text-2xl font-serif text-[#132C4D]">GRAMy</p>
+        <p className="text-2xl text-[#132C4D]">GRAMy</p>
         <p className="text-base text-[#494949]">스마트 재고관리 서비스</p>
         <p className="text-xl font-semibold text-[#132C4D]">CUSTOMER CENTER</p>
         <p className="text-2xl font-bold text-[#494949]">1996-0414</p>
@@ -24,7 +24,7 @@ const Footer = () => {
           rel="noreferrer"
           className="text-xl text-[#3E72AF] hover:underline underline-offset-4 hover:text-white"
         >
-          Instagarm
+          Instagram
         </a>
       </div>
     </div>
