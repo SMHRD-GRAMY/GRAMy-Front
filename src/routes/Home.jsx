@@ -155,7 +155,7 @@ const Home = () => {
           <div className="flex flex-col w-full h-auto items-center">
             <div className="mb-20 text-4xl text-[#132C4D]">
               <span className="font-bold ">팀 </span>
-              <span className="font-serif">GRAMy</span>
+              <span>GRAMy</span>
             </div>
             <div className="flex w-[65%] justify-evenly mb-14">
               <div className="flex flex-col items-center">
