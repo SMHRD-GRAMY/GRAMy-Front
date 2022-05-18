@@ -159,7 +159,11 @@ const Home = () => {
             </div>
             <div className="flex w-[65%] justify-evenly mb-14">
               <div className="flex flex-col items-center">
-                <div className="w-[150px] h-[150px] bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <img
+                  src="img/dabin.png"
+                  alt="avatar"
+                  className="w-[150px] h-[150px]  rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all"
+                />
                 <Chip
                   label="김다빈"
                   size="small"
@@ -190,7 +194,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-[150px] h-[150px]  bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <img
+                  src="img/yeonghye.png"
+                  alt="avatar"
+                  className="w-[150px] h-[150px]  rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all"
+                />
                 <Chip
                   label="조영혜"
                   size="small"
@@ -256,7 +264,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-[150px] h-[150px]  bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <img
+                  src="img/minsuck.png"
+                  alt="avatar"
+                  className="w-[150px] h-[150px] rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all"
+                />
                 <Chip
                   label="김민석"
                   size="small"
@@ -293,7 +305,11 @@ const Home = () => {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-[150px] h-[150px] bg-slate-400 rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all" />
+                <img
+                  src="img/jungjun.png"
+                  alt="avatar"
+                  className="w-[150px] h-[150px] rounded-full shadow-2xl mb-5 cursor-pointer hover:scale-110 transition-all"
+                />
                 <Chip
                   label="김정준"
                   size="small"
