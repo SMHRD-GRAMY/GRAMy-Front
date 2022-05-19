@@ -1,11 +1,14 @@
+import axios from "axios";
 import React, { useContext, useState, useRef } from "react";
 import Helmet from "react-helmet";
+import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import PopupDom from "../components/PopupDom";
 import PopupPostCode from "../components/PopupPostCode";
 
 const Join = () => {
   const ModalContext = useContext(AppContext);
+  const navigate = useNavigate();
 
   const [input, setInput] = useState({
     user_id: "",
@@ -80,7 +83,8 @@ const Join = () => {
     }
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const result = await fetch("http://localhost:8082/join.do", {
       method: "POST", // *GET, POST, PUT, DELETE 등
       mode: "cors", // no-cors, *cors, same-origin
@@ -95,8 +99,9 @@ const Join = () => {
       body: JSON.stringify(input),
     });
     let resultText = await result.text();
+    console.log(resultText);
     if (resultText === "success") {
-      window.location.href = "login";
+      navigate("/login");
     } else if (resultText === "fail") {
       console.log("회원가입 실패 처리하기");
     }
