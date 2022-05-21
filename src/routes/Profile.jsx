@@ -10,7 +10,7 @@ const Profile = () => {
   const [userData, setUserData] = useState();
 
   const loadUserInfo = () => {
-    let url = "http://localhost:8082/selectOne.do";
+    let url = "http://211.48.228.51:8082/selectOne.do";
     let data = {
       user_id: params.id,
     };

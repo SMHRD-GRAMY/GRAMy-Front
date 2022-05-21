@@ -77,7 +77,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
       switch (board) {
         case "purchase":
           console.log("구매 문의 게시글 수정!");
-          url = "http://localhost:8082/purchase/update.do"; // 구매 문의 게시글 수정 url
+          url = "http://211.48.228.51:8082/purchase/update.do"; // 구매 문의 게시글 수정 url
           data = {
             purchase_seq: articleId,
             purchase_title: title,
@@ -95,7 +95,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           break;
         case "report":
           console.log("고장 신고 게시글 수정!");
-          url = "http://localhost:8082/report/update.do"; // 고장 신고 게시글 수정 url
+          url = "http://211.48.228.51:8082/report/update.do"; // 고장 신고 게시글 수정 url
           data = {
             report_seq: articleId,
             report_title: title,
@@ -119,7 +119,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
       switch (board) {
         case "purchase":
           console.log("구매 문의 게시글 등록!");
-          url = "http://localhost:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
+          url = "http://211.48.228.51:8082/purchase/insert.do"; // 구매 문의 게시글 등록 url
           data = {
             user_id: identifyUserId(userCookie, socialUser),
             user_name: identifyUserName(userCookie, socialUser),
@@ -139,7 +139,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           break;
         case "report":
           console.log("고장 신고 게시글 등록!");
-          url = "http://localhost:8082/report/insert.do"; // 고장 신고 게시글 등록 url
+          url = "http://211.48.228.51:8082/report/insert.do"; // 고장 신고 게시글 등록 url
           data = {
             user_id: identifyUserId(userCookie, socialUser),
             user_name: identifyUserName(userCookie, socialUser),
@@ -201,7 +201,7 @@ const DraftEditor = ({ title, mode, articleId, editContent, board }) => {
           onEditorStateChange={onEditorStateChange}
         />
       </MyBlock>
-      <div className="bg-[#DAE2EF] flex justify-end pt-3 mb-3">
+      <div className="bg-white flex justify-end pt-3 mb-3">
         <button
           onClick={handleSubmit}
           className="h-9 bg-[#132C4D] rounded-md text-white font-bold w-20"

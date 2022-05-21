@@ -30,7 +30,7 @@ const PurchaseDetail = () => {
     e.preventDefault();
     axios
       .get(
-        "http://localhost:8082/purchase/delete.do",
+        "http://211.48.228.51:8082/purchase/delete.do",
         {
           params: { purchase_seq: postId },
         },
@@ -47,7 +47,7 @@ const PurchaseDetail = () => {
 
   const loadArticle = () => {
     axios
-      .post("http://localhost:8082/purchase/content.do", postId, {
+      .post("http://211.48.228.51:8082/purchase/content.do", postId, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -60,7 +60,7 @@ const PurchaseDetail = () => {
 
   const loadComment = () => {
     axios
-      .post("http://localhost:8082/purchase/replylist.do", postId, {
+      .post("http://211.48.228.51:8082/purchase/replylist.do", postId, {
         headers: {
           "Content-Type": "application/json",
         },

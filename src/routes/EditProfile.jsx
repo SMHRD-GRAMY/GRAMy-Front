@@ -31,7 +31,7 @@ const EditProfile = () => {
   };
 
   const loadUserInfo = () => {
-    let url = "http://localhost:8082/selectOne.do";
+    let url = "http://211.48.228.51:8082/selectOne.do";
     let data = {
       user_id: user_id,
     };
@@ -77,7 +77,7 @@ const EditProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let url = "http://localhost:8082/updateUser.do";
+    let url = "http://211.48.228.51:8082/updateUser.do";
     let data = input;
     axios
       .post(url, data, {

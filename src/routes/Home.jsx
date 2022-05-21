@@ -126,15 +126,15 @@ const Home = () => {
           id="productInfo"
         >
           <div className="w-full h-full flex items-center">
-            <div className="w-full h-[450px] flex justify-between">
+            <div className="w-full h-[450px] flex items-center">
               <Fade when={fade.realtime} bottom>
                 <img
-                  src="img/realtime_img_1.png"
-                  className="rounded-2xl hover:scale-110 transition-all shadow-2xl"
+                  src="img/phone.png"
+                  className="hover:scale-110 transition-all w-[600px] h-[600px]"
                   alt="이미지"
                 />
               </Fade>
-              <div>
+              <div className=" ml-28">
                 <p className=" text-4xl text-[#132C4D] font-semibold mb-2">
                   다양한 서비스
                 </p>

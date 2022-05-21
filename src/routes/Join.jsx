@@ -85,7 +85,7 @@ const Join = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await fetch("http://localhost:8082/join.do", {
+    const result = await fetch("http://211.48.228.51:8082/join.do", {
       method: "POST", // *GET, POST, PUT, DELETE 등
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

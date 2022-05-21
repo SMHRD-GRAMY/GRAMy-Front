@@ -31,7 +31,7 @@ const ReportDetail = () => {
     e.preventDefault();
     axios
       .get(
-        "http://localhost:8082/report/delete.do",
+        "http://211.48.228.51:8082/report/delete.do",
         {
           params: { report_seq: postId },
         },
@@ -48,7 +48,7 @@ const ReportDetail = () => {
 
   const loadArticle = () => {
     axios
-      .post("http://localhost:8082/report/content.do", postId, {
+      .post("http://211.48.228.51:8082/report/content.do", postId, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -71,7 +71,7 @@ const ReportDetail = () => {
 
   const loadComment = () => {
     axios
-      .post("http://localhost:8082/report/replylist.do", postId, {
+      .post("http://211.48.228.51:8082/report/replylist.do", postId, {
         headers: {
           "Content-Type": "application/json",
         },

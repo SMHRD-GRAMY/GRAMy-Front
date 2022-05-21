@@ -32,7 +32,7 @@ const Comments = ({ comment, index, length, article }) => {
     let url;
     let data;
     if (article === "purchase") {
-      url = "http://localhost:8082/purchase/replyupdate.do";
+      url = "http://211.48.228.51:8082/purchase/replyupdate.do";
       data = {
         pr_seq: comment.pr_seq,
         pr_content: editComment,
@@ -47,7 +47,7 @@ const Comments = ({ comment, index, length, article }) => {
           navigate(0);
         });
     } else if (article === "report") {
-      url = "http://localhost:8082/report/replyupdate.do";
+      url = "http://211.48.228.51:8082/report/replyupdate.do";
       data = {
         reply_seq: comment.reply_seq,
         reply_content: editComment,

@@ -22,7 +22,7 @@ const WriteComment = ({ postId, comment, setComment, article }) => {
     let url;
     let data;
     if (article === "purchase") {
-      url = "http://localhost:8082/purchase/replyinsert.do";
+      url = "http://211.48.228.51:8082/purchase/replyinsert.do";
       data = {
         purchase_seq: postId,
         user_id: identifyUserId(userCookie, socialUser),
@@ -30,7 +30,7 @@ const WriteComment = ({ postId, comment, setComment, article }) => {
         pr_content: comment,
       };
     } else if (article === "report") {
-      url = "http://localhost:8082/report/replyinsert.do";
+      url = "http://211.48.228.51:8082/report/replyinsert.do";
       data = {
         report_seq: postId,
         user_id: identifyUserId(userCookie, socialUser),

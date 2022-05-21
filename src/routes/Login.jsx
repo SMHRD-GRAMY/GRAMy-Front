@@ -31,7 +31,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const url = "http://localhost:8082/login.do";
+    const url = "http://211.48.228.51:8082/login.do";
     let data = { ...input }; // email, password 넘어감!
     axios
       .post(url, JSON.stringify(data), {

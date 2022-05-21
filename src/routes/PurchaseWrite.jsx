@@ -38,7 +38,7 @@ const PurchaseWrite = ({ mode }) => {
         <BoardTitle title="구매 문의 작성" />
         <form action="/purchase">
           <div className="w-full h-full flex justify-center">
-            <div className="w-[50%] bg-[#DAE2EF]">
+            <div className="w-[50%] bg-white">
               {/* 게시글 제목 */}
               <div className="border border-gray-400">
                 <input
