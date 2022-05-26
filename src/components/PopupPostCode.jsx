@@ -16,7 +16,7 @@ const PopupPostCode = ({ onClose, setAddress, address }) => {
     <div className=" border-4 border-black z-30 shadow-2xl w-[500px] h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center bg-[#ECECEC]">
       <DaumPostcode onComplete={onComplete} />
       <button
-        className="h-10 bg-[#90C8B4] rounded-md text-white font-bold w-28"
+        className="h-10 bg-[#132C4D] rounded-md text-white font-bold w-28 my-3"
         onClick={onClose}
       >
         닫기
