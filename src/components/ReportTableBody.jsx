@@ -27,7 +27,7 @@ const ReportTableBody = ({ posts, loading, offset, limit }) => {
                   </Link>
                 </td>
                 <td>{info.user_name}</td>
-                <td>{info.report_date}</td>
+                <td>{info.report_date.substring(0, 11)}</td>
                 <td>{info.report_cnt}</td>
               </tr>
             );
